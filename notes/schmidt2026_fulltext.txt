@@ -1,0 +1,2959 @@
+
+
+===== PAGE 1 =====
+
+Astronomy & Astrophysics manuscript no. main
+©ESO 2026
+June 19, 2026
+Cooling, conduction, compact objects: Gravothermal evolution of
+dissipative self-interacting dark matter halos
+Ludwig D. Schmidt1,⋆, Moritz S. Fischer2, 3, and Mathias Garny1
+1 Technische Universität München, TUM School of Natural Sciences, Physik Department T31, James-Franck-Straße 1, D-85748
+Garching, Germany
+2 Donostia International Physics Center (DIPC), Paseo Manuel de Lardizabal 4, 20018 Donostia-San Sebastian, Spain
+3 Universitäts-Sternwarte, Fakultät für Physik, Ludwig-Maximilians-Universität München, Scheinerstr. 1, D-81679 München, Ger-
+many
+Received XX Month, 2026 / Accepted XX Month, 20XX
+ABSTRACT
+Context. Many proposed self-interacting dark matter (SIDM) models give rise to radiative processes that can dissipate energy. Un-
+derstanding their impact on astrophysical objects through simulations and comparing the results with observations may thus constrain
+SIDM models.
+Aims. In this work, we systematically investigate how dissipation alters the gravothermal evolution of isolated SIDM halos by inde-
+pendently varying dissipation and heat conduction and identify potential observational signatures.
+Methods. To this end, we present the first extension of the N-body formalism for frequent small-angle self-interactions (fSIDM) to
+include effective dissipation. We compare all results for isolated halos with a dissipative gravothermal fluid model to assess its validity
+and limitations.
+Results. We find that dissipation qualitatively changes the gravothermal evolution of SIDM halos beyond simply accelerating collapse.
+Sufficiently strong central cooling can invert the usual role of heat conduction: the formation of an isothermal core is suppressed such
+that conduction remains directed inward throughout the evolution. Outer halo regions beyond the scale radius can cool efficiently rather
+than being heated by conduction, resulting in a larger region of mass infall and a less pronounced indentation between the core and the
+outer halo in the final density profile. These effects depend strongly on the cooling rate but are comparatively insensitive to the angular
+dependence of the self-interaction cross section. We further show that weakly dissipative self-interactions can explain the properties
+of the recently observed strong lens perturber in JVAS B1938+666 with significantly shorter evolution times or, equivalently, smaller
+cross sections compared to the elastic case.
+Conclusions. Our results open a new route to connecting halo structure and recently reported compact objects to dark-sector micro-
+physics.
+Key words. dark matter – galaxies: halos – gravitation – scattering – methods: numerical – gravitational lensing: strong
+1. Introduction
+Self-interacting dark matter (SIDM) has emerged as a com-
+pelling extension of the cold dark matter (CDM) paradigm
+(Spergel & Steinhardt 2000; Tulin & Yu 2018; Adhikari et al.
+2025), as it is well-motivated from a particle-physics perspec-
+tive and addresses several small-scale challenges of the ΛCDM
+model (see Bullock & Boylan-Kolchin 2017 for a review). Self-
+interactions enable collisional heat conduction, which causes
+a gravothermal evolution of dark matter (DM) halos with ini-
+tial core formation and subsequent collapse (Balberg et al. 2002;
+Koda & Shapiro 2011). The emerging time dependence of the
+central density alleviates both the core-cusp problem and the too-
+big-to-fail problem (Elbert et al. 2015).
+SIDM models often invoke light mediators to achieve sizable
+cross sections at dwarf-galaxy velocities (e.g., Tulin et al. 2013)
+while satisfying constraints at cluster scales (e.g., Randall et al.
+2008; Sagunski et al. 2021; Andrade et al. 2022). Recently, Yu
+(2026) collected different indications of compact objects that
+SIDM could explain. Most prominently, a dark million-solar-
+mass object in the JVAS B1938+666 system at a redshift of z =
+⋆E-mail: ludwig.schmidt@tum.de
+0.881 has been identified via gravitational lensing (Powell et al.
+2025; Vegetti et al. 2026). Its inferred mass distribution – an un-
+resolved central point mass embedded in a nearly constant sur-
+face density – appears to be consistent with a collapsing SIDM
+halo. However, Vegetti et al. (2026) inferred that core collapse
+by this redshift requires a velocity-averaged elastic cross section
+as large as 800 cm2 g−1. This implies that the cross section would
+have to increase very strongly toward low velocities.
+As an alternative, dissipation is known to accelerate gravo-
+thermal evolution (Essig et al. 2019), potentially allowing halos
+to enter the collapse phase before z = 0.881 even for moderate
+self-interaction cross sections. This mechanism has also been
+proposed to explain the early formation of supermassive black
+holes (Choquette et al. 2019; Xiao et al. 2021).
+Light mediators (e.g., dark photons) naturally permit dissipa-
+tive processes via bremsstrahlung (Lankester-Broche & Pradler
+2026) if allowed kinematically. Dissipation can become particu-
+larly efficient in the presence of DM bound states, which may be
+collisionally excited and subsequently decay via mediator emis-
+sion – closely analogous to radiative cooling in baryonic hydro-
+gen during structure formation (Spitzer 1978). Models featur-
+ing such bound states include mirror DM (Foot 2004), asym-
+Article number, page 1
+arXiv:2606.19428v1  [astro-ph.CO]  17 Jun 2026
+
+
+===== PAGE 2 =====
+
+A&A proofs: manuscript no. main
+metric DM (Wise & Zhang 2014; Gresham et al. 2018), dark
+quantum chromodynamics (Kribs & Neil 2016), and atomic DM
+(Kaplan et al. 2010).
+Using
+atomic
+DM,
+Foot & Silagadze
+(2013)
+and
+Randall & Scholtz (2015) attempted to explain the plane
+of satellite galaxies around the Andromeda Galaxy (M31). As
+first pointed out by Fan et al. (2013), a dissipative subcomponent
+of DM could form a second disk (double-disk DM). Recent
+studies further suggest that atomic DM can create compact
+objects within DM halos (Gurian et al. 2022). Owing to its
+similarity to ordinary baryonic gas, the dissipative component is
+commonly simulated as a fluid (Roy et al. 2023, 2025).
+Yet, this fluid approximation breaks down for less strongly
+self-interacting DM. Previous dissipative N-body simulations of
+DM typically assume an isotropic cross section and dissipate ei-
+ther a fixed amount of energy with a certain probability above
+a velocity threshold (Huo et al. 2020) or a fixed fraction of the
+kinetic energy (Shen et al. 2021). However, realistic particle-
+physics cross sections, especially those mediated by light par-
+ticles, are often strongly forward-peaked, rendering direct sam-
+pling computationally expensive (Robertson et al. 2017). To ad-
+dress this, Fischer et al. (2021) introduced an N-body method
+called fSIDM (frequently self-interacting dark matter), which
+treats frequent small-angle scatterings effectively as a drag force
+and diffusion acting on the simulation particles. In this work, we
+present the first extension of this framework to include dissipa-
+tion and apply it to isolated DM halos.
+Using a simple velocity-independent parametrization, we
+systematically investigate how dissipative self-interactions mod-
+ify the gravothermal evolution of isolated DM halos by vary-
+ing cooling and heat conduction independently. We further com-
+pare the results with the gravothermal fluid model to assess
+its validity and limitations, and with an isotropic implementa-
+tion analogous to Shen et al. (2021) to examine the influence
+of the cross section’s angular dependence. Finally, we derive
+projected quantities accessible to gravitational lensing observa-
+tions to identify potential observational signatures of dissipa-
+tive SIDM. We further investigate whether dissipative SIDM can
+generate the inferred mass profile of the strong lens perturber in
+JVAS B1938+666 (Vegetti et al. 2026).
+This work is structured as follows. In Sect. 2, we review the
+fSIDM method and extend it to include dissipation. We present
+our simulation results for isolated halos in Sect. 3, exploring
+variations in dissipation and heat conduction. In Sect. 4, we in-
+terpret these results and compute projected quantities to compare
+them with lensing observations.
+2. Numerical method
+In this section, we extend the effective N-body method for
+frequently self-interacting dark matter (fSIDM) introduced by
+Fischer et al. (2021) to incorporate dissipative interactions. The
+implementation is part of OpenGadget3 (Dolag et al., in prep.;
+Ragagnin et al. 2016; Fischer et al. 2024, 2026), a descendant of
+GADGET-2 (Springel 2005). Throughout this work, bold sym-
+bols v denote 3-vectors, v the corresponding magnitude, and
+ˆv = v/v the corresponding unit vector.
+2.1. Review of the elastic fSIDM method
+In the N-body framework, each simulation particle represents an
+ensemble of physical DM particles with a coarse-grained phase-
+space distribution. If two simulation particles, i and j, of equal
+mass m interact at a relative velocity ∆vi j = vi −v j, frequent
+small-angle scatterings between the underlying physical parti-
+cles give rise to an effective drag force
+Fdrag = 1
+2∆v2
+i j
+σT
+mχ
+Z
+dVρiρj,
+(1)
+as derived by Fischer et al. (2021), building on results from
+Kahlhoefer et al. (2014). This expression assumes that the nu-
+merical particles have spatially extended density distributions, ρi
+and ρ j, which are given by spline kernels of sizes hi and h j set by
+the number of neighboring particles. Since the DM particles are
+assumed to be indistinguishable, the modified momentum trans-
+fer cross section
+σT = 2
+1
+Z
+0
+dcos θ (1 −cos θ) dσ
+dcos θ
+(2)
+enters, with the scattering angle θ measured in the center-of-
+mass system (CMS).
+The algorithm proceeds in two steps, as illustrated by Fig. 1.
+First, a drag-induced velocity change
+∆vdrag = Fdrag
+m ∆t∆ˆvi j
+(3)
+is applied along the direction of the relative velocity. Second, a
+stochastic velocity kick
+∆v2
+rand = ∆vdrag(∆vi j −∆vdrag)
+(4)
+perpendicular to the relative motion restores the energy lost
+through drag and models diffusion. Overall, the velocities of all
+overlapping particles are updated according to
+v′
+i = vi −∆vdrag + ∆vrand,
+v′
+j = vj + ∆vdrag −∆vrand,
+(5)
+which ensures momentum conservation. The time step ∆t is cho-
+sen such that the relative change in velocity due to the drag force
+remains smaller than a fixed constant τ ≪1, i.e., ∆vdrag/∆vi j < τ
+(Fischer et al. 2024). For more details on the scheme for frequent
+self-interactions, we refer the reader to Fischer et al. (2021,
+2026).
+2.2. Dissipative extension
+We now derive how ∆vdrag and ∆vrand must change in a dissipa-
+tive situation. As we will show, dissipation increases the drag.
+The corresponding energy loss is then not fully restored such
+that the total energy of the N-body system decreases as desired.
+A very general radiative scattering process that can describe
+both bremsstrahlung and the collisional excitation of a short-
+lived state decaying under emission of radiation is given by
+χ
+mχv
+2
+
++ χ
+
+−mχv
+2
+
+→χ
+ mχv′
+2
+−k
+2
+!
++ χ
+ 
+−mχv′
+2
+−k
+2
+!
++ ϕ(k)
+(6)
+and illustrated in Fig. 1 (right inset). The arguments denote the
+respective non-relativistic three-momenta in the CMS frame.
+One or more particles, collectively denoted by ϕ, carry away a
+total energy k0 and are not tracked in the simulation. We must
+therefore require that they are not significantly reabsorbed by
+DM particles. Furthermore, their mass must be sufficiently low
+to be produced on shell from the non-relativistic kinetic energy.
+Article number, page 2
+
+
+===== PAGE 3 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+CMS
+Fig. 1. Left: Schematic scattering of numerical particles. Both decel-
+erate by ∆vdrag and experience opposite ∆vrand in a random direction
+perpendicular to the relative velocity ∆vij. Right: Zoom-in to the level
+of physical particles for a dissipative process like Eq. (6). The physical
+particles undergo many such scatterings in a single numerical interac-
+tion. Therefore, the radiated momenta k average out and the transverse
+momenta of the outgoing DM particles give rise to diffusion with van-
+ishing drift in the CMS frame modeled by ∆vrand. The radiated energy
+k0 accumulates and leads to an increased drag. For readability, the scat-
+tering angle and the magnitude of the radiated momentum k are highly
+exaggerated.
+Intermediate excited states do not have to be included explicitly
+but enter via their impact on the differential cross section.
+Using |k| < k0 ∼O
+
+v2
+, we obtain
+k0 = mχ
+4 (v2 −v′2) + O
+
+v4
+,
+(7)
+which implies k0 ≪mχv2 in the forward-scattering limit v ∼v′
+relevant for fSIDM. Using this to expand in k0/(mχv2) ≪1 gives
+rise to
+v′ = v
+1 −2k0
+mχv2 + O
+
+ k0
+mχv2
+!2
+.
+(8)
+Following Kahlhoefer et al. (2014), we compute the magnitude
+of the velocity change
+δv =
+
+v′
+2 −
+k
+2mχ
+−v
+2
+ ≃|v′ −v|
+2
+≃v
+ 
+1 −
+k0
+mχv2
+!
+sin θ
+2
+(9)
+and its component parallel to the initial relative velocity
+δv∥=
+ v′
+2 −
+k
+2mχ
+−v
+2
+!
+· ˆv = v′
+2 cos θ −|k|
+2mχ
+cos θk −v
+2
+≃−v
+ 
+sin2 θ
+2 +
+k0
+mχv2 cos θ
+!
+(10)
+with cos θ ≡ˆv · ˆv′ and cos θk ≡ˆv · ˆk. Terms proportional to
+k/mχ are subdominant compared to the velocities. They further
+involve cos θk, which averages to zero over many scatterings if
+the emission of ϕ is forward-backward symmetric. We therefore
+neglect these terms hereafter.
+For k0 = 0, the elastic expressions from Kahlhoefer et al.
+(2014, Appendix A) are recovered. For small scattering angles
+θ and dissipation k0, the hierarchy δv ≫δv∥persists, implying
+that most momentum transfer occurs perpendicular to the initial
+direction. As the perpendicular components point in random di-
+rections within a plane, they average to zero over many scatter-
+ings. However, an average diffusion ⟨δv2
+⊥⟩in the perpendicular
+direction remains. At the same order in θ, the parallel compo-
+nent ⟨δv∥⟩accumulates and gives rise to an effective drag force
+acting on the numerical particles. Assuming that all physical par-
+ticles collide at the relative velocity v = ∆vi j of the simulation
+particles, i and j, the accumulated parallel momentum change is
+given by
+dp∥= −Fdrag∆t =
+Z
+dCdVρiδv∥≡1
+2
+σT
+mχ
+rdiss∆v2
+i j∆t
+Z
+dVρiρj.
+(11)
+Here, we first integrate over the collisions
+dC = ρj
+mχ
+∆vi j
+dσ
+dΩdk0 dΩdk0∆t
+(12)
+of a single particle of i with the particles of j, and then over all
+particles of i. We defined the dissipation parameter
+rdiss ≡1 + 8π
+σT
+mχ∆v2
+ij/4
+Z
+mϕ
+dk0
+1
+Z
+0
+dcos θ
+dσ
+dΩdk0
+k0
+mχ∆v2
+i j
+cos θ
+(13)
+as the factor by which dissipation enhances the drag force rela-
+tive to Eq. (1). The full expression for the drag velocity kick with
+dissipation thus reads
+∆vdrag = ∆ˆvi j
+∆t
+2m∆v2
+i j
+σT
+mχ
+rdiss
+Z
+dV ρiρj.
+(14)
+In contrast to elastic scatterings, the kinetic energy of the
+numerical particles should not be conserved but decrease by
+∆E = −
+Z
+dCdV ρi
+mχ
+k0 ≃−1
+2∆v3
+i j
+σT
+mχ
+(rdiss−1)∆t
+Z
+dVρiρj (15)
+in each time step ∆t. Recovering rdiss required introducing a fac-
+tor cos θ. This does not modify the angular integral if the cross
+section is dominated by small-angle scattering. If the recoil from
+the emitted radiation averages out over many interactions, i.e., if
+the cross section is symmetric under k →−k, the momentum-
+conserving velocity update given by Eq. (5) remains valid. En-
+ergy conservation
+∆E = E′
+kin −Ekin = m
+2 (v′2
+i + v′2
+j ) −m
+2 (v2
+i + v2
+j)
+(16)
+then implies a slightly modified velocity kick
+∆v2
+rand = ∆vdrag
+ ∆vi j
+rdiss
+−∆vdrag
+!
+,
+(17)
+where ∆vdrag refers to Eq. (14).
+To ensure ∆vdrag/∆vi j < τ ≪1 as before, the usual time
+step criterion of elastic fSIDM must be scaled down as ∆tdiss =
+∆tel/rdiss. For large rdiss, the requirement of positivity of Eq. (17)
+may pose a stronger constraint ∆vdrag/∆vi j < r−1
+diss on the time
+step. Thus, one must choose τ < r−1
+diss.
+If multiple elastic or dissipative processes contribute, both
+the drag force Fdrag and the energy loss ∆E sum up straightfor-
+wardly. One can therefore define effective simulation parameters
+σeff
+T =
+X
+r
+σr
+T,
+reff
+diss =
+1
+σeff
+T
+X
+r
+σr
+Trr
+diss,
+(18)
+Article number, page 3
+
+
+===== PAGE 4 =====
+
+A&A proofs: manuscript no. main
+which can be precomputed and used without further modifica-
+tion of the algorithm.
+In summary, the dissipative extension of the fSIDM algo-
+rithm consists of a drag velocity enhanced by rdiss (cf. Eq. (13)),
+a time step reduced by rdiss, and a slightly modified expression
+for the stochastic velocity kick (cf. Eq. (17)). Multiple interac-
+tion channels can be incorporated through effective parameters.
+Both the cross section σT/mχ and the dissipation parameter
+rdiss generally depend on the relative velocity. In this work, we
+limit ourselves to constant parameters, as a first step. This corre-
+sponds to the situation in which neither the cross section nor the
+dissipated energy introduce an additional velocity scale. The lat-
+ter must then be proportional to the kinetic energy. In this case,
+the local cooling rate is given by
+C(ρ, ν) ≡−dE
+dV dt =
+8
+√π
+σT
+mχ
+(rdiss −1)ρ2ν3
+(19)
+and the heat conduction rate is proportional to σT/mχrdiss, as
+shown in Appendix A by thermally averaging over scatterings of
+different relative velocities. In Appendix B, we cross-check our
+implementation against solutions of differential equations that
+can be derived with these expressions in the absence of gravity.
+2.3. Rarely self-interacting dark matter (rSIDM) with
+dissipation
+Cross sections that are not sufficiently dominated by forward
+scatterings to be modeled by the fSIDM algorithm must be
+explicitly sampled (Burkert 2000; Kochanek & White 2000;
+Davé et al. 2001; Colín et al. 2002; Robertson et al. 2017) or
+split into small-angle and large-angle scatterings (Arido et al.
+2025). In general, the scattering probability then follows from
+the differential cross section
+dσ
+dΩdk0 and depends not only on the
+scattering angle θ and relative velocity ∆vij but also on the ra-
+diated energy k0. The randomly sampled θ and k0 would then
+be applied to the directions and magnitudes of the outgoing DM
+particles, respectively.
+To compare with the dissipative fSIDM case, we have imple-
+mented a simple example of this scheme for an isotropic cross
+section given by a constant σiso
+tot/mχ and a constant dissipation
+parameter fdiss that encodes the fraction of the CMS kinetic en-
+ergy dissipated per interaction (cf. Shen et al. 2021). The scat-
+tering probability of two particles i and j is then given by
+Pi j = σiso
+tot
+mχ
+∆vij
+∆t
+m
+Z
+dV ρiρj ≪1
+(20)
+with the time step ensuring its smallness. Since this is only
+computationally feasible if the scatterings are sufficiently rare,
+Kahlhoefer et al. (2014) named these models rSIDM (rarely self-
+interacting dark matter) as opposed to fSIDM.
+If two simulation particles happen to interact, they scatter
+into a random direction in the CMS frame, emerging back-to-
+back with speeds reduced to
+v′ = v
+p
+1 −fdiss.
+(21)
+One can show that this generates a local cooling rate
+C(ρ, ν) =
+4
+√π
+σiso
+tot
+mχ
+fdissρ2ν3,
+(22)
+similar to Eq. (19). The precise correspondence is established in
+Sect. 3.4.
+3. Simulation of an isolated, dissipative SIDM halo
+Having validated our code (introduced in Sect. 2) in controlled
+test setups without gravity (cf. Appendix B), we now apply it
+to an isolated DM halo (described in Sect. 3.1). The goal is to
+identify qualitative changes in the gravothermal evolution with
+respect to the elastic SIDM case. We run two series of simu-
+lations with increasing dissipation at constant heat conduction
+(Sect. 3.2) and vice versa (Sect. 3.3) to disentangle their effects.
+Finally, we compare the halo evolutions simulated with fSIDM,
+i.e., with a forward-dominated cross section, with simulations
+employing an isotropic rSIDM cross section (Sect. 3.4).
+3.1. Set-up
+Using SpherIC1 (Garrison-Kimmel et al. 2013), we generate
+a discrete realization of a Navarro-Frenk-White (NFW) halo
+(Navarro et al. 1997) with scale radius rs = 3.6 kpc and charac-
+teristic density ρ0 = 4ρ(rs) = 7.09 × 106 M⊙kpc−3, represented
+by N = 5×106 particles. The code introduces an exponential cut-
+off chosen beyond rcutoff = 55 kpc to render the total halo mass fi-
+nite at a value of M = 1010 M⊙. We take this mass to equal M200c,
+corresponding to a radius r200c ≃44 kpc, defined by an average
+enclosed density of 200 times the critical density of the Universe
+at z = 0. The virial radius thus lies well within the cutoff radius.
+The concentration parameter c200c ≡r200c/rs ≃12 is somewhat
+below the median mass-concentration relation, but is well within
+the reported scatter (Dutton & Macciò 2014; Diemer & Joyce
+2019).
+Even at this comparatively high particle number, we find a
+percent-level scatter in the initial energy of the sampled halo rel-
+ative to the analytic expectation. This variation translates into
+relative differences in the collapse time that are roughly ten times
+larger (cf. Appendix C) because halos of lower initial energy be-
+gin dissipation-driven collapse earlier. To mitigate this effect, we
+generated multiple realizations and selected one with a relative
+energy deviation of only 3 × 10−5.
+Following Mace et al. (2024), we further verified that, for
+this realization, the collapse time is insensitive to gravitational
+softening lengths in the range ϵ = 4.0–63 pc. We adopt ϵ = 10 pc
+for all simulations presented below.
+We compare all N-body results with outputs from the
+fluid model code GravothermalSIDM2 (Nishikawa et al. 2020;
+Outmezguine et al. 2023; Gad-Nasr et al. 2024), augmented by
+the cooling rate C(ρ, ν) from Eq. (19) as proposed by Essig et al.
+(2019). Details are provided in Appendix D. In all subsequent
+figures, the corresponding fluid-model results are shown in the
+background for reference.
+3.2. Varying dissipation at constant heat conduction
+We first consider simulations with different initial cooling rates
+∝σT/mχ(rdiss −1) at fixed initial conduction rate ∝σT/mχrdiss
+(cf. Eq. (B.4)). Figure 2 shows the time evolution of the central
+density and velocity dispersion (measured within r ≲0.16 kpc),
+as well as the total dissipated energy. The inset in the lower panel
+highlights the different initial cooling rates.
+The curves exhibit the characteristic gravothermal evolution
+of SIDM halos to varying degrees (e.g. Tulin & Yu 2018, cf. blue
+curve for elastic SIDM). During the initial core formation phase,
+the central density decreases before rising again during core col-
+1 https://bitbucket.org/migroch/spheric/src/main/
+2 https://github.com/kboddy/GravothermalSIDM
+Article number, page 4
+
+
+===== PAGE 5 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+108
+109
+1010
+ρ(r
+0.16kpc)(M ⊙kpc−3)
+10
+20
+30
+40
+ν(r
+0.16kpc)(kms−1)
+10
+2
+10
+1
+100
+101
+Time (Gyr)
+0.20
+0.15
+0.10
+0.05
+0.00
+∆E/|E0|
+σT/mχ = 50cm2 g−1
+rdiss = 1.0
+σT/mχ = 50cm2 g−1
+rdiss = 1.01
+σT/mχ = 47.6cm2 g−1
+rdiss = 1.05
+σT/mχ = 45.5cm2 g−1
+rdiss = 1.1
+σT/mχ = 41.7cm2 g−1
+rdiss = 1.2
+σT/mχ = 38.5cm2 g−1
+rdiss = 1.3
+Fig. 2. Time evolution of the central density (top), velocity dispersion
+(middle), and total dissipated energy (bottom) of an isolated halo with
+different initial dissipation rates. Solid lines (foreground) show the N-
+body results, while faint lines (background) indicate the corresponding
+fluid-model predictions. The dashed horizontal line marks five times
+the initial central density, which is used to define the collapse time tcoll.
+Colored dots indicate the minimum central density, which defines the
+core formation time tcore.
+lapse. We define the collapse time tcoll by
+ρ(tcoll, r ≲0.16 kpc) ≡5ρ(0, r ≲0.16 kpc),
+(23)
+indicated by the dashed horizontal line. Across the range of
+dissipation parameters considered, tcoll decreases by nearly two
+orders of magnitude, which is in qualitative agreement with
+Essig et al. (2019) and Huo et al. (2020).
+The minimum central density (after Gaussian filtering over
+five data points) is marked by the dots in the upper panel and de-
+fines the core formation time tcore. With increasing dissipation,
+the corresponding core density ρ(tcore) increases, while the ve-
+locity dispersion ν(tcore) decreases. By the end of the simulation,
+the total dissipated energy is smaller for stronger dissipation, re-
+flecting the shorter evolution time prior to collapse.
+The fluid model reproduces these trends qualitatively but
+predicts lower densities and higher velocity dispersions dur-
+ing core formation. Nevertheless, the collapse times agree
+0
+2
+4
+6
+8
+10
+σT/mχ(rdiss −1) (cm2 g−1)
+10
+1
+100
+101
+Time t (Gyr)
+No dissipation
+Core formation
+Collapse
+Fits: σT/mχrdiss ≃50cm2 g−1
+σT/mχ = 5 −500cm2 g−1
+Fig. 3. Core formation times (circles) and collapse times (squares) as
+a function of the dissipation strength σT/mχ(rdiss −1) at fixed conduc-
+tion strength σTrdiss ≃50 cm2 g−1. The colors are consistent with Fig. 2.
+Green error bars indicate results obtained by varying σT/mχ at fixed
+σT/mχ(rdiss −1) = 2.5 cm2 g−1 (cf. Sect. 3.3). Faint markers show the
+corresponding fluid-model results. Dashed lines indicate best-fit rela-
+tions given by Eq. (24) with parameters listed in Table 1.
+well, within 5%, even though the model’s long-mean-free-path
+(LMFP) conductivity was calibrated solely on the elastic simu-
+lation (cf. Appendix D).
+Figure 3 shows the dependence of the core formation and
+collapse times on the parameter combination σT/mχ(rdiss −1), to
+which the cooling rate C(ρ, ν) is proportional (cf. Eq. (19)). Both
+times decrease rapidly with increasing dissipation and are well
+fitted by a stretched exponential,
+tcore/coll
+ 
+x ≡σT
+mχ
+(rdiss −1)
+!
+= tcore/coll(x = 0) exp
+"
+−
+ x
+x0
+!α#
+(24)
+where the two fit parameters are listed in Table 1 and tcore/coll(x =
+0) are fixed to the respective non-dissipative values. Both in-
+creasing and decreasing the cross section relative to the fitted
+value of σT/mχrdiss ≃50 cm2 g−1 accelerate the evolution, as
+indicated by the green bars. This non-monotonic behavior is dis-
+cussed in detail in Sect. 3.3. Generally, the impact of σT/mχ is
+much smaller than that of rdiss. To what extent the fit parameters
+α and x0 universally apply under the change of cross section and
+initial conditions beyond the rescaling symmetry introduced in
+Appendix G remains to be investigated.
+Figure 4 shows the corresponding density and velocity dis-
+persion profiles at t = tcore, t = 0.9tcoll, t = tcoll. With increas-
+ing dissipation, the resulting core becomes denser, less extended,
+and further from isothermality. While both the density and ve-
+locity dispersion increase toward collapse, the core properties
+described above persist, with the velocity dispersion gradient re-
+maining positive at small radii. At tcoll – shortly before the N-
+body simulation breaks down because time steps become pro-
+hibitively small – the density profile has a less pronounced core
+Table 1. Fit parameters for Eq. (24).
+x0 (cm2 g−1)
+α
+tcoll
+0.54 ± 0.10
+0.48 ± 0.03
+tcore
+1.4 ± 0.3
+0.58 ± 0.07
+Notes. The first row refers to the fit of the collapse time, the second row
+to that of the core formation time. x0 normalizes the argument of the
+stretched exponential with exponent α.
+Article number, page 5
+
+
+===== PAGE 6 =====
+
+A&A proofs: manuscript no. main
+105
+106
+107
+108
+109
+Density ρ (M ⊙kpc−3)
+rdiss = 1.0
+rdiss = 1.3
+t = tcore
+t = 0.9tcoll
+σT/mχ = 50cm2 g−1
+rdiss = 1.0
+σT/mχ = 50cm2 g−1
+rdiss = 1.01
+t = tcoll
+σT/mχ = 47.6cm2 g−1
+rdiss = 1.05
+σT/mχ = 45.5cm2 g−1
+rdiss = 1.1
+10
+1
+100
+10
+15
+20
+25
+30
+Velocity dispersion ν (kms−1)
+10
+1
+100
+Radius r (kpc)
+rdiss = 1.0
+rdiss = 1.3
+10
+1
+100
+σT/mχ = 41.7cm2 g−1
+rdiss = 1.2
+σT/mχ = 38.5cm2 g−1
+rdiss = 1.3
+Fig. 4. Upper row: Density profiles at t = tcore, t = 0.9tcoll, and t = tcoll for different dissipation strengths. The initial NFW halo is shown in gray
+for reference, and corresponding fluid-model profiles are shown as faint lines. Lower row: Corresponding velocity dispersion profiles.
+and exhibits a shallower outer slope for strong dissipation. We
+discuss the underlying reason for this behavior in Sect. 4. The
+fluid model can capture these features qualitatively, but system-
+atically overestimates the velocity dispersion also at larger radii.
+3.3. Varying heat conduction at constant dissipation
+As a second set of simulations, we vary the transfer cross section
+in the range 5 cm2 g−1 < σT/mχ < 500 cm2 g−1, while keeping
+the initial cooling rate C(ρ, ν) ∝σT/mχ(rdiss −1) fixed. Figure 5
+shows the time evolution of the central density and velocity dis-
+persion analogous to Fig. 2. In the lower panel, all initial slopes
+of the energy loss are indeed identical, before the halos diverge
+onto different evolutionary tracks.
+The variation in collapse and core formation times is much
+smaller than in the previous case, amounting to less than a fac-
+tor of three. Both increase with the cross section for σT/mχ ≲
+50 cm2 g−1, before decreasing at larger cross sections. The
+central density and velocity dispersion exhibit a similar non-
+monotonic trend. It is driven by the heat conductivity κ, which
+increases at small cross sections, where it is limited by the self-
+interaction strength ∝σT (LMFP regime). At large cross sec-
+tions, the decreasing mean free path ∝σ−1
+T suppresses conduc-
+tion, causing κ to decline (short-mean-free-path/SMFP regime).
+Figure 6 shows the correlation between quantities extracted
+from the halo evolution and the central fluid-model heat conduc-
+tivity, time-averaged up to tcore. Among several tested definitions
+– κ(t = 0), κ(tcore), κ(tcoll), ⟨κ(t < tcoll)⟩, and ⟨κ(t < tcore)⟩– the
+last of these shown in the figure yields the tightest correlation.
+An empirical relation of the form
+tcoll(⟨κ⟩) = (0.54 ± 0.07) Gyr log
+ 
+⟨κ(t < tcore)⟩
+108 M⊙kpc−1 Gyr−1
+!
++ (0.94 ± 0.06) Gyr
+(25)
+provides a good description of the collapse time over the ex-
+plored range, though a residual dependence on the cross section
+remains, as indicated by the arrows in Fig. 6. The fit systemat-
+ically overestimates tcoll at small cross sections and underesti-
+mates it at large cross sections. For the central density and ve-
+locity dispersion, the correlations are weaker. We therefore do
+not fit them.
+The identified correlations clearly indicate that heat conduc-
+tion is the physical mechanism underlying the non-monotonic
+behavior with varying cross section. This interpretation is fur-
+ther supported by the velocity dispersion profiles in Fig. 7, which
+first become more isothermal with increasing cross section, indi-
+cating stronger heat conduction, but then slightly less isothermal
+again at large cross sections. Correspondingly, the core becomes
+less dense and more extended when heat conduction is most ef-
+ficient. In this sense, conduction counteracts the effects of dissi-
+pation identified in Fig. 4 and thus delays collapse. Through this
+mechanism, the non-monotonic dependence of the heat conduc-
+tivity on the cross section at the transition from the LMFP to the
+SMFP regime can propagate to the core formation and collapse
+time and the central density and velocity dispersion.
+The predictions of the gravothermal fluid model are signifi-
+cantly less accurate than in Sect. 3.2. For the smallest cross sec-
+tion, the collapse time is overestimated by 7 %, while for the
+largest cross section, it is underestimated by 16 %. This could be
+explained by an effective decrease of the calibration parameter
+β (cf. Appendix D) governing the LMFP heat conduction in the
+fluid model. Qualitatively, Mace et al. (2026) found the same be-
+havior for elastic SIDM. They argue that an alternative interpo-
+lation rule between the LMFP and SMFP (short-mean-free-path)
+regime can absorb this dependence while keeping β constant. As
+previously, the fluid model underestimates the density after core
+formation and overestimates the velocity dispersion.
+Article number, page 6
+
+
+===== PAGE 7 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+108
+109
+ρ(r
+0.16kpc)(M ⊙kpc−3)
+15
+20
+25
+ν(r
+0.16kpc)(kms−1)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+Time (Gyr)
+0.20
+0.15
+0.10
+0.05
+0.00
+∆E/|E0|
+σT/mχ = 5cm2 g−1
+rdiss = 1.5
+σT/mχ = 10cm2 g−1
+rdiss = 1.25
+σT/mχ = 25cm2 g−1
+rdiss = 1.1
+σT/mχ = 50cm2 g−1
+rdiss = 1.05
+σT/mχ = 100cm2 g−1
+rdiss = 1.025
+σT/mχ = 250cm2 g−1
+rdiss = 1.01
+σT/mχ = 500cm2 g−1
+rdiss = 1.005
+Fig. 5. Time evolution of central density (top), velocity dispersion (mid-
+dle), and total dissipated energy (bottom) as in Fig. 2, but for a set of
+simulations of an isolated halo with dissipative fSIDM parameters cho-
+sen to correspond to equal initial cooling rates (cf. inset).
+3.4. Matching condition between an isotropic (rSIDM) and
+forward-dominated (fSIDM) cross section
+We run a set of elastic and dissipative rSIDM simulations
+(cf. Sect. 2.3) with different isotropic cross sections σiso
+tot. Un-
+der certain matching conditions to the fSIDM parameters, we
+find a very similar time evolution of isolated halos. In the elastic
+case, the collapse times obtained using rSIDM and fSIDM agree
+within 1.1% for σiso
+tot = 50 cm2 g−1 and σfSIDM
+T
+= 150 cm2 g−1
+(see figure in Appendix E, upper panel). The difference by a fac-
+tor of three is expected since SIDM halos of equal viscosity cross
+section
+σV = 4π
+1
+Z
+0
+dcos θ(1 −cos2 θ) dσ
+dΩ=
+(2σiso
+tot/3,
+rSIDM
+2σfSIDM
+T
+,
+fSIDM
+(26)
+are known to evolve similarly (Yang & Yu 2022; Sabarish et al.
+2024).3
+3 Note that there are conventions for the viscosity cross section in the
+literature that differ by numerical factors. The relation between σiso
+tot and
+σfSIDM
+T
+is independent of the precise choice.
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+Time t (Gyr)
+0.5
+1.0
+1.5
+2.0
+2.5
+ρ(r
+0.16kpc) (108 M ⊙kpc−3)
+Core formation
+Collapse
+Time average
+Fit: σT/mχ(rdiss −1) = 2.5cm2 g−1
+Increasing σT/mχ
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+mχ
+kB
+­
+(r
+0.16kpc, t < tcore)
+®
+ (108 M ⊙kpc−1 Gyr−1)
+16
+18
+20
+22
+24
+26
+ν(r
+0.16kpc) (kms−1)
+Fig. 6. Correlation between the time-averaged heat conductivity ⟨κ(t <
+tcore)⟩and the core formation and collapse time (top), the minimum and
+time-averaged central density (middle), and the maximum and time-
+averaged central velocity dispersion (bottom). Colors are consistent
+with Fig. 5, and arrows indicate increasing cross section. We omit
+ρ(tcoll) as it is constant by definition, and ν(tcore) as it is very similar
+to ⟨ν(t < tcoll)⟩but more noisy.
+With dissipation, we expect a similar time evolution when
+the cooling rates given in Eqs. (19) and (22) are equal. This im-
+plies the full matching condition
+fdiss ↔2
+3(rdiss −1),
+σiso
+tot ↔3σfSIDM
+T
+.
+(27)
+For the representative example in the lower panel of the figure
+in Appendix E, it is confirmed with a relative difference of 2.5%
+in the collapse times (solid blue curve). Choosing a larger fdiss
+at the same cross section significantly accelerates the collapse
+(dashed blue curve). A simultaneous increase of fdiss and de-
+crease of σiso
+tot at a constant cooling rate has a much smaller im-
+pact (orange curve). Yet, it still decreases the collapse time due
+to the weaker heat conduction, which allows more efficient cen-
+tral dissipation (cf. Sect. 3.3).
+The existence of such simple matching conditions demon-
+strates that the angular dependence of the cross section plays a
+minor role for the evolution of isolated halos. It may be more rel-
+Article number, page 7
+
+
+===== PAGE 8 =====
+
+A&A proofs: manuscript no. main
+105
+106
+107
+108
+109
+Density ρ (M ⊙kpc−3)
+increasing
+conduction
+t = tcore
+t = 0.9tcoll
+σT/mχ = 5cm2 g−1
+rdiss = 1.5
+σT/mχ = 10cm2 g−1
+rdiss = 1.25
+t = tcoll
+σT/mχ = 25cm2 g−1
+rdiss = 1.1
+σT/mχ = 50cm2 g−1
+rdiss = 1.05
+10
+1
+100
+10
+15
+20
+25
+30
+Velocity dispersion ν (kms−1)
+10
+1
+100
+Radius r (kpc)
+increasing
+conduction
+10
+1
+100
+σT/mχ = 100cm2 g−1
+rdiss = 1.025
+σT/mχ = 250cm2 g−1
+rdiss = 1.01
+σT/mχ = 500cm2 g−1
+rdiss = 1.005
+Fig. 7. Density (upper row) and velocity dispersion profiles (lower row) as in Fig. 4, but varying the cross section at a fixed initial cooling rate.
+Some trends reverse with increasing cross section, which we attribute to the non-monotonic behavior of the heat conduction.
+evant for satellites and mergers, as simulations of elastic SIDM
+suggest (e.g. Fischer et al. 2021; Klemmer et al. 2026).
+4. Discussion
+In this section, we first provide a physical intuition for the simu-
+lation results found, employing the fluid model to discuss the ra-
+dially resolved halo energy budget (Sect. 4.1). Then, we draw the
+connection to astrophysical observables by projecting along the
+line of sight (Sect. 4.2) and discuss whether the projected den-
+sity profile of the exotic compact object in JVAS B1938+666 in-
+ferred by Vegetti et al. (2026) could be explained by dissipative
+SIDM (Sect. 4.3).
+4.1. Gravothermal evolution with dissipation
+To interpret the results presented in Sect. 3, we adopt the sim-
+plified picture of the gravothermal fluid model, which provides
+a qualitatively accurate description as demonstrated. In this pic-
+ture, heat conduction proceeds from regions of higher to lower
+velocity dispersion (cf. Appendix D), i.e., both inward and out-
+ward from the maximum of the initial NFW profile. As heat is
+transported into the center, the central velocity dispersion in-
+creases, causing particles to migrate to larger orbits. This leads to
+an outward mass flow, reducing the central density and thereby
+forming a core.
+The structure of the core depends on the competition be-
+tween conductive heating and dissipative cooling, the latter be-
+ing most efficient at high densities. If conduction dominates, the
+core is heated and expands, resulting in a lower central density.
+Conversely, if cooling dominates, the core remains colder and
+denser. Crucially, a fully isothermal core can only form in the
+absence of dissipation.
+In the presence of dissipation, we find that a more or less
+pronounced off-center (r , 0) maximum in the velocity disper-
+sion profile persists throughout the evolution (cf. Figs. 4 and 7,
+lower rows). As a result, the direction of heat conduction in the
+inner region does not reverse, in contrast to the elastic case. The
+core loses energy locally through dissipation rather than con-
+duction, without heating outer regions of the halo. Inward heat
+conduction partially compensates for the energy loss, thereby de-
+laying collapse. This explains why stronger conduction leads to
+longer collapse times in our simulations (cf. Fig. 5), opposite to
+the trend observed in the elastic case.
+Using the fluid model, we can explicitly visualize this by de-
+composing the rate of specific energy change into contributions
+from conduction ˙qcond, dissipation ˙qdiss, and gravitational work
+˙w as a function of radius and time (cf. Fig. 8). The dissipation
+term ˙qdiss is non-positive at all radii and peaks in magnitude at
+small radii where the density is highest. As expected, it vanishes
+in the elastic case of rdiss = 1 (upper row).
+In contrast, conduction ˙qcond only redistributes energy within
+the halo and therefore integrates to zero over mass. Positive work
+˙w > 0 is performed on regions that are compressed, while ex-
+panding regions perform negative work ˙w < 0. By construction
+of the fluid model, the sum of all contributions yields the change
+in specific internal energy, which determines the velocity disper-
+sion.
+Initially, regions near the maximum of the velocity disper-
+sion profile at r ∼rs = 3.6 kpc lose energy via conduction, trans-
+ferring heat to both the core and the outer halo. The work term ˙w
+reflects the gravitational response: heated regions generally ex-
+pand, while cooling regions contract. These contributions do not
+exactly balance, resulting in a net change in internal energy and
+hence velocity dispersion.
+In the elastic case (upper row), this process gradually erases
+the maximum in the velocity dispersion profile. Once the max-
+Article number, page 8
+
+
+===== PAGE 9 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+105
+104
+103
+102
+101
+0
+101
+102
+103
+104
+105
+t = 0.1tcore
+t = tcore
+t = 0.8tcoll
+rdiss = 1.0
+t = tcoll
+10
+1
+100
+101
+102
+105
+104
+103
+102
+101
+0
+101
+102
+103
+104
+105
+10
+1
+100
+101
+102
+10
+1
+100
+101
+102
+10
+1
+100
+101
+102
+rdiss = 1.05
+Radius r (kpc)
+Specific power (km2 s−2 Gyr−1)
+˙qdiss
+˙qcond
+˙w
+˙u = ˙qdiss + ˙qcond + ˙w
+Fig. 8. Specific power, i.e., energy change per mass bin, due to dissipation ˙qdiss, conduction ˙qcond, and mechanical work ˙w, together with their
+sum, the specific internal energy change ˙u, as a function of radius. The columns show different times relative to the core formation time tcore and
+collapse time tcoll. The upper row was obtained from an elastic fluid model run with σT/mχ = 50 cm2 g−1, the lower row from a dissipative run
+with rdiss = 1.05 and the same cross section.
+imum is at the center, the direction of heat conduction reverses
+(cf. upper right panels), and the collapse phase begins. The neg-
+ative heat capacity of self-gravitating systems manifests itself in
+the opposite signs of ˙qcond and ˙u. Although energy is transported
+outward, the core heats up due to the strong compressional work
+˙w, which dominates over conductive cooling.
+In the dissipative case (lower row), the early evolution (t =
+0.1tcore) closely resembles the elastic scenario. However, at later
+times, dissipative cooling dominates over conduction. The halo
+responds with a global contraction ˙w > 0, sufficiently strong to
+drive an increase in internal energy (˙u > 0). This occurs even
+before the maximum in the velocity dispersion is erased, distin-
+guishing the dissipative from the elastic collapse pathway.
+As a consequence, the direction of heat conduction does not
+reverse at any stage of the evolution. Instead of conduction-
+driven collapse, the halo contracts due to continuous energy loss.
+This overall contraction enhances the central mass concentration
+and may seed the formation of compact objects, as we discuss in
+the following section.
+4.2. Consequences on lensing observables
+To connect our simulation results to observables accessible to
+strong-lensing surveys, we consider the time evolution of quan-
+tities derived from the projected surface density Σ(r2D) (see Ap-
+pendix F for definitions and calculation details). In particular,
+Fig. 9 shows the evolutionary tracks of all simulations in the
+plane spanned by the projected enclosed mass M(r < r2D) and
+the logarithmic slope of the surface density profile γ2D(r2D)
+evaluated at r = 0.2 kpc, r = 0.8 kpc, and r = 3.2 kpc (cf.
+Fischer et al. 2025b). The arrows indicate increasing dissipation
+(upper row) and heat conduction (lower row).
+At r = 0.2 kpc, the core formation and collapse phase are
+clearly distinguishable. Initially, the enclosed mass decreases
+and the density profile becomes shallower until tcore (marked
+by the circle), before both reverse. The overall variation of both
+quantities throughout the evolution generally decreases as dis-
+sipation dominates more strongly over heat conduction. This re-
+flects the increasingly suppressed core formation. At r = 0.8 kpc,
+the two phases remain visible for weak dissipation. For strong
+dissipation, however, both the enclosed mass and profile steep-
+ness increase monotonically from the beginning, indicating that
+the core radius is smaller than 0.8 kpc. At r = 3.2 kpc, close to
+the scale radius, the enclosed mass and profile steepness increase
+immediately in all simulations, indicating that no core larger than
+this radius forms.
+Toward collapse, the non-dissipative simulation (blue, up-
+per row) exhibits a clear turnaround in both quantities for r ≳
+0.8 kpc. The earlier one in γ2D reflects the formation of an inden-
+tation in the density profile caused by mass flowing both inward
+and outward from the radius where ˙qcond = 0 (cf. Fig. 8, up-
+per row). As this radius moves inward over time, outward mass
+transport eventually dominates, leading to the second turnaround
+in the enclosed mass.
+Dissipation largely suppresses this outward mass transport,
+at least at the radii considered here. As a result, the enclosed
+mass at tcoll (squares) can exceed that of the elastic case and the
+region of parameter space shaded in blue in Fig. 9 becomes ac-
+cessible for moderate dissipation. For very strong dissipation,
+however, the collapse time becomes so short that the enclosed
+mass at tcoll is smaller, simply because the system has less time
+to evolve. At fixed absolute time, the intuitive trend is restored:
+stronger dissipation leads to larger enclosed mass, as particles
+lose energy and fall inward. The turnaround in the slope persists,
+but becomes progressively less pronounced with increasing dis-
+sipation relative to conduction.
+Once again, the gravothermal fluid model can reproduce
+the physical trends described above. The precise values deviate
+slightly.
+Article number, page 9
+
+
+===== PAGE 10 =====
+
+A&A proofs: manuscript no. main
+2.0
+1.5
+1.0
+0.5
+0.0
+rdiss = 1.0
+rdiss = 1.3
+r2D = 0.2kpc
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+inaccessible to
+elastic SIDM
+r2D = 0.8kpc
+1.5
+1.4
+1.3
+1.2
+1.1
+r2D = 3.2kpc
+0.1
+1
+0.2
+0.5
+2
+2.0
+1.5
+1.0
+0.5
+0.0
+increasing
+conduction
+1
+2
+3
+4
+5
+6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+11
+12
+13
+14
+15
+16
+1.5
+1.4
+1.3
+1.2
+1.1
+t = 0
+tcore
+tcoll
+Enclosed mass M(r < r2D) (108 M ⊙)
+Logarithmic slope γ2D(r2D)
+Fig. 9. Evolutionary tracks of all simulations in the plane of projected enclosed mass and the logarithmic slope of the surface density profile. The
+upper row shows the simulations with varying dissipation (Sect. 3.2), while the lower row shows the simulations with varying heat conduction
+(Sect. 3.3). Colors are consistent with the legends in these sections, with faint background lines representing the fluid model. White dots mark
+time intervals of 0.2tcoll.
+4.3. Reproducing observed lensing results
+We finally examine whether the gravothermal evolution of our
+simulated halos can reproduce the mass distribution inferred by
+Vegetti et al. (2026) for the compact object in JVAS B1938+666
+detected through gravitational imaging (Powell et al. 2025).
+Their analysis considered a broad class of density profiles, which
+agree best in enclosed projected masses at the two radii r = 20 pc
+and r = 90 pc. We therefore adopt the corresponding best-fit val-
+ues M(r < 20 pc) = (4.25 ± 0.21) × 105 M⊙and M(r < 90 pc) =
+(1.167 ± 0.039) × 106 M⊙. Taking these two data points as given,
+we investigate whether our SIDM halos evolved with and with-
+out dissipation could match them after appropriate rescaling
+(cf. Appendix G). Recall that they are initially described by an
+NFW profile and evolved in isolation. We further require an evo-
+lution time consistent with the observed redshift zobs = 0.881.
+In Fig. 10, we first consider the corresponding dimensionless
+mass ratio M(r < r2D)/M(r < 4.5r2D) as a function of the inner
+radius normalized by the NFW scale radius r2D/rs for all snap-
+shots of the elastic and least dissipative simulation (rdiss = 1.01).
+The gray band indicates the 3σ confidence region around the ob-
+served mass ratio M(r < 20 pc)/M(r < 90 pc) = 0.364 ± 0.022
+(dashed line). Close to core collapse, both the elastic and dissi-
+pative SIDM halo match it over a wide range of scales.
+Assuming that the density profile locally follows a simple
+power law, we can map the shown mass ratio to the slope of the
+projected density profile γ2D introduced in Sect. 4.2 (see sec-
+ondary axis). Except for the shrinking core, the late-time den-
+sity profile of the collapsing halo is much steeper than the inner
+slope of the initial NFW profile and therefore in much better
+agreement with the observation in both cases. For rdiss = 1.0,
+the steep edge of the core causes an even larger mass ratio than
+required for the observation. It shifts inward and amplifies with
+time. The local minimum at r2D/rs ∼0.5 approaches the asymp-
+totic slope γ2D = −1.19 of the self-similar fluid-model solution
+in the LMFP limit (Balberg et al. 2002). For even larger radii,
+the curves resemble the initial NFW profile as self-interactions
+become inefficient. All this behavior generically falls within the
+confidence interval of the observed mass ratio over about two
+orders of magnitude in r/rs.
+For rdiss = 1.01, the maximum in the mass ratio disappears
+together with the steep section in the density profile (cf. Fig. 4).
+The curves suggest the existence of a similar attractor slope as
+in the elastic case, potentially even closer to the observed value.
+Our simulations with rdiss > 1.01 do not reproduce the observa-
+tion within the time accessible to the simulation. Whether they
+would eventually do so if the simulations could be continued be-
+yond numerical breakdown remains an open question and is a
+key limitation of the present approach.
+Having considered only scale-invariant quantities until now,
+we explicitly rescale the simulated halo to the size of the ob-
+served one in the following. We verified that Fig. 10 is fully in-
+variant under the rescaling symmetry introduced in Appendix G,
+as expected. However, the mass ratio may differ significantly for
+initial conditions and cross sections that are not related by this
+symmetry. We highlight three representative values of r2D/rs for
+which the observed ratio can be reproduced within 3σ. In each
+case, we compute the corresponding rescaling parameters as de-
+scribed in Appendix G and list the rescaled physical halo prop-
+erties in Table 2.
+The larger the radius r2D/rs at which the halo shows the re-
+quired mass ratio, the smaller the rescaled halo in extent. Since
+the required mass rescaling varies much less, a smaller halo im-
+plies a higher density ρ0, shorter evolution time tevo, and smaller
+cross section σT/mχ. Multiple snapshots falling within the con-
+fidence interval translate to a time interval ∆t, during which
+the observation can be explained. This interval is significantly
+shorter with dissipation. However, the values are only lower
+bounds, as the halo likely remains within the confidence inter-
+val beyond the simulation’s breakdown.
+Article number, page 10
+
+
+===== PAGE 11 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+10
+2
+10
+1
+100
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+M(r < r2D)/M(r < 4.5r2D)
+Self-sim.
+fluid sol.
+rdiss = 1.0
+3
+2
+1
+1.00
+0.00
+0.50
+1.00
+1.19
+1.33
+γ2D(r2D)
+10
+2
+10
+1
+100
+Vegetti et al. (2026)
+rdiss = 1.01
+3
+2
+r2D/rs
+Fig. 10. Ratio of projected enclosed masses M(r < r2D)/M(r < 4.5r2D) as a function of the normalized inner radius r2D/rs for our elastic (left) and
+least dissipative (right) simulation. Darker colors correspond to later snapshots. The dashed horizontal line indicates the mass ratio of the exotic
+compact object in JVAS B1938+666 inferred by Vegetti et al. (2026), with the shaded region showing the 3σ confidence interval. The dotted line
+represents the self-similar fluid model solution found by Balberg et al. (2002), which the minimum appears to approach in the elastic case. We
+label three values of r2D/rs, with some snapshots closely reproducing the observed mass ratio, which we consider as benchmarks (see Table 2).
+Table 2. Rescaled properties of the simulated halos matching size and mass with the profile from Vegetti et al. (2026).
+#
+rdiss
+rs (kpc)
+ρ0 (M⊙pc−3)
+σT/mχ (102 cm2 g−1)
+tevo (Gyr)
+∆t (Gyr)
+zini
+M200c (106 M⊙)
+c200c
+cDiemer
+200c (M200c, zini)
+1
+1.0
+0.88
+0.0019
+7.8
+28
+0.18
+∞
+−
+−
+−
+2
+1.0
+0.19
+0.063
+1.0
+4.8
+0.15
+4.0
+6.3
+5.9
+4.9
+1.01
+0.054
+1.2
+2.3
+0.0037
+1.6
+8.3
+12
+9.8
+3
+1.0
+0.024
+7.7
+0.070
+0.41
+0.24
+0.98
+4.7
+1.0 × 102
+13
+1.01
+7.1
+0.076
+0.20
+0.093
+0.93
+4.3
+1.0 × 102
+14
+Notes. # refers to the markers in Fig. 10, rdiss to the respective panel. rs, ρ0, M200c, and c200c are parameters of the initial NFW halo at redshift
+zini. σT/mχ and tevo denote the rescaled cross section and evolution time required to explain the observation of the compact object by Vegetti et al.
+(2026). ∆t denotes the time the halo spends within the confidence interval during the simulated evolution. We compare the concentrations to the
+mass-concentration relation cDiemer
+200c (M200c, zini) from Diemer & Joyce (2019). All quantities are rounded to two significant digits.
+Using the observed lens redshift zobs = 0.881, correspond-
+ing to a cosmic age of t(zobs) = 6.37 Gyr for the cosmol-
+ogy of Planck Collaboration et al. (2020), we infer the redshift
+zini ≡z(t(zobs) −tevo) at which the halo was described by the
+NFW profile. With it, we compute the associated halo masses
+M200c and concentrations c200c.4
+The largest and least dense halos (1) require evolution times
+exceeding the age of the Universe at zobs despite their large self-
+interaction cross sections. Neglecting potential accelerated evo-
+lution due to tidal stripping (Nishikawa et al. 2020), such sys-
+tems are therefore disfavored. They would require even larger
+cross sections to collapse in time (recall also σiso
+tot ↔3σT). At the
+opposite extreme, the smallest and densest halos (3) undergo gra-
+vothermal collapse extremely rapidly even for very small cross
+sections, since tcoll ∝ρ−3/2
+0
+(Essig et al. 2019). However, these
+halos require unrealistically large initial concentrations exceed-
+ing the Diemer & Joyce (2019) mass-concentration relation by
+more than 5σ.
+The most plausible candidates are intermediate systems (2).
+These halos require concentrations less than 1σ above the me-
+dian relation, implying that a small but non-negligible fraction of
+4 This approach is different from Vegetti et al. (2026), who always use
+zobs = 0.881 for the conversion. They further only consider a single
+snapshot and the data point at 90 pc.
+halos in this mass range could collapse by zobs. For comparable
+cross sections, dissipative simulations evolve roughly twice as
+fast as elastic simulations, demonstrating that even weak dissipa-
+tion can significantly accelerate gravothermal evolution. Equiv-
+alently, dissipative halos could reproduce the observations with
+smaller self-interaction cross sections within the same evolution
+time.
+Overall, our analysis shows that both elastic and weakly dis-
+sipative SIDM halos with cross sections σT/mχ ∼102 cm2 g−1
+– which are largely unconstrained at masses as low as M200c ≲
+107 M⊙– can naturally reproduce the compact mass distribution
+inferred by Vegetti et al. (2026) through the gravothermal evo-
+lution of moderately overdense isolated NFW halos within the
+available cosmic time. Dissipation further reduces the required
+cross section by accelerating the collapse process.
+5. Conclusions
+In this paper, we have introduced dissipation into the N-body
+formalism for frequent small-angle self-interactions, described
+by a drag force and transverse momentum diffusion. Compared
+to the elastic case, the drag is increased by a generally velocity-
+dependent dissipation parameter rdiss. The associated energy loss
+is not fully restored by the transverse diffusion. Instead, it is cho-
+Article number, page 11
+
+
+===== PAGE 12 =====
+
+A&A proofs: manuscript no. main
+sen to reproduce the correct energy loss per collision of the un-
+derlying model.
+We applied the algorithm to an isolated DM halo with
+different velocity-independent transfer cross sections σT/mχ
+and dissipation parameters rdiss. At constant heat conduction
+∝σT/mχrdiss, cooling ∝σT/mχ(rdiss −1) can accelerate gravo-
+thermal evolution by orders of magnitude. Conversely, stronger
+heat conduction slightly inhibits collapse – in contrast to the
+elastic case, where it causes collapse.
+The underlying reason is a qualitative difference in the evo-
+lution of the velocity dispersion profile. If central dissipation is
+sufficiently strong, the core does not become isothermal; instead,
+the positive velocity dispersion gradient persists at the center. As
+a consequence, conduction remains directed inward and counter-
+acts central dissipation, which ultimately drives the collapse. In
+outer halo regions, where dissipation also dominates over out-
+ward conduction, we observe mass infall rather than outflow. In
+some cases, this leads to more enclosed mass at large radii than
+is achievable without dissipation and may generally increase the
+mass of a potentially forming central object.
+The aforementioned may be the most distinct signatures
+of dissipation. For moderate dissipation, however, the observ-
+ables evolve in general very similarly, only faster. Using rescal-
+ing arguments, we could explicitly show that the observed
+mass distribution of the recently discovered compact object in
+JVAS B1938+666 can be explained by both an elastic and a
+weakly dissipative SIDM halo. In the late stages of their evolu-
+tion, they generically develop steep slopes in the density profile,
+consistent with the observation. With dissipation, the required
+evolution time can be reduced by roughly a factor of two, or
+equivalently, a smaller cross section suffices.
+Dissipation can therefore provide a natural mechanism to
+evade constraints on the self-interaction cross section. Realis-
+tically, both the cross section σT/mχ and rdiss depend on ve-
+locity and are explicitly connected to a particle physics model.
+An emerging angular dependence may require a dissipative gen-
+eralization of the hybrid approach between fSIDM and rSIDM
+(Arido et al. 2025). To generalize the conclusions of this work,
+initial conditions outside the rescaling family considered here
+should be explored, along with methods to continue simulations
+deeper into the collapse phase. Finally, cosmological simulations
+of dissipative SIDM will be essential to derive observational con-
+straints on the dissipation. Taken together, our results motivate a
+broader theoretical and observational program to constrain the
+dissipative properties of DM and their implications for particle
+physics models of the dark sector.
+Note added. During the completion of this work, Zhang & Yu (2026) appeared,
+discussing how elastic SIDM can account for the density profile of the perturber
+in the strong lens system JVAS B1938+666 inferred by Vegetti et al. (2026). Our
+results in Sect. 4.3 regarding the same system are in broad qualitative agreement
+for the elastic scenario.
+Acknowledgements. The authors thank all participants of the Darkium SIDM
+Journal Club for helpful discussions. We acknowledge support by the DFG Col-
+laborative Research Institution Neutrinos and Dark Matter in Astro- and Par-
+ticle Physics (SFB 1258) and the Excellence Cluster ORIGINS - EXC-2094
+- 390783311. MSF gratefully acknowledges the support of the Alexander von
+Humboldt Foundation through a Feodor Lynen Research Fellowship. We thank
+Kimberly Boddy for publishing the GravothermalSIDM code. Other software:
+NumPy (Harris et al. 2020), Matplotlib (Hunter 2007). Colossus (Diemer 2018).
+References
+Adhikari, S., Banerjee, A., Boddy, K. K., et al. 2025, Reviews of Modern
+Physics, 97, 045004
+Andrade, K. E., Fuson, J., Gad-Nasr, S., et al. 2022, MNRAS, 510, 54
+Arido, C., Fischer, M. S., & Garny, M. 2025, A&A, 694, A297
+Balberg, S., Shapiro, S. L., & Inagaki, S. 2002, ApJ, 568, 475
+Barnes, J. E. 2012, MNRAS, 425, 1104
+Bettwieser, E. & Spurzem, R. 1986, A&A, 161, 102
+Bullock, J. S. & Boylan-Kolchin, M. 2017, ARA&A, 55, 343
+Burkert, A. 2000, ApJ, 534, L143
+Choquette, J., Cline, J. M., & Cornell, J. M. 2019, J. Cosmology Astropart. Phys.,
+2019, 036
+Colín, P., Avila-Reese, V., Valenzuela, O., & Firmani, C. 2002, ApJ, 581, 777
+Davé, R., Spergel, D. N., Steinhardt, P. J., & Wandelt, B. D. 2001, ApJ, 547, 574
+Diemer, B. 2018, ApJS, 239, 35
+Diemer, B. & Joyce, M. 2019, ApJ, 871, 168
+Dutton, A. A. & Macciò, A. V. 2014, MNRAS, 441, 3359
+Dvorkin, C., Blum, K., & Kamionkowski, M. 2014, Phys. Rev. D, 89, 023519
+Elbert, O. D., Bullock, J. S., Garrison-Kimmel, S., et al. 2015, MNRAS, 453, 29
+Essig, R., McDermott, S. D., Yu, H.-B., & Zhong, Y.-M. 2019, Phys. Rev. Lett.,
+123, 121102
+Fan, J., Katz, A., Randall, L., & Reece, M. 2013, Physics of the Dark Universe,
+2, 139
+Fischer, M. S., Brüggen, M., Schmidt-Hoberg, K., et al. 2021, MNRAS, 505,
+851
+Fischer, M. S., Dolag, K., Garny, M., et al. 2025a, A&A, 700, A145
+Fischer, M. S., Kasselmann, L., Brüggen, M., et al. 2024, MNRAS, 529, 2327
+Fischer, M. S., Wiertel, M., Arido, C., et al. 2026 [arXiv:2603.10107]
+Fischer, M. S., Yu, H.-B., & Dolag, K. 2025b, A&A, 703, A234
+Foot, R. 2004, International Journal of Modern Physics D, 13, 2161
+Foot, R. & Silagadze, Z. K. 2013, Physics of the Dark Universe, 2, 163
+Gad-Nasr, S., Boddy, K. K., Kaplinghat, M., Outmezguine, N. J., & Sagunski,
+L. 2024, J. Cosmology Astropart. Phys., 2024, 131
+Garrison-Kimmel, S., Rocha, M., Boylan-Kolchin, M., Bullock, J. S., & Lally, J.
+2013, MNRAS, 433, 3539
+Gnedin, O. Y. & Ostriker, J. P. 2001, ApJ, 561, 61
+Gresham, M. I., Lou, H. K., & Zurek, K. M. 2018, Phys. Rev. D, 98, 096001
+Gurian, J., Ryan, M., Schon, S., Jeong, D., & Shandera, S. 2022, ApJ, 939, L12
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. 2020, Nature, 585, 357
+Hunter, J. D. 2007, Computing in Science & Engineering, 9, 90
+Huo, R., Yu, H.-B., & Zhong, Y.-M. 2020, J. Cosmology Astropart. Phys., 2020,
+051
+Kahlhoefer, F., Schmidt-Hoberg, K., Frandsen, M. T., & Sarkar, S. 2014, MN-
+RAS, 437, 2865
+Kaplan, D. E., Krnjaic, G. Z., Rehermann, K. R., & Wells, C. M. 2010, J. Cos-
+mology Astropart. Phys., 2010, 021
+Klemmer, D., Fischer, M. S., Boddy, K. K., Kaplinghat, M., & Sagunski, L. 2026
+[arXiv:2603.19362]
+Kochanek, C. S. & White, M. 2000, ApJ, 543, 514
+Koda, J. & Shapiro, P. R. 2011, MNRAS, 415, 1125
+Kribs, G. D. & Neil, E. T. 2016, International Journal of Modern Physics A, 31,
+1643004
+Lankester-Broche, G. & Pradler, J. 2026, J. Cosmology Astropart. Phys., 2026,
+034
+Lynden-Bell, D. & Eggleton, P. P. 1980, MNRAS, 191, 483
+Lynden-Bell, D. & Wood, R. 1968, MNRAS, 138, 495
+Mace, C., Yang, S., Zeng, Z. C., et al. 2026, Phys. Rev. D, 113, 103011
+Mace, C., Zeng, Z. C., Peter, A. H. G., et al. 2024, Phys. Rev. D, 110, 123024
+Navarro, J. F., Frenk, C. S., & White, S. D. M. 1997, ApJ, 490, 493
+Nishikawa, H., Boddy, K. K., & Kaplinghat, M. 2020, Phys. Rev. D, 101, 063009
+Outmezguine, N. J., Boddy, K. K., Gad-Nasr, S., Kaplinghat, M., & Sagunski,
+L. 2023, MNRAS, 523, 4786
+Planck Collaboration, Aghanim, N., Akrami, Y., et al. 2020, A&A, 641, A6
+Powell, D. M., McKean, J. P., Vegetti, S., et al. 2025, Nature Astronomy, 9, 1714
+Power, C., Navarro, J. F., Jenkins, A., et al. 2003, MNRAS, 338, 14
+Ragagnin, A., Tchipev, N., Bader, M., Dolag, K., & Hammer, N. J. 2016, in
+Advances in Parallel Computing, 411–420
+Randall, L. & Scholtz, J. 2015, J. Cosmology Astropart. Phys., 2015, 057
+Randall, S. W., Markevitch, M., Clowe, D., Gonzalez, A. H., & Bradaˇc, M. 2008,
+ApJ, 679, 1173
+Robertson, A., Massey, R., & Eke, V. 2017, MNRAS, 467, 4719
+Roy, S., Shen, X., Barron, J., et al. 2025, ApJ, 982, 175
+Roy, S., Shen, X., Lisanti, M., et al. 2023, ApJ, 954, L40
+Sabarish, V. M., Brüggen, M., Schmidt-Hoberg, K., Fischer, M. S., & Kahlhoe-
+fer, F. 2024, MNRAS, 529, 2032
+Sagunski, L., Gad-Nasr, S., Colquhoun, B., Robertson, A., & Tulin, S. 2021, J.
+Cosmology Astropart. Phys., 2021, 024
+Shen, X., Hopkins, P. F., Necib, L., et al. 2021, MNRAS, 506, 4421
+Shen, X., Hopkins, P. F., Necib, L., et al. 2024, ApJ, 966, 131
+Spergel, D. N. & Steinhardt, P. J. 2000, Phys. Rev. Lett., 84, 3760
+Spitzer, L. 1978, Physical processes in the interstellar medium (New York:
+Wiley-Interscience)
+Springel, V. 2005, MNRAS, 364, 1105
+Springel, V. 2016, Saas-Fee Advanced Course, 43, 251
+Tulin, S. & Yu, H.-B. 2018, Phys. Rep., 730, 1
+Tulin, S., Yu, H.-B., & Zurek, K. M. 2013, Phys. Rev. D, 87, 115007
+Vegetti, S., White, S. D. M., McKean, J. P., et al. 2026, Nature Astronomy, 10,
+440
+Wise, M. B. & Zhang, Y. 2014, Phys. Rev. D, 90, 055030
+Xiao, H., Shen, X., Hopkins, P. F., & Zurek, K. M. 2021, J. Cosmology Astropart.
+Phys., 2021, 039
+Yang, D. & Yu, H.-B. 2022, J. Cosmology Astropart. Phys., 2022, 077
+Yu, H.-B. 2026, Phys. Rev. Lett., 136, 141001
+Zhang, X. & Yu, H.-B. 2026 [arXiv:2606.12909]
+Article number, page 12
+
+
+===== PAGE 13 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+Appendix A: Cooling and heat conduction rate
+In this section, we compute the energy change of individual nu-
+merical particles per time step. After thermal averaging, this
+yields the cooling and heat conduction rates simulated by our
+N-body algorithm.
+Using the velocity updates from Eq. (5) and the relative ori-
+entation of the involved vectors
+vi −v j = ∆vi j ∥∆vdrag ⊥∆vrand,
+(A.1)
+the respective change in kinetic energy is given by
+2∆Ei/ j
+m
+= v′2
+i/ j −v2
+i/ j
+= ∆v2
+drag + ∆v2
+rand ∓2vi/j · ∆vdrag ± 2vi/j · ∆vrand
+= ∆vdrag
+∆vi j
+rdiss
+∓2vi/j · ∆ˆvij∆vdrag ± 2∆vi/j · ∆ˆvrand∆vrand
+(A.2)
+with
+∆vdrag = 1
+2∆v2
+i j
+σT
+mχ
+rdiss
+∆t
+m
+Z
+dV ρiρj.
+(A.3)
+The upper sign always corresponds to the first index i, the lower
+sign to the second index j. In the second line of Eq. (A.2), we
+inserted ∆v2
+rand from Eq. (17), which cancels ∆v2
+drag. Taking the
+expectation value, the last term vanishes since it is odd under
+∆ˆvrand →−∆ˆvrand, which both have the same probability of being
+sampled from the uniform distribution of vectors in the plane
+perpendicular to ∆vi j.
+The local volumetric rate of energy change is found by ther-
+mally averaging, removing the volume integral, and dividing by
+the numerical time step ∆t:
+dEi/ j
+dV dt ≃d
+dV
+⟨∆Ei/ j⟩
+∆t
+= 1
+4
+σT
+mχ
+ρiρj
+h
+⟨∆v3
+ij⟩∓2rdiss⟨vi/j · ∆vi j∆vi j⟩
+i
+(A.4)
+In this step, we transition from discrete density kernels of numer-
+ical particles to local continuous density fields for components i
+and j. This corresponds to the limit of many numerical particles
+of fixed kernel size within a small integration volume, such that
+their overlapping kernels form two locally homogeneous but po-
+tentially distinct density fields. As in the main text, we assume
+a velocity-independent cross section σT and dissipation param-
+eter rdiss here. Otherwise the thermal averaging would need to
+include these quantities, which are highly model-dependent.
+If both vi and vj follow Maxwell-Boltzmann distributions of
+1D velocity dispersions νi and ν j, respectively, the magnitude of
+the relative velocity is distributed as
+f(∆vi j) =
+r
+2
+π
+∆v2
+i j
+
+ν2
+i + ν2
+j
+3/2 exp
+−
+∆v2
+ij
+2(ν2
+i + ν2
+j)
+.
+(A.5)
+This is also a Maxwell-Boltzmann distribution with velocity dis-
+persion
+
+ν2
+i + ν2
+j
+1/2. The integral
+⟨∆v3
+i j⟩=
+∞
+Z
+0
+d(∆vij) ∆v3
+i j f(∆vij) = 8
+r
+2
+π
+
+ν2
+i + ν2
+j
+3/2
+(A.6)
+can be evaluated analytically.
+For the other average in Eq. (A.4), we integrate separately
+over all velocity components, each of which follows a Gaussian,
+⟨vi/ j · ∆vi j∆vi j⟩=
+Z
+dvidv j
+exp
+
+−
+v2
+i
+2ν2
+i
+
+exp
+
+−
+v2
+j
+2ν2
+j
+
+(2π)3ν3
+i ν3
+j
+vi/ j · ∆vi j∆vi j
+= −ν2
+i/ j
+Z
+dvidv j
+
+∇vi/j
+exp
+
+−
+v2
+i
+2ν2
+i
+
+exp
+
+−
+v2
+j
+2ν2
+j
+
+(2π)3ν3
+i ν3
+j
+
+· ∆vi j∆vi j.
+(A.7)
+and absorb vi/ j in a gradient, which produces the case-dependent
+ν2
+i/ j in front of the integral. Integrating by parts and employing
+that the Gaussians vanish for vi/ j →∞, we find the relation
+⟨vi/ j · ∆vi j∆vi j⟩= ν2
+i/ j
+D
+∇vi/j
+
+∆vi j∆vi j
+E
+= ±4ν2
+i/ j
+D
+∆vi j
+E
+(A.8)
+by direct differentiation.
+After evaluating
+⟨∆vi j⟩=
+∞
+Z
+0
+d(∆vi j) ∆vi j f(∆vi j) = 2
+r
+2
+π
+
+ν2
+i + ν2
+j
+1/2 ,
+(A.9)
+Eq. (A.4) reduces to
+dEi/ j
+dV dt =
+r
+8
+π
+σT
+mχ
+ρiρ j
+h
+(ν2
+i + ν2
+j)3/2 −2rdissν2
+1/2(ν2
+i + ν2
+j)1/2i
+= −
+r
+8
+π
+σT
+mχ
+(rdiss −1)ρiρj(ν2
+i + ν2
+j)3/2
+∓
+r
+8
+π
+σT
+mχ
+rdissρiρj(ν2
+i + ν2
+j)1/2(ν2
+i −ν2
+j).
+(A.10)
+The result naturally separates into a dissipation term, which van-
+ishes for rdiss = 1, and a conduction term, which vanishes for
+νi = ν j. Note that this is the volumetric rate of energy change
+in scattering processes between two components, i and j, that do
+not necessarily have to differ in density and velocity dispersion.
+Self-scattering within a component gives rise to the local cooling
+rate
+C(ρ, ν) =
+8
+√π
+σT
+mχ
+(rdiss −1)ρ2ν3
+(A.11)
+by inserting ρ ≡ρi = ρj and ν ≡νi = νj into Eq. (A.10). For
+multiple components, all pairwise combinations must be taken
+into account.
+Appendix B: Validation of the fSIDM algorithm
+We validate the cooling and heat conduction rate in our imple-
+mentation of the dissipative fSIDM algorithm against Eq. (A.10)
+by simulating a periodic box containing one or two particle com-
+ponents of homogeneous density and velocity dispersion in the
+absence of gravity. Since the density remains constant, the evo-
+lution is governed by differential equations for the velocity dis-
+persion that are analytically or at least numerically tractable and
+should be reproduced by the N-body simulation.
+Article number, page 13
+
+
+===== PAGE 14 =====
+
+A&A proofs: manuscript no. main
+0
+20
+40
+60
+80
+100
+Time t (Gyr)
+10
+1
+100
+101
+1D velocity dispersion ν (kms−1)
+σT/mχ = 50cm2 g−1
+rdiss = 1.00
+rdiss = 1.05
+rdiss = 1.20
+σT/mχ = 200cm2 g−1
+rdiss = 1.05
+rdiss = 1.20
+Simulation
+Theory
+0.005
+0.000
+0.005
+0.010
+0.015
+ν(0) = 20kms−1
+0
+20
+40
+60
+80
+100
+Time t (Gyr)
+0.004
+0.002
+0.000
+0.002
+0.004
+0.006
+0.008
+Wg
+ν(0) = 2.0kms−1
+Relative deviation from theory
+Fig. B.1. Left: Comparison of the simulated velocity dispersion (dots, shown every 5 Gyr) in a periodic box of homogeneous density with the
+theoretical expectation (lines) for different cooling rates set by the modified transfer cross section σT/mχ (cf. Eq. (2)) and dissipation parameter
+rdiss. Right: Relative deviation of the simulation from the theoretical prediction for the two initial velocity dispersions. With a single exception at
+late times, the agreement is at the sub-percent level.
+B.1. Test with dissipation only
+To examine the cooling rate, we initialize N = 104 particles with
+a total mass of M = 1010 M⊙in a periodic cube of side length
+L = 10 kpc. We consider two initial 1D velocity dispersions,
+ν(t = 0) = 20 km s−1 and ν(t = 0) = 2.0 km s−1, and vary the
+velocity-independent parameters σT/mχ and rdiss (similar set-
+up as in Shen et al. 2024, Appendix B.3). Initial positions are
+drawn from a uniform distribution, while velocity components
+are sampled from a zero-mean Gaussian with standard deviation
+ν(t = 0), which corresponds to a Maxwell-Boltzmann distribu-
+tion.
+Assuming that the velocities remain Maxwell-Boltzmann
+distributed, the evolution of the velocity dispersion in the sim-
+ulation should be governed by
+3
+2ρdν2
+dt = −C(ρ, ν) = −8
+√π
+σT
+mχ
+(rdiss −1)ρ2ν3
+(B.1)
+where we used the local cooling rate C(ρ, ν) derived in Ap-
+pendix A. This has the analytic solution
+ν(t) = ν(t = 0)
+ 
+1 +
+t
+2tdiss
+!−1
+(B.2)
+with the dissipation timescale
+tdiss =
+3ρν(t = 0)2
+2C(ρ, ν(t = 0)) =
+3 √π
+16 σT
+mχ (rdiss −1)ρν(t = 0).
+(B.3)
+Due to finite particle sampling, the average velocity ⟨v⟩in
+the simulation’s initial conditions does not vanish exactly. Since
+it is conserved in the simulation, it becomes dominant once the
+velocity dispersion has decreased to ν(t) ∼|⟨v⟩|. However, the
+analytic solution assumes ⟨v⟩= 0 and thus overestimates the rel-
+ative velocity in interactions and therefore dissipation. To mit-
+igate this, we subtract the mean velocity from all particles to
+enforce ⟨v⟩= 0 while preserving ν(0).
+In Fig. B.1, we compare the simulated time evolution of
+the velocity dispersion with the analytic expectation. The left
+panel shows that the velocity dispersion decays toward zero at a
+rate depending on σT/mχ(rdiss −1), as predicted by Eqs. (B.2)
+and (B.3). At late times t ≫tdiss, the evolution becomes inde-
+pendent of the initial velocity dispersion. Simulations with iden-
+tical σT/mχ(rdiss −1) (green and yellow) yield indistinguishable
+results, confirming the expected degeneracy. The right panels
+show the relative deviation of the simulation from the analytic
+solution and demonstrate sub-percent-level agreement. Residual
+high-frequency fluctuations arise primarily from snapshots writ-
+ten when not all particles have completed their current time step.
+In summary, the test confirms that the implementation of dis-
+sipative interactions reproduces the expected cooling rate in a
+controlled setting without gravity.
+B.2. Test with additional heat conduction
+To test a system subject to both dissipation and heat conduction,
+we increase the number of particles to N = 2 × 104 and divide
+them into two components with different initial velocity disper-
+Article number, page 14
+
+
+===== PAGE 15 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+10
+2
+5
+ν(t)(kms−1)
+ρ1/ρ2 = 1, ν1(0)/ν2(0) = 2
+rdiss
+1.00
+1.05
+1.20
+2.00
+10
+2
+5
+20
+ρ1/ρ2 = 2, ν1(0)/ν2(0) = 4
+101
+102
+ρ1/ρ2 = 0.1, ν1(0)/ν2(0) = 20
+Simulation
+Theory ν1 (hot)
+Theory ν2 (cold)
+0
+20
+40
+60
+80
+100
+0.010
+0.005
+0.000
+0.005
+0.010
+0.015
+0.020
+Relative deviation from theory
+0
+20
+40
+60
+80
+100
+Time t (Gyr)
+0.01
+0.00
+0.01
+0.02
+0
+20
+40
+60
+80
+100
+0.02
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+Fig. B.2. Upper row: Comparison of the simulated velocity dispersions (dots, shown every 10 Gyr) with the numerical solution of Eq. (B.4) (lines)
+for two components of different initial velocity dispersion and density. The cooler one (dashed) always starts at ν(0) = 5 km s−1 and the cross
+section is set to σT/mχ = 2 cm2 g−1 in all cases. Lower row: Relative deviation of the simulation results from the theoretical prediction. Solid lines
+correspond to the hotter component and dashed lines to the cooler component.
+sions, ν1(t = 0) > ν2(t = 0), and relative abundance f = ρ1/ρ2.
+The total mass M = 1010 M⊙and box size L = 10 kpc are un-
+changed, and gravity remains disabled.
+The time evolution of the two velocity dispersions is gov-
+erned by coupled differential equations for each component i =
+1, 2 with i , j
+3
+2ρi
+dν2
+i
+dt = −
+8
+√π
+σT
+mχ
+(rdiss −1)ρ2
+i ν3
+i
+−
+8
+√π
+σT
+mχ
+(rdiss −1)ρiρj
+
+ν2
+i + ν2
+j
+2
+
+3/2
+−
+r
+8
+π
+σT
+mχ
+rdissρiρj
+
+ν2
+i + ν2
+j
+1/2 
+ν2
+i −ν2
+j
+
+,
+(B.4)
+which are derived in Appendix A. The first two terms are due
+to cooling by scatterings within the component and between the
+components. The last term is due to conduction and transports
+energy from the hotter to the cooler component, as it is anti-
+symmetric under νi ↔νj. It closely resembles the conduction
+term found by Dvorkin et al. (2014) and used by Fischer et al.
+(2025a),5 but is enhanced by a factor rdiss.
+We fix the cross section at σT/mχ = 2 cm2 g−1, as a rescaling
+of σT/mχ is equivalent to a rescaling of time t →t/(σT/mχ). The
+system further exhibits a scaling symmetry under νi/j →λνi/ j
+5 Since they consider DM-baryon scatterings, they use the usual mo-
+mentum transfer cross section for distinguishable particles instead of
+the modified one introduced in Eq. (2).
+and t →t/λ. This implies that the dynamics depend only on the
+ratio of the initial velocity dispersions ν1(t = 0)/ν2(t = 0), not
+the absolute scale. We therefore fix ν2(t = 0) = 5 km s−1. Simi-
+larly, the equations are invariant under ρi/ j →λρi/ j and t →t/λ,
+such that the evolution depends only on the relative abundance
+f = ρ1/ρ2. Larger cross sections, velocities and densities there-
+fore accelerate the evolution, consistent with the scaling of the
+scattering rate ∝ρνσT/mχ.
+Figure B.2 shows the simulated time evolution of the veloc-
+ity dispersions compared to the numerical solution of Eq. (B.4)
+for several representative initial configurations (columns) and
+dissipation parameters rdiss (colors). There are two competing
+processes: heat conduction drives the two components toward a
+common velocity dispersion, and cooling (for rdiss > 1) makes
+the velocity dispersion decay. Increasing rdiss accelerates this de-
+cay. The relative difference between simulation and theory gen-
+erally increases with dissipation, as a similar absolute difference
+appears larger relative to the smaller velocity dispersions. Initial
+configurations with a larger contrast between the two compo-
+nents also show larger discrepancies.
+Regardless of whether the hotter component is denser or
+less dense than the cooler one, heat transfer appears to pro-
+ceed slightly more slowly than predicted by Eq. (B.4). We found
+that this discrepancy can be reduced to some extent by adopting
+smaller time steps to better resolve the rapid initial conduction
+phase. Even with very small time steps, there may be a resid-
+ual deviation if individual interactions with large dissipation or
+heat transfer drive the velocity distribution away from Maxwell-
+Article number, page 15
+
+
+===== PAGE 16 =====
+
+A&A proofs: manuscript no. main
+Boltzmann. Nevertheless, the overall agreement for the simula-
+tions shown here is very good.
+Appendix C: Convergence tests
+A fundamental problem for our dissipative N-body simulation
+is the realization noise arising from the discrete representation
+of the analytic NFW halo. In particular, the initial energy varies
+on the percent-level around the analytic initial energy ˆE(0) =
+−392.85 × 1010 M⊙km2 s−2.
+For dissipative simulations with σT/mχ = 50 cm2 g−1 and
+rdiss = 1.05, this variation is significantly amplified in the col-
+lapse time, as shown in Fig. C.1. Configurations of lower ini-
+tial energy collapse earlier, while those of higher initial energy
+take longer to collapse. The upper panel shows the energy as a
+function of time remaining until collapse. All simulations fol-
+low a very similar trajectory, which is initially linear to a good
+approximation. For the simulation parameters adopted, the col-
+lapse consistently occurs near a fixed total energy. Reruns with
+identical initial conditions yield very similar results, confirming
+that the variation is dominated by the initial conditions rather
+than the inherent stochasticity of the algorithm.
+The middle panel can be considered as focusing on the re-
+gion with markers in the upper panel with inverted axes. Due to
+the initially linear evolution of the total energy, the correlation
+between collapse time and initial energy is well described by a
+two-parameter fit
+tcoll =
+"
+(0.046 ± 0.008)
+E(0) −ˆE(0)
+1010 M⊙km2 s−2 + (1.57 ± 0.02)
+#
+Gyr.
+(C.1)
+Thus, a 1 %-variation in initial energy translates into a much
+larger 18 %-variation in the collapse time. This relation is in-
+dependent of N; however, the typical deviation from the desired
+ˆE(0) decreases with N, as shown in the lower panel. The mean
+slightly underestimates ˆE(0) systematically.
+In the following, we use the realization closest to ˆE(0) among
+nine generated initial conditions for each N. Their relative devi-
+ations from ˆE(0) range from 8.9 × 10−4 for N = 2 × 105 down to
+2.8 × 10−5 for N = 5 × 106.
+With these initial conditions, we investigate the impact of the
+gravitational softening length ϵ on the simulation results, follow-
+ing Mace et al. (2024). It regularizes the gravitational potential
+Φ(r) = −G
+N
+X
+i=1
+m
+(r −ri)2 + ϵ21/2
+(C.2)
+generated by the simulation particles, preventing infinities, large-
+angle gravitational scatterings, the formation of binaries, and
+prohibitively small time steps (Springel 2016).
+We vary the softening length around the reference value
+ϵ0 =
+2.3rs
+√N(r < rs)
+≃
+
+0.09 kpc,
+N = 105
+0.06 kpc,
+N = 2 × 105
+0.03 kpc,
+N = 106
+0.01 kpc,
+N = 5 × 106
+(C.3)
+with NFW scale radius rs and the number of particles N(r < rs)
+enclosed within. It is inspired by the criterion from Power et al.
+(2003), but is 6–7 times smaller (motivated by Fischer et al.
+2025b), and was also used for Fig. C.1 and throughout the main
+text.
+1.75
+1.50
+1.25
+1.00
+0.75
+0.50
+0.25 0.00
+Time until collapse t −tcoll (Gyr)
+500
+480
+460
+440
+420
+400
+Energy E (1010 M ⊙km2 s−2)
+N
+105
+2 × 105
+reruns
+106
+5 × 106
+396
+394
+392
+390
+388
+Initial energy E(0) (1010 M ⊙km2 s−2)
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+Collapse time tcoll (Gyr)
+ˆE(0)
+400
+398
+396
+394
+392
+390
+388
+Initial energy E(0) (1010 M ⊙km2 s−2)
+105
+2 × 105
+106
+5 × 106
+Number of particles N
+Fig. C.1. Upper panel: Total energy as a function of time until col-
+lapse for different discrete realizations of the same isolated halo. In all
+panels, the dashed lines mark the desired value of the initial energy
+ˆE(0) = −392.85 × 1010 M⊙km2 s−2, around which the discrete initial
+conditions are scattered due to realization noise. Middle panel: Cor-
+relation between the collapse time and initial energy with a linear fit
+(dotted). Lower panel: Scatter in the initial energy of nine sampled ini-
+tial conditions for each number of particles N. The error bars mark one
+standard deviation and the dotted line connects the means (crosses).
+Figure C.2 shows the time evolution of the central density
+varying the softening length around ϵ0 for different numbers
+of simulation particles N. The simulation parameters σT/mχ =
+50 cm2 g−1 and rdiss = 1.05 are unchanged compared to Fig. C.1,
+but we now use the most accurate initial conditions we found.
+For small N, a large softening length systematically delays core
+collapse. It flattens not only the potential of every single parti-
+cle, but also that of the full halo (Barnes 2012). The central mass
+subject to dissipation may therefore concentrate less, which in
+turn reduces dissipation.
+Article number, page 16
+
+
+===== PAGE 17 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+107
+108
+109
+1010
+1011
+ϵ = 10−0.4ϵ0
+N
+105
+2 × 105
+106
+5 × 106
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+ϵ = 100ϵ0
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+107
+108
+109
+1010
+1011
+ϵ = 100.4ϵ0
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+ϵ = 100.8ϵ0
+Time (Gyr)
+Central density ρ(r < 0.1kpc) (M ⊙kpc−3)
+Fig. C.2. Time evolution of the central density varying the number of simulation particles N and the softening length ϵ around the reference value
+ϵ0 (cf. Eq. (C.3)). For reference, dashed lines mark the collapse time tcoll for ϵ = ϵ0 and N = 5 × 106 and the corresponding density ρ = 5ρ(t = 0).
+Our largest simulation with N = 5×106 is almost insensitive
+to the softening length. For this reason, and due to the reduced
+realization noise, which is also evident in the density evolution,
+we ran all simulations considered in the main text with this par-
+ticle number.
+Appendix D: The gravothermal fluid model with
+dissipation
+The
+gravothermal
+fluid
+model
+(Gnedin & Ostriker
+2001;
+Balberg et al. 2002; Koda & Shapiro 2011) considers isolated
+SIDM halos as quasi-static, spherically symmetric systems of a
+conductive, monatomic ideal gas (adiabatic index γ = 5/3) with
+pressure P = ρkBT/mχ = ρν2. It was first introduced for globular
+clusters (Lynden-Bell & Eggleton 1980); Bettwieser & Spurzem
+(1986) even formulated it with an anisotropic velocity dispersion
+ν. Nevertheless, the standard set of equations for SIDM assumes
+isotropy:
+∂M
+∂r = 4πr2ρ
+(D.1)
+∂(ρν2)
+∂r
+= −GMρ
+r2
+(D.2)
+ρν2
+ d
+dt
+!
+M
+log ν3
+ρ = −
+1
+4πr2
+∂L
+∂r −C(ρ, ν)
+(D.3)
+L
+4πr2 = −mχ
+kB
+κ∂ν2
+∂r ,
+(D.4)
+Together, they describe the conservation of mass (Eq. (D.1)),
+the hydrostatic equilibrium between pressure and gravity
+(Eq. (D.2)), the change of energy density within each mass el-
+ement (Eq. (D.3)), and the luminosity L due to heat conduction
+down the gradient of the velocity dispersion (Eq. (D.4)). The heat
+conductivity is conventionally interpolated as a harmonic mean
+κ−1 = κ−1
+SMFP + κ−1
+LMFP between the short-mean-free-path (SMFP)
+limit
+κSMFP = 75 √πν
+64σtot
+(D.5)
+and the long-mean-free-path (LMFP) limit
+κLMFP =
+3β
+2π3/2G
+σtot
+mχ
+ρν3.
+(D.6)
+Motivated by Sect. 3.4, we identify the total cross section with
+the transfer cross section of the fSIDM algorithm via σtot = 3σT.
+The LMFP limit contains an O (1) parameter β to be cali-
+brated. For this purpose, we employ the non-dissipative (rdiss =
+1.0) N-body simulation with σT/mχ = 50 cm2 g−1 and consider
+the central density (Fig. D.1, upper panel). The smaller β, i.e.,
+the weaker the LMFP conduction, the later the core collapse. We
+find the best agreement in terms of time-averaged squared rela-
+tive deviation
+L =
+* ρFluid −ρNbody
+ρFluid
+!2+
+t∈[tcore+0.1tcoll,tcoll]
+(D.7)
+for β = 0.726. The core formation phase is excluded from the fit,
+as the fluid model does not reproduce it well for any value of β.
+Article number, page 17
+
+
+===== PAGE 18 =====
+
+A&A proofs: manuscript no. main
+108
+109
+1010
+ρ(r
+0.16kpc)(M ⊙kpc−3)
+0.0
+2.5
+5.0
+7.5
+10.0
+12.5
+15.0
+17.5
+20.0
+Time (Gyr)
+15
+20
+25
+30
+35
+ν(r
+0.16kpc)(kms−1)
+β
+0.5
+0.6
+0.71 -
+0.74
+0.8
+0.9
+N-body
+Fig. D.1. Time evolution of the central density and velocity dispersion
+obtained from the elastic fluid model for different values of the cali-
+bration parameter β. The collapse time increases considerably with de-
+creasing β, i.e., decreasing LMFP heat conduction. Between the two
+vertical dotted lines, β = 0.726 minimizes the deviation from the N-
+body central density (black curve).
+Equation (D.3) includes the cooling rate C(ρ, ν) (cf.
+Essig et al. 2019) to account for dissipation, as well as a La-
+grangian derivative
+ d
+dt
+!
+M
+= ∂
+∂t + v · ∇
+(D.8)
+which follows the mass elements moving at a velocity v
+rather than taking the time derivative at a fixed position. In
+practice, the GravothermalSIDM code (Nishikawa et al. 2020;
+Outmezguine et al. 2023; Gad-Nasr et al. 2024) discretizes the
+halo into shells of constant mass, whose energies are updated
+according to Eqs. (D.3) and (D.4). Hydrostatic equilibrium is
+subsequently restored by shifting the mass shells according to
+Eqs. (D.1) and (D.2).
+Appendix E: Matching between fSIDM and rSIDM
+We run two elastic and three dissipative velocity-independent
+isotropic rSIDM simulations with the same initial conditions as
+used for fSIDM (cf. Sect. 3.1) to verify the matching condi-
+tion given in Eq. (27). It follows from requiring equal viscos-
+ity cross sections (Yang & Yu 2022) in the strongly forward-
+dominated and isotropic cases, respectively, together with equal
+cooling rates. Figure E.1 clearly confirms the matching condi-
+tion, demonstrating that the angular dependence of the cross sec-
+tion has only a limited influence on the evolution of the isolated
+halo. A more detailed discussion can be found in Sect. 3.4).
+0.0
+2.5
+5.0
+7.5
+10.0
+12.5
+15.0
+17.5
+20.0
+108
+109
+1010
+Elastic scattering
+σfSIDM
+T
+/mχ = 50cm2 g−1
+σiso
+tot/mχ = 100cm2 g−1
+σiso
+tot/mχ = 150cm2 g−1
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+108
+109
+1010
+Dissipative scattering (cross sections as above)
+rdiss = 1.05
+fdiss = 0.05
+fdiss = 0.05
+fdiss = 0.0¯3
+ρ(r
+0.16kpc)(M ⊙kpc−3)
+Time (Gyr)
+Fig. E.1. Central density evolution of representative elastic (upper
+panel) and dissipative (lower panel) fSIDM simulations (black curves)
+to be matched by rSIDM simulations (colored curves). The legend in
+the upper panel applies to both panels; the legend in the lower panel
+applies only there. In the elastic case, the matching σiso
+tot ↔3σfSIDM
+T
+is
+clearly superior. With dissipation, the dissipation parameter for rSIDM
+should additionally satisfy fdiss ↔2(rdiss −1)/3.
+Appendix F: Computing projected quantities
+The projected surface density Σ(r2D) used in Sects. 4.2 and 4.3
+and the usual three-dimensional density ρ(r) are related by the
+Abel transform
+Σ(r2D) ≡
+∞
+Z
+−∞
+dz ρ(r) = 2
+∞
+Z
+r2D
+dr
+rρ(r)
+q
+r2 −r2
+2D
+.
+(F.1)
+For the numerical conversion of fluid model results, it is advanta-
+geous to retain the z-integral form near the singularity at r = r2D.
+The projected enclosed mass directly follows as
+M(r < r2D) = 2π
+r2D
+Z
+0
+dr rΣ(r).
+(F.2)
+However, the fluid code generates density profiles only down to
+an inner radius r0, so the surface density is unavailable for r2D <
+r0. Therefore, we decompose the projected enclosed mass into
+three contributions: the mass within a sphere of radius r0, the
+mass within the remaining cylinder of radius r0, and the mass
+within the annular cylinder between r0 and r2D, where Σ(r2D) is
+Article number, page 18
+
+
+===== PAGE 19 =====
+
+Ludwig D. Schmidt et al.: Gravothermal evolution of dissipative SIDM halos
+available. This yields
+M(r < r2D) = M(r < r0) + 4π
+∞
+Z
+r0
+dr rρ(r)
+
+r −
+q
+r2 −r2
+0
+
++ 2π
+r2D
+Z
+r0
+dr rΣ(r).
+(F.3)
+The logarithmic slope of the surface density profile is defined as
+γ2D(r2D) = d log Σ
+d log r2D
+.
+(F.4)
+It is straightforward to compute numerically.
+Appendix G: Rescaling N-body results
+Purely
+gravitational
+N-body
+simulations
+without
+self-
+interactions generate discrete realizations that sample the
+coarse-grained distribution function governed by the Poisson-
+Vlasov system
+∇2Φ = 4πG
+Z
+d3v f(r, v, t),
+(G.1)
+d
+dt f(r, v, t) = ∂f
+∂t + v · ∇r f −∇rΦ · ∇v f = 0
+(G.2)
+with the gravitational potential Φ and the distribution function f
+depending on position r, velocity v and time t. These equations
+are invariant under the two-parameter rescaling transformations
+r →λr,
+v →
+rµ
+λv,
+t →
+s
+λ3
+µ t,
+Φ →µ
+λΦ,
+f →
+1
+p
+µλ3 f
+(G.3)
+where µ rescales the macroscopic mass or, more fundamentally,
+the number of microscopic particles with constant mass mχ.
+We can use the two parameters λ and µ to rescale the results
+of an N-body simulation, which are described by these invariant
+evolution equations. However, we must reinterpret the results as
+arising from different NFW initial conditions with rs →λrs and
+ρ0 →µρ0/λ3 in order for the density profile
+ρ(r) =
+ρ0
+r/rs (1 + r/rs)2
+(G.4)
+to remain invariant.
+In the presence of self-interactions, the vanishing right-hand
+side of the Vlasov equation is formally replaced by the two-body
+collision term
+C =
+Z
+d3v2
+Z
+dΩ|v −v2| dσ
+dΩ
+ f(r, v′, t)f(r, v′
+2, t)
+−f(r, v, t)f(r, v2, t)) ,
+(G.5)
+which scatters velocities from v to v′. Invariance of this term
+requires
+dσ
+dΩ→λ2
+µ
+dσ
+dΩ
+(G.6)
+and similarly for all angular integrals such as σtot or σT. Their
+dependence on the relative velocity must not introduce a fixed
+velocity scale arising from microphysics. This scaling symme-
+try is implicit in the dimensionless formulation of the gravother-
+mal fluid equations (Lynden-Bell & Wood 1968; Balberg et al.
+2002), but to our knowledge has not been stated explicitly at the
+level of the Poisson-Vlasov system.
+The dissipative generalization of the collision term reads
+C =
+Z
+d3v2
+Z
+dΩ
+Z
+dk0 |v −v2|
+dσ
+dΩdk0
+  f(r, v′, t)f(r, v′
+2, t)
+−f(r, v, t)f(r, v2, t))
+(G.7)
+with k0 = mχ(v2 + v2
+2 −v′2 −v′2
+2 ). This implies k0 →µk0/λ and
+dσ
+dΩdk0 →λ3
+µ2
+dσ
+dΩdk0 .
+(G.8)
+Analogously to the velocity dependence in the elastic case, this
+differential cross section must be free of fixed scales to fulfill
+Eq. (G.8) for arbitrary k0. In particular, our simulations with
+velocity-independent transfer cross section and energy radiation
+proportional to the kinetic energy satisfy this condition. While
+σT/mχ →λ2/µ σT/mχ, the dimensionless dissipation parameter
+rdiss remains invariant.
+In summary, rescaling simulation results by λ and µ corre-
+sponds to evolving a rescaled NFW halo with a different cross
+section but the same dissipation parameter rdiss. We explicitly
+verified that our N-body implementation exhibits the rescaling
+symmetry by evolving an NFW halo of ρ0 = 5.40×107 M⊙kpc−3
+and rs = 0.1944 kpc with σT/mχ = 121.5 cm2 g−1 and rdiss =
+1.01. These parameters are related to our fiducial simulation of
+rdiss = 1.01 by λ = 0.054 and µ = 0.0012. Under this rescaling,
+all generated results are in perfect agreement.
+In Sect. 4.3, we map our simulations to agree with two ob-
+served data points
+
+robs
+2D , M(r < robs
+2D )
+
+of a compact object for
+r2D = 20 pc and 90 pc. To this end, we rescale distances as
+λ = robs
+2D
+rsim
+2D
+= robs
+2D
+rsim
+s
+ r2D
+rs
+!−1
+= 20 pc
+3.6 kpc
+ r2D
+rs
+!−1
+=
+1
+180
+ r2D
+rs
+!−1
+(G.9)
+using the inner radius, where r2D/rs is read off the horizontal
+axis of Fig. 10. To match both mass observations as closely as
+possible, we minimize
+χ2 =
+
+
+µM(r < rsim
+2D ) −M(r < 20 pc)
+σ(M(r < 20 pc))
+
+2
++
+
+µM(r < 4.5rsim
+2D ) −M(r < 90 pc)
+σ(M(r < 90 pc))
+
+2.
+(G.10)
+with the respective uncertainties σ. This yields
+µ =
+
+M(r < rsim
+2D )M(r < 20 pc)
+σ2(M(r < 20 pc))
++ M(r < 4.5rsim
+2D )M(r < 90 pc)
+σ2(M(r < 90 pc))
+
+×
+
+M2(r < rsim
+2D )
+σ2(M(r < 20 pc)) + M2(r < 4.5rsim
+2D )
+σ2(M(r < 90 pc))
+
+−1
+.
+(G.11)
+The resulting µ and λ fully specify the rescaled halo, its cross
+section, and evolution time, as listed in Table 2.
+Article number, page 19
