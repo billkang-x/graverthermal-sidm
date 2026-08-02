@@ -1,0 +1,70 @@
+%paramfile for N-body verification
+% Point: P1_elastic_control
+% Description: Elastic control: no dissipation
+% SIDM sigma/m = 0.1 cm^2/g (compile-time via Config.sh)
+% SIDM r_diss = 1.0 (compile-time via Config.sh)
+% Target evolution time: 0.68 Gyr
+
+InitCondFile        ic
+OutputDir           output
+SnapshotFileBase    snapshot
+OutputListFilename  output_list.txt
+
+ICFormat            3
+SnapFormat          3
+
+TimeLimitCPU              7200
+CpuTimeBetRestartFile     3600
+MaxMemSize                2000
+
+TimeBegin           0.0
+TimeMax             0.68
+
+ComovingIntegrationOn    0
+Omega0              0
+OmegaLambda         0
+OmegaBaryon         0
+HubbleParam         1.0
+Hubble              0
+BoxSize             0
+
+OutputListOn              1
+TimeBetSnapshot           0.68
+TimeOfFirstSnapshot       0.68
+TimeBetStatistics         0.01
+NumFilesPerSnapshot       1
+MaxFilesWithConcurrentIO  1
+
+ErrTolIntAccuracy        0.025
+CourantFac               0.15
+MaxSizeTimestep          0.005
+MinSizeTimestep          0.0
+
+TypeOfOpeningCriterion                1
+ErrTolTheta                           0.5
+ErrTolThetaMax                        0.5
+ErrTolForceAcc                        0.005
+TopNodeFactor                         3.0
+ActivePartFracForNewDomainDecomp      0.01
+
+DesNumNgb                             32
+MaxNumNgbDeviation                    2
+
+UnitLength_in_cm         3.0856775814913673e21
+UnitMass_in_g            1.989e43
+UnitVelocity_in_cm_per_s 1.0e5
+GravityConstantInternal  0
+
+SofteningComovingClass0       0.0005
+SofteningMaxPhysClass0        0.0005
+SofteningComovingClass1       0.0005
+SofteningMaxPhysClass1        0.0005
+SofteningComovingClass2       0.0005
+SofteningMaxPhysClass2        0.0005
+SofteningClassOfPartType0     0
+SofteningClassOfPartType1     1
+SofteningClassOfPartType2     2
+
+ArtBulkViscConst       1.0
+MinEgySpec             0
+InitGasTemp            0

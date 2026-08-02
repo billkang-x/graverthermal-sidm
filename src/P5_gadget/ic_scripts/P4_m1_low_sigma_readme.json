@@ -1,0 +1,15 @@
+{
+  "point_name": "P4_m1_low_sigma",
+  "model": "M1",
+  "sigma_m_100_cm2_g": 0.005,
+  "r_diss": "velocity-dependent",
+  "r_s_kpc": 0.085,
+  "rho_0_msun_pc3": 10.0,
+  "n_particles": 100000,
+  "softening_pc": 0.5,
+  "box_kpc": 0.34,
+  "t_end_gyr": 1.0,
+  "r_inner_pc": 20.0,
+  "r_outer_pc": 90.0,
+  "target_mass_ratio": 0.364
+}

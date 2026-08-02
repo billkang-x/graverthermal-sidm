@@ -1,0 +1,81 @@
+%paramfile for N-body verification
+% Point: P3_m3_high_sigma
+% Description: M3 high sigma/m: strong cooling
+% SIDM sigma/m = 0.22 cm^2/g (compile-time via Config.sh)
+% SIDM r_diss = 1.05 (compile-time via Config.sh)
+
+InitCondFile      ic
+OutputDir         output
+SnapshotFileBase  snap
+RestartDir        restart
+OutputListFilename output_list.txt
+OutputListOn       0
+
+TimeMax           1.0
+TimeBegin         0.0
+TimeBetSnapshot   0.1
+TimeBetStatistics 0.01
+TimeOfFirstSnapshot 0.0
+CpuTimeBetRestartFile 36000.0
+
+% Timestep parameters
+ErrTolIntAccuracy  0.025
+ErrTolTheta         0.5
+ErrTolThetaMax      0.5
+ErrTolForce         0.005
+ErrTolForceAcc      0.005
+MaxRMSDisplacementFac 0.2
+MaxSizeTimestep     0.05
+MinSizeTimestep     0.0
+TypeOfOpeningCriterion 1
+CourantFac         0.15
+DesNumNgb          32
+MaxNumNgbDeviation 2
+ArtBulkViscConst   1.0
+TopNodeFactor      3.0
+ActivePartFracForNewDomainDecomp 0.01
+CpuTreeDomainUpdate 0.1
+ComovingIntegrationOn 0
+MaxMemSize         1000.0
+
+% I/O format
+ICFormat           3
+SnapFormat         3
+NumFilesPerSnapshot 1
+MaxFilesWithConcurrentIO 1
+
+% Softening (in code units = kpc; we want 0.0005 kpc = 0.5 pc)
+SofteningClassOfPartType0  1
+SofteningClassOfPartType1  1
+SofteningClassOfPartType2  1
+SofteningComovingClass0    0.0005
+SofteningMaxPhysClass0     0.0005
+SofteningComovingClass1    0.0005
+SofteningMaxPhysClass1     0.0005
+SofteningComovingClass2    0.0005
+SofteningMaxPhysClass2     0.0005
+
+% Units (kpc, Msun, km/s)
+UnitLength_in_cm          3.085678e21
+UnitMass_in_g             1.989e43
+UnitVelocity_in_cm_per_s  1.0e5
+UnitLuminosity_in_erg_s   1.0
+UnitEnergy_in_ergs        1.0
+GravityConstantInternal  0.017778279
+
+% Cosmology (no cosmology - isolated halo)
+MinGasTemp                100.0
+HubbleParam               0.7
+Omega0                    1.0
+OmegaBaryon               0.0
+OmegaLambda               0.0
+Hubble                     0.0
+
+% Box (non-periodic)
+BoxSize                   0.5
+PeriodicBoundariesOn      0
+
+% Cooling (turned off via Config.sh but parameters required)
+InitGasTemp              1000.0
+MinEgySpec               0.05
+TreecoolFile             treecool.txt

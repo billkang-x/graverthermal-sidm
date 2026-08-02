@@ -1,0 +1,56 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# WorkBuddy internal
+.workbuddy/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Large binary data files (N-body snapshots, ICs, pickles, HDF5)
+# These are too large for Git and can be regenerated from source code
+data/**/*.pickle
+data/**/*.h5
+data/**/*.hdf5
+data/**/snapshot_*
+data/**/ic.dat
+data/**/ic_*.dat
+data/**/output_relax/
+data/**/output_prod/
+data/**/ref_snapshots/
+data/**/sim_snapshots/
+data/**/ics_sim_space/
+
+# Large CSV files (>5MB, can be regenerated from source code)
+data/P3_B1938_viable_region.csv
+data/P3_rescaled_params.csv
+
+# Temporary files
+tmp/
+*.tmp
+*.log
+texput.log
+
+# LaTeX auxiliary
+*.aux
+*.bbl
+*.blg
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

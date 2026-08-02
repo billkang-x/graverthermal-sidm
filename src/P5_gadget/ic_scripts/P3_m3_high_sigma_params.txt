@@ -1,0 +1,52 @@
+%paramfile for N-body verification
+% Point: P3_m3_high_sigma
+% Model: M3, sigma/m=0.22 cm^2/g @ 100 km/s
+% r_diss: 1.05
+
+InitCondFile      ic
+OutputDir        output
+SnapshotFileBase  snap
+
+TimeMax            1.0
+TimeBetSnapshot    0.05
+TimeBetStatistics  0.01
+CpuTreeDomainUpdate 0.1
+
+ErrTolIntAccuracy  0.025
+ErrTolTheta        0.5
+ErrTolForce        0.005
+MaxRMSDisplacementFac 0.2
+
+SofteningComovingClass0  0.5
+SofteningMaxPhysClass0   0.5
+SofteningComovingClass1  0.5
+SofteningMaxPhysClass1   0.5
+SofteningComovingClass2  0.5
+SofteningMaxPhysClass2   0.5
+SofteningComovingClass3  0.5
+SofteningMaxPhysClass3   0.5
+SofteningComovingClass4  0.5
+SofteningMaxPhysClass4   0.5
+SofteningComovingClass5  0.5
+SofteningMaxPhysClass5   0.5
+
+UnitLength_in_cm          3.085678e21
+UnitMass_in_g             1.989e43
+UnitVelocity_in_cm_per_s  1e5
+UnitLuminosity_in_erg_s   1
+UnitEnergy_in_ergs        1
+GravityConstantInternal  0.017778279
+
+MinGasTemp                1e2
+HubbleParam               0.7
+Omega0                    1.0
+OmegaBaryon               0.0
+OmegaLambda               0.0
+Hubble                     0.0
+
+% SIDM parameters - will be overridden by Config.sh compile-time values
+% sigma/m at v=100 km/s = 0.22
+% r_diss = 1.05
+
+BoxSize                   1.0
+PeriodicBoundariesOn      0

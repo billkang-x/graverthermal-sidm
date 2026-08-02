@@ -1,0 +1,16 @@
+# Config.sh additions for dissipative fSIDM
+#
+# Add these options to your Gadget4 Config.sh to enable the dissipative
+# fSIDM module. The base SIDM option (from the existing gas_sidm_bars
+# setup) must also be enabled.
+
+# Existing SIDM options (from Config.sh.sidm)
+SIDM
+SIDM_K_NEIGHBORS=32
+SIDM_SIGMA_OVER_MASS=3.0       # cm^2/g (will be rescaled by unit system)
+SIDM_PMAX=0.1
+
+# New dissipative fSIDM options
+SIDM_DISSIPATIVE
+SIDM_R_DISS=1.05               # dissipation parameter (1.0 = elastic)
+# SIDM_VELOCITY_DEPENDENT=1    # uncomment to use sigma(v) table
