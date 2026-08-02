@@ -1,0 +1,1191 @@
+Grid: 15 sigma x 13 r_s = 195 points per model
+  sigma/m: [5.0000e-03, 1.0000e+00] cm²/g
+  r_s:     [0.0150, 0.1200] kpc
+  rho_0:   10.0 Msun/pc^3 (fixed)
+  init_ratio at r_s=0.0150: 0.5786
+  init_ratio at r_s=0.1200: 0.3488
+Models: ['M1', 'M2', 'M3'] -> 585 total simulations
+
+=== Model M1 (M1_dark_photon_massive) ===
+[1/585] M1 sig=5.0000e-03 rs=0.0150 (0s, 1.0/s, ETA 584s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0150
+no-cross (ratio high)
+[2/585] M1 sig=5.0000e-03 rs=0.0178 (2s, 0.8/s, ETA 686s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0178
+no-cross (ratio high)
+[3/585] M1 sig=5.0000e-03 rs=0.0212 (4s, 0.7/s, ETA 829s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0212
+no-cross (ratio high)
+[4/585] M1 sig=5.0000e-03 rs=0.0252 (9s, 0.4/s, ETA 1298s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0252
+no-cross (ratio high)
+[5/585] M1 sig=5.0000e-03 rs=0.0300 (14s, 0.4/s, ETA 1609s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0300
+no-cross (ratio high)
+[6/585] M1 sig=5.0000e-03 rs=0.0357 (19s, 0.3/s, ETA 1811s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0357
+no-cross (ratio high)
+[7/585] M1 sig=5.0000e-03 rs=0.0424 (23s, 0.3/s, ETA 1932s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0424
+no-cross (ratio high)
+[8/585] M1 sig=5.0000e-03 rs=0.0505 (28s, 0.3/s, ETA 2001s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0505
+no-cross (ratio high)
+[9/585] M1 sig=5.0000e-03 rs=0.0600 (60s, 0.1/s, ETA 3868s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0600
+VIABLE t_cross=0.0113 Gyr
+[10/585] M1 sig=5.0000e-03 rs=0.0714 (82s, 0.1/s, ETA 4733s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0714
+VIABLE t_cross=0.0071 Gyr
+[11/585] M1 sig=5.0000e-03 rs=0.0849 (106s, 0.1/s, ETA 5553s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.0849
+VIABLE t_cross=0.0022 Gyr
+[12/585] M1 sig=5.0000e-03 rs=0.1009 (112s, 0.1/s, ETA 5361s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.1009
+VIABLE t_cross=0.0008 Gyr
+[13/585] M1 sig=5.0000e-03 rs=0.1200 (116s, 0.1/s, ETA 5121s) ~~~~~ Creating new halo M1_sig5.0000e-03_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[14/585] M1 sig=7.3001e-03 rs=0.0150 (120s, 0.1/s, ETA 4889s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0150
+no-cross (ratio high)
+[15/585] M1 sig=7.3001e-03 rs=0.0178 (125s, 0.1/s, ETA 4754s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0178
+no-cross (ratio high)
+[16/585] M1 sig=7.3001e-03 rs=0.0212 (130s, 0.1/s, ETA 4636s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0212
+no-cross (ratio high)
+[17/585] M1 sig=7.3001e-03 rs=0.0252 (136s, 0.1/s, ETA 4528s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0252
+no-cross (ratio high)
+[18/585] M1 sig=7.3001e-03 rs=0.0300 (141s, 0.1/s, ETA 4430s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0300
+no-cross (ratio high)
+[19/585] M1 sig=7.3001e-03 rs=0.0357 (146s, 0.1/s, ETA 4337s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0357
+no-cross (ratio high)
+[20/585] M1 sig=7.3001e-03 rs=0.0424 (150s, 0.1/s, ETA 4250s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0424
+no-cross (ratio high)
+[21/585] M1 sig=7.3001e-03 rs=0.0505 (155s, 0.1/s, ETA 4164s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0505
+no-cross (ratio high)
+[22/585] M1 sig=7.3001e-03 rs=0.0600 (188s, 0.1/s, ETA 4805s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0600
+VIABLE t_cross=0.0074 Gyr
+[23/585] M1 sig=7.3001e-03 rs=0.0714 (206s, 0.1/s, ETA 5029s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0714
+VIABLE t_cross=0.0025 Gyr
+[24/585] M1 sig=7.3001e-03 rs=0.0849 (211s, 0.1/s, ETA 4921s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.0849
+VIABLE t_cross=0.0017 Gyr
+[25/585] M1 sig=7.3001e-03 rs=0.1009 (216s, 0.1/s, ETA 4837s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.1009
+VIABLE t_cross=0.0006 Gyr
+[26/585] M1 sig=7.3001e-03 rs=0.1200 (219s, 0.1/s, ETA 4713s) ~~~~~ Creating new halo M1_sig7.3001e-03_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[27/585] M1 sig=1.0658e-02 rs=0.0150 (223s, 0.1/s, ETA 4603s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0150
+no-cross (ratio high)
+[28/585] M1 sig=1.0658e-02 rs=0.0178 (228s, 0.1/s, ETA 4534s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0178
+no-cross (ratio high)
+[29/585] M1 sig=1.0658e-02 rs=0.0212 (233s, 0.1/s, ETA 4470s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0212
+no-cross (ratio high)
+[30/585] M1 sig=1.0658e-02 rs=0.0252 (238s, 0.1/s, ETA 4410s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0252
+no-cross (ratio high)
+[31/585] M1 sig=1.0658e-02 rs=0.0300 (244s, 0.1/s, ETA 4353s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0300
+no-cross (ratio high)
+[32/585] M1 sig=1.0658e-02 rs=0.0357 (249s, 0.1/s, ETA 4298s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0357
+no-cross (ratio high)
+[33/585] M1 sig=1.0658e-02 rs=0.0424 (254s, 0.1/s, ETA 4243s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0424
+no-cross (ratio high)
+[34/585] M1 sig=1.0658e-02 rs=0.0505 (258s, 0.1/s, ETA 4188s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0505
+no-cross (ratio high)
+[35/585] M1 sig=1.0658e-02 rs=0.0600 (291s, 0.1/s, ETA 4575s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0600
+no-cross (ratio high)
+[36/585] M1 sig=1.0658e-02 rs=0.0714 (324s, 0.1/s, ETA 4938s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0714
+VIABLE t_cross=0.0041 Gyr
+[37/585] M1 sig=1.0658e-02 rs=0.0849 (333s, 0.1/s, ETA 4930s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.0849
+VIABLE t_cross=0.0017 Gyr
+[38/585] M1 sig=1.0658e-02 rs=0.1009 (338s, 0.1/s, ETA 4862s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.1009
+VIABLE t_cross=0.0006 Gyr
+[39/585] M1 sig=1.0658e-02 rs=0.1200 (341s, 0.1/s, ETA 4772s) ~~~~~ Creating new halo M1_sig1.0658e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[40/585] M1 sig=1.5561e-02 rs=0.0150 (344s, 0.1/s, ETA 4690s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0150
+no-cross (ratio high)
+[41/585] M1 sig=1.5561e-02 rs=0.0178 (349s, 0.1/s, ETA 4637s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0178
+no-cross (ratio high)
+[42/585] M1 sig=1.5561e-02 rs=0.0212 (355s, 0.1/s, ETA 4586s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0212
+no-cross (ratio high)
+[43/585] M1 sig=1.5561e-02 rs=0.0252 (360s, 0.1/s, ETA 4537s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0252
+no-cross (ratio high)
+[44/585] M1 sig=1.5561e-02 rs=0.0300 (365s, 0.1/s, ETA 4490s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0300
+no-cross (ratio high)
+[45/585] M1 sig=1.5561e-02 rs=0.0357 (370s, 0.1/s, ETA 4445s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0357
+no-cross (ratio high)
+[46/585] M1 sig=1.5561e-02 rs=0.0424 (375s, 0.1/s, ETA 4400s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0424
+no-cross (ratio high)
+[47/585] M1 sig=1.5561e-02 rs=0.0505 (380s, 0.1/s, ETA 4355s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0505
+no-cross (ratio high)
+[48/585] M1 sig=1.5561e-02 rs=0.0600 (413s, 0.1/s, ETA 4622s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0600
+VIABLE t_cross=0.0131 Gyr
+[49/585] M1 sig=1.5561e-02 rs=0.0714 (424s, 0.1/s, ETA 4642s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0714
+VIABLE t_cross=0.0048 Gyr
+[50/585] M1 sig=1.5561e-02 rs=0.0849 (431s, 0.1/s, ETA 4616s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.0849
+VIABLE t_cross=0.0021 Gyr
+[51/585] M1 sig=1.5561e-02 rs=0.1009 (436s, 0.1/s, ETA 4564s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.1009
+VIABLE t_cross=0.0007 Gyr
+[52/585] M1 sig=1.5561e-02 rs=0.1200 (440s, 0.1/s, ETA 4506s) ~~~~~ Creating new halo M1_sig1.5561e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[53/585] M1 sig=2.2720e-02 rs=0.0150 (443s, 0.1/s, ETA 4444s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0150
+no-cross (ratio high)
+[54/585] M1 sig=2.2720e-02 rs=0.0178 (448s, 0.1/s, ETA 4405s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0178
+no-cross (ratio high)
+[55/585] M1 sig=2.2720e-02 rs=0.0212 (453s, 0.1/s, ETA 4368s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0212
+no-cross (ratio high)
+[56/585] M1 sig=2.2720e-02 rs=0.0252 (459s, 0.1/s, ETA 4332s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0252
+no-cross (ratio high)
+[57/585] M1 sig=2.2720e-02 rs=0.0300 (464s, 0.1/s, ETA 4296s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0300
+no-cross (ratio high)
+[58/585] M1 sig=2.2720e-02 rs=0.0357 (469s, 0.1/s, ETA 4261s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0357
+no-cross (ratio high)
+[59/585] M1 sig=2.2720e-02 rs=0.0424 (474s, 0.1/s, ETA 4228s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0424
+no-cross (ratio high)
+[60/585] M1 sig=2.2720e-02 rs=0.0505 (479s, 0.1/s, ETA 4194s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0505
+no-cross (ratio high)
+[61/585] M1 sig=2.2720e-02 rs=0.0600 (511s, 0.1/s, ETA 4389s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0600
+no-cross (ratio high)
+[62/585] M1 sig=2.2720e-02 rs=0.0714 (544s, 0.1/s, ETA 4585s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0714
+VIABLE t_cross=0.0075 Gyr
+[63/585] M1 sig=2.2720e-02 rs=0.0849 (555s, 0.1/s, ETA 4601s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.0849
+VIABLE t_cross=0.0018 Gyr
+[64/585] M1 sig=2.2720e-02 rs=0.1009 (559s, 0.1/s, ETA 4555s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.1009
+VIABLE t_cross=0.0009 Gyr
+[65/585] M1 sig=2.2720e-02 rs=0.1200 (563s, 0.1/s, ETA 4504s) ~~~~~ Creating new halo M1_sig2.2720e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[66/585] M1 sig=3.3172e-02 rs=0.0150 (566s, 0.1/s, ETA 4453s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0150
+no-cross (ratio high)
+[67/585] M1 sig=3.3172e-02 rs=0.0178 (572s, 0.1/s, ETA 4418s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0178
+no-cross (ratio high)
+[68/585] M1 sig=3.3172e-02 rs=0.0212 (577s, 0.1/s, ETA 4385s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0212
+no-cross (ratio high)
+[69/585] M1 sig=3.3172e-02 rs=0.0252 (582s, 0.1/s, ETA 4353s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0252
+no-cross (ratio high)
+[70/585] M1 sig=3.3172e-02 rs=0.0300 (587s, 0.1/s, ETA 4321s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0300
+no-cross (ratio high)
+[71/585] M1 sig=3.3172e-02 rs=0.0357 (593s, 0.1/s, ETA 4290s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0357
+no-cross (ratio high)
+[72/585] M1 sig=3.3172e-02 rs=0.0424 (598s, 0.1/s, ETA 4259s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0424
+no-cross (ratio high)
+[73/585] M1 sig=3.3172e-02 rs=0.0505 (603s, 0.1/s, ETA 4229s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0505
+no-cross (ratio high)
+[74/585] M1 sig=3.3172e-02 rs=0.0600 (627s, 0.1/s, ETA 4332s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0600
+no-cross (ratio high)
+[75/585] M1 sig=3.3172e-02 rs=0.0714 (660s, 0.1/s, ETA 4488s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0714
+VIABLE t_cross=0.0080 Gyr
+[76/585] M1 sig=3.3172e-02 rs=0.0849 (670s, 0.1/s, ETA 4484s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.0849
+VIABLE t_cross=0.0030 Gyr
+[77/585] M1 sig=3.3172e-02 rs=0.1009 (676s, 0.1/s, ETA 4458s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.1009
+VIABLE t_cross=0.0014 Gyr
+[78/585] M1 sig=3.3172e-02 rs=0.1200 (680s, 0.1/s, ETA 4420s) ~~~~~ Creating new halo M1_sig3.3172e-02_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[79/585] M1 sig=4.8431e-02 rs=0.0150 (683s, 0.1/s, ETA 4376s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0150
+no-cross (ratio high)
+[80/585] M1 sig=4.8431e-02 rs=0.0178 (688s, 0.1/s, ETA 4346s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0178
+no-cross (ratio high)
+[81/585] M1 sig=4.8431e-02 rs=0.0212 (694s, 0.1/s, ETA 4317s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0212
+no-cross (ratio high)
+[82/585] M1 sig=4.8431e-02 rs=0.0252 (699s, 0.1/s, ETA 4288s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0252
+no-cross (ratio high)
+[83/585] M1 sig=4.8431e-02 rs=0.0300 (704s, 0.1/s, ETA 4260s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0300
+no-cross (ratio high)
+[84/585] M1 sig=4.8431e-02 rs=0.0357 (710s, 0.1/s, ETA 4232s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0357
+no-cross (ratio high)
+[85/585] M1 sig=4.8431e-02 rs=0.0424 (715s, 0.1/s, ETA 4205s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0424
+no-cross (ratio high)
+[86/585] M1 sig=4.8431e-02 rs=0.0505 (720s, 0.1/s, ETA 4178s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0505
+no-cross (ratio high)
+[87/585] M1 sig=4.8431e-02 rs=0.0600 (725s, 0.1/s, ETA 4151s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0600
+no-cross (ratio high)
+[88/585] M1 sig=4.8431e-02 rs=0.0714 (751s, 0.1/s, ETA 4242s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0714
+VIABLE t_cross=0.0082 Gyr
+[89/585] M1 sig=4.8431e-02 rs=0.0849 (760s, 0.1/s, ETA 4234s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.0849
+VIABLE t_cross=0.0034 Gyr
+[90/585] M1 sig=4.8431e-02 rs=0.1009 (766s, 0.1/s, ETA 4211s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.1009
+VIABLE t_cross=0.0025 Gyr
+[91/585] M1 sig=4.8431e-02 rs=0.1200 (770s, 0.1/s, ETA 4180s) ~~~~~ Creating new halo M1_sig4.8431e-02_rs0.1200
+VIABLE t_cross=0.0003 Gyr
+[92/585] M1 sig=7.0711e-02 rs=0.0150 (773s, 0.1/s, ETA 4144s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0150
+no-cross (ratio high)
+[93/585] M1 sig=7.0711e-02 rs=0.0178 (779s, 0.1/s, ETA 4119s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0178
+no-cross (ratio high)
+[94/585] M1 sig=7.0711e-02 rs=0.0212 (784s, 0.1/s, ETA 4094s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0212
+no-cross (ratio high)
+[95/585] M1 sig=7.0711e-02 rs=0.0252 (789s, 0.1/s, ETA 4070s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0252
+no-cross (ratio high)
+[96/585] M1 sig=7.0711e-02 rs=0.0300 (794s, 0.1/s, ETA 4046s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0300
+no-cross (ratio high)
+[97/585] M1 sig=7.0711e-02 rs=0.0357 (800s, 0.1/s, ETA 4023s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0357
+no-cross (ratio high)
+[98/585] M1 sig=7.0711e-02 rs=0.0424 (805s, 0.1/s, ETA 4000s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0424
+no-cross (ratio high)
+[99/585] M1 sig=7.0711e-02 rs=0.0505 (810s, 0.1/s, ETA 3977s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0505
+no-cross (ratio high)
+[100/585] M1 sig=7.0711e-02 rs=0.0600 (815s, 0.1/s, ETA 3955s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0600
+no-cross (ratio high)
+[101/585] M1 sig=7.0711e-02 rs=0.0714 (837s, 0.1/s, ETA 4012s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0714
+no-cross (ratio high)
+[102/585] M1 sig=7.0711e-02 rs=0.0849 (864s, 0.1/s, ETA 4091s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.0849
+VIABLE t_cross=0.0054 Gyr
+[103/585] M1 sig=7.0711e-02 rs=0.1009 (870s, 0.1/s, ETA 4073s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.1009
+VIABLE t_cross=0.0022 Gyr
+[104/585] M1 sig=7.0711e-02 rs=0.1200 (875s, 0.1/s, ETA 4047s) ~~~~~ Creating new halo M1_sig7.0711e-02_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[105/585] M1 sig=1.0324e-01 rs=0.0150 (878s, 0.1/s, ETA 4015s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0150
+no-cross (ratio high)
+[106/585] M1 sig=1.0324e-01 rs=0.0178 (883s, 0.1/s, ETA 3991s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0178
+no-cross (ratio high)
+[107/585] M1 sig=1.0324e-01 rs=0.0212 (889s, 0.1/s, ETA 3969s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0212
+no-cross (ratio high)
+[108/585] M1 sig=1.0324e-01 rs=0.0252 (894s, 0.1/s, ETA 3948s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0252
+no-cross (ratio high)
+[109/585] M1 sig=1.0324e-01 rs=0.0300 (899s, 0.1/s, ETA 3926s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0300
+no-cross (ratio high)
+[110/585] M1 sig=1.0324e-01 rs=0.0357 (904s, 0.1/s, ETA 3905s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0357
+no-cross (ratio high)
+[111/585] M1 sig=1.0324e-01 rs=0.0424 (910s, 0.1/s, ETA 3885s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0424
+no-cross (ratio high)
+[112/585] M1 sig=1.0324e-01 rs=0.0505 (915s, 0.1/s, ETA 3864s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0505
+no-cross (ratio high)
+[113/585] M1 sig=1.0324e-01 rs=0.0600 (924s, 0.1/s, ETA 3859s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0600
+no-cross (ratio high)
+[114/585] M1 sig=1.0324e-01 rs=0.0714 (946s, 0.1/s, ETA 3909s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0714
+no-cross (ratio high)
+[115/585] M1 sig=1.0324e-01 rs=0.0849 (968s, 0.1/s, ETA 3957s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.0849
+VIABLE t_cross=0.0078 Gyr
+[116/585] M1 sig=1.0324e-01 rs=0.1009 (977s, 0.1/s, ETA 3951s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.1009
+VIABLE t_cross=0.0026 Gyr
+[117/585] M1 sig=1.0324e-01 rs=0.1200 (982s, 0.1/s, ETA 3928s) ~~~~~ Creating new halo M1_sig1.0324e-01_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[118/585] M1 sig=1.5073e-01 rs=0.0150 (985s, 0.1/s, ETA 3899s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0150
+no-cross (ratio high)
+[119/585] M1 sig=1.5073e-01 rs=0.0178 (990s, 0.1/s, ETA 3878s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0178
+no-cross (ratio high)
+[120/585] M1 sig=1.5073e-01 rs=0.0212 (995s, 0.1/s, ETA 3856s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0212
+no-cross (ratio high)
+[121/585] M1 sig=1.5073e-01 rs=0.0252 (1000s, 0.1/s, ETA 3837s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0252
+no-cross (ratio high)
+[122/585] M1 sig=1.5073e-01 rs=0.0300 (1006s, 0.1/s, ETA 3817s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0300
+no-cross (ratio high)
+[123/585] M1 sig=1.5073e-01 rs=0.0357 (1011s, 0.1/s, ETA 3797s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0357
+no-cross (ratio high)
+[124/585] M1 sig=1.5073e-01 rs=0.0424 (1016s, 0.1/s, ETA 3779s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0424
+no-cross (ratio high)
+[125/585] M1 sig=1.5073e-01 rs=0.0505 (1022s, 0.1/s, ETA 3760s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0505
+no-cross (ratio high)
+[126/585] M1 sig=1.5073e-01 rs=0.0600 (1031s, 0.1/s, ETA 3754s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0600
+no-cross (ratio high)
+[127/585] M1 sig=1.5073e-01 rs=0.0714 (1056s, 0.1/s, ETA 3809s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0714
+VIABLE t_cross=0.0265 Gyr
+[128/585] M1 sig=1.5073e-01 rs=0.0849 (1072s, 0.1/s, ETA 3829s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.0849
+VIABLE t_cross=0.0098 Gyr
+[129/585] M1 sig=1.5073e-01 rs=0.1009 (1083s, 0.1/s, ETA 3828s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.1009
+VIABLE t_cross=0.0036 Gyr
+[130/585] M1 sig=1.5073e-01 rs=0.1200 (1086s, 0.1/s, ETA 3800s) ~~~~~ Creating new halo M1_sig1.5073e-01_rs0.1200
+VIABLE t_cross=0.0003 Gyr
+[131/585] M1 sig=2.2007e-01 rs=0.0150 (1087s, 0.1/s, ETA 3767s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0150
+no-cross (ratio high)
+[132/585] M1 sig=2.2007e-01 rs=0.0178 (1089s, 0.1/s, ETA 3736s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0178
+no-cross (ratio high)
+[133/585] M1 sig=2.2007e-01 rs=0.0212 (1091s, 0.1/s, ETA 3706s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0212
+no-cross (ratio high)
+[134/585] M1 sig=2.2007e-01 rs=0.0252 (1093s, 0.1/s, ETA 3677s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0252
+no-cross (ratio high)
+[135/585] M1 sig=2.2007e-01 rs=0.0300 (1095s, 0.1/s, ETA 3649s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0300
+no-cross (ratio high)
+[136/585] M1 sig=2.2007e-01 rs=0.0357 (1097s, 0.1/s, ETA 3620s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0357
+no-cross (ratio high)
+[137/585] M1 sig=2.2007e-01 rs=0.0424 (1099s, 0.1/s, ETA 3593s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0424
+no-cross (ratio high)
+[138/585] M1 sig=2.2007e-01 rs=0.0505 (1101s, 0.1/s, ETA 3565s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0505
+no-cross (ratio high)
+[139/585] M1 sig=2.2007e-01 rs=0.0600 (1104s, 0.1/s, ETA 3544s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0600
+no-cross (ratio high)
+[140/585] M1 sig=2.2007e-01 rs=0.0714 (1118s, 0.1/s, ETA 3554s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0714
+VIABLE t_cross=0.0386 Gyr
+[141/585] M1 sig=2.2007e-01 rs=0.0849 (1128s, 0.1/s, ETA 3553s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.0849
+VIABLE t_cross=0.0149 Gyr
+[142/585] M1 sig=2.2007e-01 rs=0.1009 (1135s, 0.1/s, ETA 3540s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.1009
+VIABLE t_cross=0.0078 Gyr
+[143/585] M1 sig=2.2007e-01 rs=0.1200 (1139s, 0.1/s, ETA 3520s) ~~~~~ Creating new halo M1_sig2.2007e-01_rs0.1200
+VIABLE t_cross=0.0005 Gyr
+[144/585] M1 sig=3.2131e-01 rs=0.0150 (1140s, 0.1/s, ETA 3492s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0150
+no-cross (ratio high)
+[145/585] M1 sig=3.2131e-01 rs=0.0178 (1142s, 0.1/s, ETA 3465s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0178
+no-cross (ratio high)
+[146/585] M1 sig=3.2131e-01 rs=0.0212 (1144s, 0.1/s, ETA 3439s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0212
+no-cross (ratio high)
+[147/585] M1 sig=3.2131e-01 rs=0.0252 (1146s, 0.1/s, ETA 3414s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0252
+no-cross (ratio high)
+[148/585] M1 sig=3.2131e-01 rs=0.0300 (1148s, 0.1/s, ETA 3389s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0300
+no-cross (ratio high)
+[149/585] M1 sig=3.2131e-01 rs=0.0357 (1150s, 0.1/s, ETA 3364s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0357
+no-cross (ratio high)
+[150/585] M1 sig=3.2131e-01 rs=0.0424 (1152s, 0.1/s, ETA 3340s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0424
+no-cross (ratio high)
+[151/585] M1 sig=3.2131e-01 rs=0.0505 (1154s, 0.1/s, ETA 3316s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0505
+no-cross (ratio high)
+[152/585] M1 sig=3.2131e-01 rs=0.0600 (1160s, 0.1/s, ETA 3304s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0600
+no-cross (ratio high)
+[153/585] M1 sig=3.2131e-01 rs=0.0714 (1175s, 0.1/s, ETA 3317s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0714
+no-cross (ratio high)
+[154/585] M1 sig=3.2131e-01 rs=0.0849 (1188s, 0.1/s, ETA 3324s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.0849
+VIABLE t_cross=0.0140 Gyr
+[155/585] M1 sig=3.2131e-01 rs=0.1009 (1196s, 0.1/s, ETA 3317s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.1009
+VIABLE t_cross=0.0069 Gyr
+[156/585] M1 sig=3.2131e-01 rs=0.1200 (1200s, 0.1/s, ETA 3301s) ~~~~~ Creating new halo M1_sig3.2131e-01_rs0.1200
+VIABLE t_cross=0.0007 Gyr
+[157/585] M1 sig=4.6912e-01 rs=0.0150 (1202s, 0.1/s, ETA 3276s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0150
+no-cross (ratio high)
+[158/585] M1 sig=4.6912e-01 rs=0.0178 (1204s, 0.1/s, ETA 3253s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0178
+no-cross (ratio high)
+[159/585] M1 sig=4.6912e-01 rs=0.0212 (1206s, 0.1/s, ETA 3230s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0212
+no-cross (ratio high)
+[160/585] M1 sig=4.6912e-01 rs=0.0252 (1207s, 0.1/s, ETA 3207s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0252
+no-cross (ratio high)
+[161/585] M1 sig=4.6912e-01 rs=0.0300 (1209s, 0.1/s, ETA 3185s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0300
+no-cross (ratio high)
+[162/585] M1 sig=4.6912e-01 rs=0.0357 (1211s, 0.1/s, ETA 3163s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0357
+no-cross (ratio high)
+[163/585] M1 sig=4.6912e-01 rs=0.0424 (1213s, 0.1/s, ETA 3141s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0424
+no-cross (ratio high)
+[164/585] M1 sig=4.6912e-01 rs=0.0505 (1215s, 0.1/s, ETA 3120s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0505
+no-cross (ratio high)
+[165/585] M1 sig=4.6912e-01 rs=0.0600 (1222s, 0.1/s, ETA 3110s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0600
+no-cross (ratio high)
+[166/585] M1 sig=4.6912e-01 rs=0.0714 (1237s, 0.1/s, ETA 3122s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0714
+no-cross (ratio high)
+[167/585] M1 sig=4.6912e-01 rs=0.0849 (1252s, 0.1/s, ETA 3133s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.0849
+VIABLE t_cross=0.0315 Gyr
+[168/585] M1 sig=4.6912e-01 rs=0.1009 (1263s, 0.1/s, ETA 3136s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.1009
+VIABLE t_cross=0.0102 Gyr
+[169/585] M1 sig=4.6912e-01 rs=0.1200 (1269s, 0.1/s, ETA 3123s) ~~~~~ Creating new halo M1_sig4.6912e-01_rs0.1200
+VIABLE t_cross=0.0009 Gyr
+[170/585] M1 sig=6.8492e-01 rs=0.0150 (1270s, 0.1/s, ETA 3100s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0150
+no-cross (ratio high)
+[171/585] M1 sig=6.8492e-01 rs=0.0178 (1272s, 0.1/s, ETA 3079s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0178
+no-cross (ratio high)
+[172/585] M1 sig=6.8492e-01 rs=0.0212 (1274s, 0.1/s, ETA 3058s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0212
+no-cross (ratio high)
+[173/585] M1 sig=6.8492e-01 rs=0.0252 (1275s, 0.1/s, ETA 3038s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0252
+no-cross (ratio high)
+[174/585] M1 sig=6.8492e-01 rs=0.0300 (1277s, 0.1/s, ETA 3017s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0300
+no-cross (ratio high)
+[175/585] M1 sig=6.8492e-01 rs=0.0357 (1279s, 0.1/s, ETA 2997s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0357
+no-cross (ratio high)
+[176/585] M1 sig=6.8492e-01 rs=0.0424 (1281s, 0.1/s, ETA 2977s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0424
+no-cross (ratio high)
+[177/585] M1 sig=6.8492e-01 rs=0.0505 (1283s, 0.1/s, ETA 2958s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0505
+no-cross (ratio high)
+[178/585] M1 sig=6.8492e-01 rs=0.0600 (1294s, 0.1/s, ETA 2959s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0600
+no-cross (ratio high)
+[179/585] M1 sig=6.8492e-01 rs=0.0714 (1309s, 0.1/s, ETA 2968s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0714
+no-cross (ratio high)
+[180/585] M1 sig=6.8492e-01 rs=0.0849 (1323s, 0.1/s, ETA 2976s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.0849
+no-cross (ratio high)
+[181/585] M1 sig=6.8492e-01 rs=0.1009 (1337s, 0.1/s, ETA 2985s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.1009
+VIABLE t_cross=0.0192 Gyr
+[182/585] M1 sig=6.8492e-01 rs=0.1200 (1346s, 0.1/s, ETA 2980s) ~~~~~ Creating new halo M1_sig6.8492e-01_rs0.1200
+VIABLE t_cross=0.0063 Gyr
+[183/585] M1 sig=1.0000e+00 rs=0.0150 (1349s, 0.1/s, ETA 2963s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0150
+no-cross (ratio high)
+[184/585] M1 sig=1.0000e+00 rs=0.0178 (1351s, 0.1/s, ETA 2944s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0178
+no-cross (ratio high)
+[185/585] M1 sig=1.0000e+00 rs=0.0212 (1353s, 0.1/s, ETA 2925s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0212
+no-cross (ratio high)
+[186/585] M1 sig=1.0000e+00 rs=0.0252 (1354s, 0.1/s, ETA 2905s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0252
+no-cross (ratio high)
+[187/585] M1 sig=1.0000e+00 rs=0.0300 (1356s, 0.1/s, ETA 2887s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0300
+no-cross (ratio high)
+[188/585] M1 sig=1.0000e+00 rs=0.0357 (1358s, 0.1/s, ETA 2868s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0357
+no-cross (ratio high)
+[189/585] M1 sig=1.0000e+00 rs=0.0424 (1360s, 0.1/s, ETA 2850s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0424
+no-cross (ratio high)
+[190/585] M1 sig=1.0000e+00 rs=0.0505 (1362s, 0.1/s, ETA 2832s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0505
+no-cross (ratio high)
+[191/585] M1 sig=1.0000e+00 rs=0.0600 (1373s, 0.1/s, ETA 2833s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0600
+no-cross (ratio high)
+[192/585] M1 sig=1.0000e+00 rs=0.0714 (1388s, 0.1/s, ETA 2840s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0714
+no-cross (ratio high)
+[193/585] M1 sig=1.0000e+00 rs=0.0849 (1402s, 0.1/s, ETA 2848s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.0849
+no-cross (ratio high)
+[194/585] M1 sig=1.0000e+00 rs=0.1009 (1416s, 0.1/s, ETA 2855s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.1009
+VIABLE t_cross=0.0215 Gyr
+[195/585] M1 sig=1.0000e+00 rs=0.1200 (1426s, 0.1/s, ETA 2852s) ~~~~~ Creating new halo M1_sig1.0000e+00_rs0.1200
+VIABLE t_cross=0.0017 Gyr
+
+=== Model M2 (M2_scalar_phi_massive) ===
+[196/585] M2 sig=5.0000e-03 rs=0.0150 (1428s, 0.1/s, ETA 2834s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0150
+no-cross (ratio high)
+[197/585] M2 sig=5.0000e-03 rs=0.0178 (1430s, 0.1/s, ETA 2816s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0178
+no-cross (ratio high)
+[198/585] M2 sig=5.0000e-03 rs=0.0212 (1431s, 0.1/s, ETA 2798s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0212
+no-cross (ratio high)
+[199/585] M2 sig=5.0000e-03 rs=0.0252 (1433s, 0.1/s, ETA 2780s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0252
+no-cross (ratio high)
+[200/585] M2 sig=5.0000e-03 rs=0.0300 (1435s, 0.1/s, ETA 2762s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0300
+no-cross (ratio high)
+[201/585] M2 sig=5.0000e-03 rs=0.0357 (1436s, 0.1/s, ETA 2744s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0357
+no-cross (ratio high)
+[202/585] M2 sig=5.0000e-03 rs=0.0424 (1438s, 0.1/s, ETA 2726s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0424
+no-cross (ratio high)
+[203/585] M2 sig=5.0000e-03 rs=0.0505 (1441s, 0.1/s, ETA 2711s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0505
+no-cross (ratio high)
+[204/585] M2 sig=5.0000e-03 rs=0.0600 (1456s, 0.1/s, ETA 2720s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0600
+VIABLE t_cross=0.0037 Gyr
+[205/585] M2 sig=5.0000e-03 rs=0.0714 (1461s, 0.1/s, ETA 2708s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0714
+VIABLE t_cross=0.0038 Gyr
+[206/585] M2 sig=5.0000e-03 rs=0.0849 (1466s, 0.1/s, ETA 2696s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.0849
+VIABLE t_cross=0.0016 Gyr
+[207/585] M2 sig=5.0000e-03 rs=0.1009 (1468s, 0.1/s, ETA 2680s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.1009
+VIABLE t_cross=0.0021 Gyr
+[208/585] M2 sig=5.0000e-03 rs=0.1200 (1469s, 0.1/s, ETA 2663s) ~~~~~ Creating new halo M2_sig5.0000e-03_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[209/585] M2 sig=7.3001e-03 rs=0.0150 (1471s, 0.1/s, ETA 2646s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0150
+no-cross (ratio high)
+[210/585] M2 sig=7.3001e-03 rs=0.0178 (1472s, 0.1/s, ETA 2629s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0178
+no-cross (ratio high)
+[211/585] M2 sig=7.3001e-03 rs=0.0212 (1474s, 0.1/s, ETA 2613s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0212
+no-cross (ratio high)
+[212/585] M2 sig=7.3001e-03 rs=0.0252 (1476s, 0.1/s, ETA 2597s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0252
+no-cross (ratio high)
+[213/585] M2 sig=7.3001e-03 rs=0.0300 (1478s, 0.1/s, ETA 2581s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0300
+no-cross (ratio high)
+[214/585] M2 sig=7.3001e-03 rs=0.0357 (1479s, 0.1/s, ETA 2564s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0357
+no-cross (ratio high)
+[215/585] M2 sig=7.3001e-03 rs=0.0424 (1481s, 0.1/s, ETA 2548s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0424
+no-cross (ratio high)
+[216/585] M2 sig=7.3001e-03 rs=0.0505 (1496s, 0.1/s, ETA 2556s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0505
+no-cross (ratio high)
+[217/585] M2 sig=7.3001e-03 rs=0.0600 (1512s, 0.1/s, ETA 2564s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0600
+VIABLE t_cross=0.0114 Gyr
+[218/585] M2 sig=7.3001e-03 rs=0.0714 (1521s, 0.1/s, ETA 2561s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0714
+VIABLE t_cross=0.0028 Gyr
+[219/585] M2 sig=7.3001e-03 rs=0.0849 (1526s, 0.1/s, ETA 2550s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.0849
+VIABLE t_cross=0.0025 Gyr
+[220/585] M2 sig=7.3001e-03 rs=0.1009 (1528s, 0.1/s, ETA 2535s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.1009
+VIABLE t_cross=0.0008 Gyr
+[221/585] M2 sig=7.3001e-03 rs=0.1200 (1529s, 0.1/s, ETA 2519s) ~~~~~ Creating new halo M2_sig7.3001e-03_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[222/585] M2 sig=1.0658e-02 rs=0.0150 (1530s, 0.1/s, ETA 2502s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0150
+no-cross (ratio high)
+[223/585] M2 sig=1.0658e-02 rs=0.0178 (1532s, 0.1/s, ETA 2487s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0178
+no-cross (ratio high)
+[224/585] M2 sig=1.0658e-02 rs=0.0212 (1534s, 0.1/s, ETA 2472s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0212
+no-cross (ratio high)
+[225/585] M2 sig=1.0658e-02 rs=0.0252 (1536s, 0.1/s, ETA 2457s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0252
+no-cross (ratio high)
+[226/585] M2 sig=1.0658e-02 rs=0.0300 (1538s, 0.1/s, ETA 2442s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0300
+no-cross (ratio high)
+[227/585] M2 sig=1.0658e-02 rs=0.0357 (1539s, 0.1/s, ETA 2428s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0357
+no-cross (ratio high)
+[228/585] M2 sig=1.0658e-02 rs=0.0424 (1541s, 0.1/s, ETA 2413s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0424
+no-cross (ratio high)
+[229/585] M2 sig=1.0658e-02 rs=0.0505 (1543s, 0.1/s, ETA 2398s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0505
+no-cross (ratio high)
+[230/585] M2 sig=1.0658e-02 rs=0.0600 (1558s, 0.1/s, ETA 2405s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0600
+VIABLE t_cross=0.0124 Gyr
+[231/585] M2 sig=1.0658e-02 rs=0.0714 (1566s, 0.1/s, ETA 2400s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0714
+VIABLE t_cross=0.0025 Gyr
+[232/585] M2 sig=1.0658e-02 rs=0.0849 (1568s, 0.1/s, ETA 2385s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.0849
+VIABLE t_cross=0.0017 Gyr
+[233/585] M2 sig=1.0658e-02 rs=0.1009 (1570s, 0.1/s, ETA 2371s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.1009
+VIABLE t_cross=0.0006 Gyr
+[234/585] M2 sig=1.0658e-02 rs=0.1200 (1571s, 0.1/s, ETA 2356s) ~~~~~ Creating new halo M2_sig1.0658e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[235/585] M2 sig=1.5561e-02 rs=0.0150 (1572s, 0.1/s, ETA 2341s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0150
+no-cross (ratio high)
+[236/585] M2 sig=1.5561e-02 rs=0.0178 (1574s, 0.1/s, ETA 2327s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0178
+no-cross (ratio high)
+[237/585] M2 sig=1.5561e-02 rs=0.0212 (1575s, 0.2/s, ETA 2313s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0212
+no-cross (ratio high)
+[238/585] M2 sig=1.5561e-02 rs=0.0252 (1577s, 0.2/s, ETA 2299s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0252
+no-cross (ratio high)
+[239/585] M2 sig=1.5561e-02 rs=0.0300 (1579s, 0.2/s, ETA 2286s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0300
+no-cross (ratio high)
+[240/585] M2 sig=1.5561e-02 rs=0.0357 (1581s, 0.2/s, ETA 2272s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0357
+no-cross (ratio high)
+[241/585] M2 sig=1.5561e-02 rs=0.0424 (1582s, 0.2/s, ETA 2259s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0424
+no-cross (ratio high)
+[242/585] M2 sig=1.5561e-02 rs=0.0505 (1584s, 0.2/s, ETA 2245s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0505
+no-cross (ratio high)
+[243/585] M2 sig=1.5561e-02 rs=0.0600 (1600s, 0.2/s, ETA 2251s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0600
+no-cross (ratio high)
+[244/585] M2 sig=1.5561e-02 rs=0.0714 (1615s, 0.2/s, ETA 2257s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0714
+VIABLE t_cross=0.0031 Gyr
+[245/585] M2 sig=1.5561e-02 rs=0.0849 (1619s, 0.2/s, ETA 2246s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.0849
+VIABLE t_cross=0.0016 Gyr
+[246/585] M2 sig=1.5561e-02 rs=0.1009 (1620s, 0.2/s, ETA 2233s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.1009
+VIABLE t_cross=0.0006 Gyr
+[247/585] M2 sig=1.5561e-02 rs=0.1200 (1621s, 0.2/s, ETA 2219s) ~~~~~ Creating new halo M2_sig1.5561e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[248/585] M2 sig=2.2720e-02 rs=0.0150 (1622s, 0.2/s, ETA 2205s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0150
+no-cross (ratio high)
+[249/585] M2 sig=2.2720e-02 rs=0.0178 (1624s, 0.2/s, ETA 2192s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0178
+no-cross (ratio high)
+[250/585] M2 sig=2.2720e-02 rs=0.0212 (1626s, 0.2/s, ETA 2179s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0212
+no-cross (ratio high)
+[251/585] M2 sig=2.2720e-02 rs=0.0252 (1628s, 0.2/s, ETA 2166s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0252
+no-cross (ratio high)
+[252/585] M2 sig=2.2720e-02 rs=0.0300 (1630s, 0.2/s, ETA 2154s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0300
+no-cross (ratio high)
+[253/585] M2 sig=2.2720e-02 rs=0.0357 (1632s, 0.2/s, ETA 2141s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0357
+no-cross (ratio high)
+[254/585] M2 sig=2.2720e-02 rs=0.0424 (1633s, 0.2/s, ETA 2128s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0424
+no-cross (ratio high)
+[255/585] M2 sig=2.2720e-02 rs=0.0505 (1635s, 0.2/s, ETA 2116s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0505
+no-cross (ratio high)
+[256/585] M2 sig=2.2720e-02 rs=0.0600 (1651s, 0.2/s, ETA 2121s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0600
+VIABLE t_cross=0.0121 Gyr
+[257/585] M2 sig=2.2720e-02 rs=0.0714 (1655s, 0.2/s, ETA 2112s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0714
+VIABLE t_cross=0.0041 Gyr
+[258/585] M2 sig=2.2720e-02 rs=0.0849 (1658s, 0.2/s, ETA 2101s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.0849
+VIABLE t_cross=0.0019 Gyr
+[259/585] M2 sig=2.2720e-02 rs=0.1009 (1660s, 0.2/s, ETA 2089s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.1009
+VIABLE t_cross=0.0007 Gyr
+[260/585] M2 sig=2.2720e-02 rs=0.1200 (1661s, 0.2/s, ETA 2076s) ~~~~~ Creating new halo M2_sig2.2720e-02_rs0.1200
+VIABLE t_cross=0.0000 Gyr
+[261/585] M2 sig=3.3172e-02 rs=0.0150 (1676s, 0.2/s, ETA 2081s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0150
+no-cross (ratio high)
+[262/585] M2 sig=3.3172e-02 rs=0.0178 (1678s, 0.2/s, ETA 2069s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0178
+no-cross (ratio high)
+[263/585] M2 sig=3.3172e-02 rs=0.0212 (1680s, 0.2/s, ETA 2057s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0212
+no-cross (ratio high)
+[264/585] M2 sig=3.3172e-02 rs=0.0252 (1682s, 0.2/s, ETA 2045s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0252
+no-cross (ratio high)
+[265/585] M2 sig=3.3172e-02 rs=0.0300 (1684s, 0.2/s, ETA 2033s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0300
+no-cross (ratio high)
+[266/585] M2 sig=3.3172e-02 rs=0.0357 (1686s, 0.2/s, ETA 2021s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0357
+no-cross (ratio high)
+[267/585] M2 sig=3.3172e-02 rs=0.0424 (1687s, 0.2/s, ETA 2010s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0424
+no-cross (ratio high)
+[268/585] M2 sig=3.3172e-02 rs=0.0505 (1689s, 0.2/s, ETA 1998s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0505
+no-cross (ratio high)
+[269/585] M2 sig=3.3172e-02 rs=0.0600 (1702s, 0.2/s, ETA 2000s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0600
+no-cross (ratio high)
+[270/585] M2 sig=3.3172e-02 rs=0.0714 (1718s, 0.2/s, ETA 2004s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0714
+VIABLE t_cross=0.0054 Gyr
+[271/585] M2 sig=3.3172e-02 rs=0.0849 (1720s, 0.2/s, ETA 1993s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.0849
+VIABLE t_cross=0.0017 Gyr
+[272/585] M2 sig=3.3172e-02 rs=0.1009 (1722s, 0.2/s, ETA 1981s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.1009
+VIABLE t_cross=0.0008 Gyr
+[273/585] M2 sig=3.3172e-02 rs=0.1200 (1723s, 0.2/s, ETA 1969s) ~~~~~ Creating new halo M2_sig3.3172e-02_rs0.1200
+VIABLE t_cross=0.0001 Gyr
+[274/585] M2 sig=4.8431e-02 rs=0.0150 (1724s, 0.2/s, ETA 1957s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0150
+no-cross (ratio high)
+[275/585] M2 sig=4.8431e-02 rs=0.0178 (1726s, 0.2/s, ETA 1945s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0178
+no-cross (ratio high)
+[276/585] M2 sig=4.8431e-02 rs=0.0212 (1728s, 0.2/s, ETA 1934s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0212
+no-cross (ratio high)
+[277/585] M2 sig=4.8431e-02 rs=0.0252 (1729s, 0.2/s, ETA 1923s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0252
+no-cross (ratio high)
+[278/585] M2 sig=4.8431e-02 rs=0.0300 (1731s, 0.2/s, ETA 1912s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0300
+no-cross (ratio high)
+[279/585] M2 sig=4.8431e-02 rs=0.0357 (1733s, 0.2/s, ETA 1901s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0357
+no-cross (ratio high)
+[280/585] M2 sig=4.8431e-02 rs=0.0424 (1735s, 0.2/s, ETA 1890s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0424
+no-cross (ratio high)
+[281/585] M2 sig=4.8431e-02 rs=0.0505 (1737s, 0.2/s, ETA 1879s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0505
+no-cross (ratio high)
+[282/585] M2 sig=4.8431e-02 rs=0.0600 (1747s, 0.2/s, ETA 1877s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0600
+no-cross (ratio high)
+[283/585] M2 sig=4.8431e-02 rs=0.0714 (1761s, 0.2/s, ETA 1879s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0714
+VIABLE t_cross=0.0068 Gyr
+[284/585] M2 sig=4.8431e-02 rs=0.0849 (1765s, 0.2/s, ETA 1870s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.0849
+VIABLE t_cross=0.0026 Gyr
+[285/585] M2 sig=4.8431e-02 rs=0.1009 (1766s, 0.2/s, ETA 1859s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.1009
+VIABLE t_cross=0.0013 Gyr
+[286/585] M2 sig=4.8431e-02 rs=0.1200 (1767s, 0.2/s, ETA 1848s) ~~~~~ Creating new halo M2_sig4.8431e-02_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[287/585] M2 sig=7.0711e-02 rs=0.0150 (1768s, 0.2/s, ETA 1836s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0150
+no-cross (ratio high)
+[288/585] M2 sig=7.0711e-02 rs=0.0178 (1770s, 0.2/s, ETA 1826s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0178
+no-cross (ratio high)
+[289/585] M2 sig=7.0711e-02 rs=0.0212 (1772s, 0.2/s, ETA 1815s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0212
+no-cross (ratio high)
+[290/585] M2 sig=7.0711e-02 rs=0.0252 (1774s, 0.2/s, ETA 1805s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0252
+no-cross (ratio high)
+[291/585] M2 sig=7.0711e-02 rs=0.0300 (1776s, 0.2/s, ETA 1794s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0300
+no-cross (ratio high)
+[292/585] M2 sig=7.0711e-02 rs=0.0357 (1778s, 0.2/s, ETA 1784s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0357
+no-cross (ratio high)
+[293/585] M2 sig=7.0711e-02 rs=0.0424 (1779s, 0.2/s, ETA 1773s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0424
+no-cross (ratio high)
+[294/585] M2 sig=7.0711e-02 rs=0.0505 (1781s, 0.2/s, ETA 1763s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0505
+no-cross (ratio high)
+[295/585] M2 sig=7.0711e-02 rs=0.0600 (1783s, 0.2/s, ETA 1753s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0600
+no-cross (ratio high)
+[296/585] M2 sig=7.0711e-02 rs=0.0714 (1794s, 0.2/s, ETA 1751s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0714
+VIABLE t_cross=0.0077 Gyr
+[297/585] M2 sig=7.0711e-02 rs=0.0849 (1797s, 0.2/s, ETA 1742s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.0849
+VIABLE t_cross=0.0030 Gyr
+[298/585] M2 sig=7.0711e-02 rs=0.1009 (1799s, 0.2/s, ETA 1732s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.1009
+VIABLE t_cross=0.0021 Gyr
+[299/585] M2 sig=7.0711e-02 rs=0.1200 (1800s, 0.2/s, ETA 1722s) ~~~~~ Creating new halo M2_sig7.0711e-02_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[300/585] M2 sig=1.0324e-01 rs=0.0150 (1801s, 0.2/s, ETA 1711s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0150
+no-cross (ratio high)
+[301/585] M2 sig=1.0324e-01 rs=0.0178 (1803s, 0.2/s, ETA 1701s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0178
+no-cross (ratio high)
+[302/585] M2 sig=1.0324e-01 rs=0.0212 (1805s, 0.2/s, ETA 1692s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0212
+no-cross (ratio high)
+[303/585] M2 sig=1.0324e-01 rs=0.0252 (1807s, 0.2/s, ETA 1682s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0252
+no-cross (ratio high)
+[304/585] M2 sig=1.0324e-01 rs=0.0300 (1809s, 0.2/s, ETA 1672s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0300
+no-cross (ratio high)
+[305/585] M2 sig=1.0324e-01 rs=0.0357 (1811s, 0.2/s, ETA 1662s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0357
+no-cross (ratio high)
+[306/585] M2 sig=1.0324e-01 rs=0.0424 (1812s, 0.2/s, ETA 1652s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0424
+no-cross (ratio high)
+[307/585] M2 sig=1.0324e-01 rs=0.0505 (1814s, 0.2/s, ETA 1643s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0505
+no-cross (ratio high)
+[308/585] M2 sig=1.0324e-01 rs=0.0600 (1816s, 0.2/s, ETA 1633s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0600
+no-cross (ratio high)
+[309/585] M2 sig=1.0324e-01 rs=0.0714 (1825s, 0.2/s, ETA 1630s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0714
+VIABLE t_cross=0.0127 Gyr
+[310/585] M2 sig=1.0324e-01 rs=0.0849 (1828s, 0.2/s, ETA 1621s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.0849
+VIABLE t_cross=0.0047 Gyr
+[311/585] M2 sig=1.0324e-01 rs=0.1009 (1830s, 0.2/s, ETA 1612s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.1009
+VIABLE t_cross=0.0020 Gyr
+[312/585] M2 sig=1.0324e-01 rs=0.1200 (1832s, 0.2/s, ETA 1603s) ~~~~~ Creating new halo M2_sig1.0324e-01_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[313/585] M2 sig=1.5073e-01 rs=0.0150 (1833s, 0.2/s, ETA 1593s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0150
+no-cross (ratio high)
+[314/585] M2 sig=1.5073e-01 rs=0.0178 (1835s, 0.2/s, ETA 1583s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0178
+no-cross (ratio high)
+[315/585] M2 sig=1.5073e-01 rs=0.0212 (1836s, 0.2/s, ETA 1574s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0212
+no-cross (ratio high)
+[316/585] M2 sig=1.5073e-01 rs=0.0252 (1838s, 0.2/s, ETA 1565s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0252
+no-cross (ratio high)
+[317/585] M2 sig=1.5073e-01 rs=0.0300 (1840s, 0.2/s, ETA 1556s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0300
+no-cross (ratio high)
+[318/585] M2 sig=1.5073e-01 rs=0.0357 (1842s, 0.2/s, ETA 1547s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0357
+no-cross (ratio high)
+[319/585] M2 sig=1.5073e-01 rs=0.0424 (1844s, 0.2/s, ETA 1537s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0424
+no-cross (ratio high)
+[320/585] M2 sig=1.5073e-01 rs=0.0505 (1846s, 0.2/s, ETA 1528s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0505
+no-cross (ratio high)
+[321/585] M2 sig=1.5073e-01 rs=0.0600 (1847s, 0.2/s, ETA 1519s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0600
+no-cross (ratio high)
+[322/585] M2 sig=1.5073e-01 rs=0.0714 (1856s, 0.2/s, ETA 1516s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0714
+VIABLE t_cross=0.0201 Gyr
+[323/585] M2 sig=1.5073e-01 rs=0.0849 (1861s, 0.2/s, ETA 1509s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.0849
+VIABLE t_cross=0.0093 Gyr
+[324/585] M2 sig=1.5073e-01 rs=0.1009 (1864s, 0.2/s, ETA 1501s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.1009
+VIABLE t_cross=0.0039 Gyr
+[325/585] M2 sig=1.5073e-01 rs=0.1200 (1866s, 0.2/s, ETA 1493s) ~~~~~ Creating new halo M2_sig1.5073e-01_rs0.1200
+VIABLE t_cross=0.0002 Gyr
+[326/585] M2 sig=2.2007e-01 rs=0.0150 (1867s, 0.2/s, ETA 1483s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0150
+no-cross (ratio high)
+[327/585] M2 sig=2.2007e-01 rs=0.0178 (1869s, 0.2/s, ETA 1475s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0178
+no-cross (ratio high)
+[328/585] M2 sig=2.2007e-01 rs=0.0212 (1871s, 0.2/s, ETA 1466s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0212
+no-cross (ratio high)
+[329/585] M2 sig=2.2007e-01 rs=0.0252 (1873s, 0.2/s, ETA 1457s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0252
+no-cross (ratio high)
+[330/585] M2 sig=2.2007e-01 rs=0.0300 (1875s, 0.2/s, ETA 1448s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0300
+no-cross (ratio high)
+[331/585] M2 sig=2.2007e-01 rs=0.0357 (1876s, 0.2/s, ETA 1440s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0357
+no-cross (ratio high)
+[332/585] M2 sig=2.2007e-01 rs=0.0424 (1878s, 0.2/s, ETA 1431s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0424
+no-cross (ratio high)
+[333/585] M2 sig=2.2007e-01 rs=0.0505 (1880s, 0.2/s, ETA 1423s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0505
+no-cross (ratio high)
+[334/585] M2 sig=2.2007e-01 rs=0.0600 (1883s, 0.2/s, ETA 1415s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0600
+no-cross (ratio high)
+[335/585] M2 sig=2.2007e-01 rs=0.0714 (1893s, 0.2/s, ETA 1412s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0714
+VIABLE t_cross=0.0239 Gyr
+[336/585] M2 sig=2.2007e-01 rs=0.0849 (1898s, 0.2/s, ETA 1407s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.0849
+VIABLE t_cross=0.0077 Gyr
+[337/585] M2 sig=2.2007e-01 rs=0.1009 (1902s, 0.2/s, ETA 1400s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.1009
+VIABLE t_cross=0.0034 Gyr
+[338/585] M2 sig=2.2007e-01 rs=0.1200 (1905s, 0.2/s, ETA 1392s) ~~~~~ Creating new halo M2_sig2.2007e-01_rs0.1200
+VIABLE t_cross=0.0003 Gyr
+[339/585] M2 sig=3.2131e-01 rs=0.0150 (1906s, 0.2/s, ETA 1383s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0150
+no-cross (ratio high)
+[340/585] M2 sig=3.2131e-01 rs=0.0178 (1907s, 0.2/s, ETA 1374s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0178
+no-cross (ratio high)
+[341/585] M2 sig=3.2131e-01 rs=0.0212 (1909s, 0.2/s, ETA 1366s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0212
+no-cross (ratio high)
+[342/585] M2 sig=3.2131e-01 rs=0.0252 (1911s, 0.2/s, ETA 1358s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0252
+no-cross (ratio high)
+[343/585] M2 sig=3.2131e-01 rs=0.0300 (1913s, 0.2/s, ETA 1350s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0300
+no-cross (ratio high)
+[344/585] M2 sig=3.2131e-01 rs=0.0357 (1915s, 0.2/s, ETA 1341s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0357
+no-cross (ratio high)
+[345/585] M2 sig=3.2131e-01 rs=0.0424 (1917s, 0.2/s, ETA 1333s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0424
+no-cross (ratio high)
+[346/585] M2 sig=3.2131e-01 rs=0.0505 (1918s, 0.2/s, ETA 1325s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0505
+no-cross (ratio high)
+[347/585] M2 sig=3.2131e-01 rs=0.0600 (1922s, 0.2/s, ETA 1318s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0600
+no-cross (ratio high)
+[348/585] M2 sig=3.2131e-01 rs=0.0714 (1933s, 0.2/s, ETA 1317s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0714
+VIABLE t_cross=0.0273 Gyr
+[349/585] M2 sig=3.2131e-01 rs=0.0849 (1942s, 0.2/s, ETA 1313s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.0849
+VIABLE t_cross=0.0136 Gyr
+[350/585] M2 sig=3.2131e-01 rs=0.1009 (1948s, 0.2/s, ETA 1308s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.1009
+VIABLE t_cross=0.0070 Gyr
+[351/585] M2 sig=3.2131e-01 rs=0.1200 (1952s, 0.2/s, ETA 1301s) ~~~~~ Creating new halo M2_sig3.2131e-01_rs0.1200
+VIABLE t_cross=0.0005 Gyr
+[352/585] M2 sig=4.6912e-01 rs=0.0150 (1953s, 0.2/s, ETA 1293s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0150
+no-cross (ratio high)
+[353/585] M2 sig=4.6912e-01 rs=0.0178 (1954s, 0.2/s, ETA 1284s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0178
+no-cross (ratio high)
+[354/585] M2 sig=4.6912e-01 rs=0.0212 (1956s, 0.2/s, ETA 1276s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0212
+no-cross (ratio high)
+[355/585] M2 sig=4.6912e-01 rs=0.0252 (1958s, 0.2/s, ETA 1268s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0252
+no-cross (ratio high)
+[356/585] M2 sig=4.6912e-01 rs=0.0300 (1960s, 0.2/s, ETA 1261s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0300
+no-cross (ratio high)
+[357/585] M2 sig=4.6912e-01 rs=0.0357 (1962s, 0.2/s, ETA 1253s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0357
+no-cross (ratio high)
+[358/585] M2 sig=4.6912e-01 rs=0.0424 (1963s, 0.2/s, ETA 1245s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0424
+no-cross (ratio high)
+[359/585] M2 sig=4.6912e-01 rs=0.0505 (1965s, 0.2/s, ETA 1237s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0505
+no-cross (ratio high)
+[360/585] M2 sig=4.6912e-01 rs=0.0600 (1971s, 0.2/s, ETA 1232s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0600
+no-cross (ratio high)
+[361/585] M2 sig=4.6912e-01 rs=0.0714 (1985s, 0.2/s, ETA 1232s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0714
+VIABLE t_cross=0.0101 Gyr
+[362/585] M2 sig=4.6912e-01 rs=0.0849 (1990s, 0.2/s, ETA 1226s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.0849
+VIABLE t_cross=0.0210 Gyr
+[363/585] M2 sig=4.6912e-01 rs=0.1009 (1997s, 0.2/s, ETA 1222s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.1009
+VIABLE t_cross=0.0075 Gyr
+[364/585] M2 sig=4.6912e-01 rs=0.1200 (2002s, 0.2/s, ETA 1215s) ~~~~~ Creating new halo M2_sig4.6912e-01_rs0.1200
+VIABLE t_cross=0.0007 Gyr
+[365/585] M2 sig=6.8492e-01 rs=0.0150 (2003s, 0.2/s, ETA 1207s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0150
+no-cross (ratio high)
+[366/585] M2 sig=6.8492e-01 rs=0.0178 (2005s, 0.2/s, ETA 1200s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0178
+no-cross (ratio high)
+[367/585] M2 sig=6.8492e-01 rs=0.0212 (2007s, 0.2/s, ETA 1192s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0212
+no-cross (ratio high)
+[368/585] M2 sig=6.8492e-01 rs=0.0252 (2008s, 0.2/s, ETA 1184s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0252
+no-cross (ratio high)
+[369/585] M2 sig=6.8492e-01 rs=0.0300 (2010s, 0.2/s, ETA 1177s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0300
+no-cross (ratio high)
+[370/585] M2 sig=6.8492e-01 rs=0.0357 (2012s, 0.2/s, ETA 1169s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0357
+no-cross (ratio high)
+[371/585] M2 sig=6.8492e-01 rs=0.0424 (2014s, 0.2/s, ETA 1162s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0424
+no-cross (ratio high)
+[372/585] M2 sig=6.8492e-01 rs=0.0505 (2016s, 0.2/s, ETA 1154s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0505
+no-cross (ratio high)
+[373/585] M2 sig=6.8492e-01 rs=0.0600 (2021s, 0.2/s, ETA 1149s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0600
+no-cross (ratio high)
+[374/585] M2 sig=6.8492e-01 rs=0.0714 (2035s, 0.2/s, ETA 1148s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0714
+VIABLE t_cross=0.0532 Gyr
+[375/585] M2 sig=6.8492e-01 rs=0.0849 (2049s, 0.2/s, ETA 1148s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.0849
+no-cross (ratio high)
+[376/585] M2 sig=6.8492e-01 rs=0.1009 (2053s, 0.2/s, ETA 1141s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.1009
+VIABLE t_cross=0.0165 Gyr
+[377/585] M2 sig=6.8492e-01 rs=0.1200 (2060s, 0.2/s, ETA 1136s) ~~~~~ Creating new halo M2_sig6.8492e-01_rs0.1200
+VIABLE t_cross=0.0009 Gyr
+[378/585] M2 sig=1.0000e+00 rs=0.0150 (2061s, 0.2/s, ETA 1129s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0150
+no-cross (ratio high)
+[379/585] M2 sig=1.0000e+00 rs=0.0178 (2063s, 0.2/s, ETA 1121s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0178
+no-cross (ratio high)
+[380/585] M2 sig=1.0000e+00 rs=0.0212 (2064s, 0.2/s, ETA 1114s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0212
+no-cross (ratio high)
+[381/585] M2 sig=1.0000e+00 rs=0.0252 (2066s, 0.2/s, ETA 1106s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0252
+no-cross (ratio high)
+[382/585] M2 sig=1.0000e+00 rs=0.0300 (2068s, 0.2/s, ETA 1099s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0300
+no-cross (ratio high)
+[383/585] M2 sig=1.0000e+00 rs=0.0357 (2070s, 0.2/s, ETA 1092s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0357
+no-cross (ratio high)
+[384/585] M2 sig=1.0000e+00 rs=0.0424 (2071s, 0.2/s, ETA 1084s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0424
+no-cross (ratio high)
+[385/585] M2 sig=1.0000e+00 rs=0.0505 (2073s, 0.2/s, ETA 1077s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0505
+no-cross (ratio high)
+[386/585] M2 sig=1.0000e+00 rs=0.0600 (2084s, 0.2/s, ETA 1074s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0600
+no-cross (ratio high)
+[387/585] M2 sig=1.0000e+00 rs=0.0714 (2098s, 0.2/s, ETA 1073s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0714
+no-cross (ratio high)
+[388/585] M2 sig=1.0000e+00 rs=0.0849 (2112s, 0.2/s, ETA 1072s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.0849
+VIABLE t_cross=0.0468 Gyr
+[389/585] M2 sig=1.0000e+00 rs=0.1009 (2126s, 0.2/s, ETA 1071s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.1009
+VIABLE t_cross=0.0166 Gyr
+[390/585] M2 sig=1.0000e+00 rs=0.1200 (2134s, 0.2/s, ETA 1067s) ~~~~~ Creating new halo M2_sig1.0000e+00_rs0.1200
+VIABLE t_cross=0.0060 Gyr
+
+=== Model M3 (const_rdiss_1p05) ===
+[391/585] M3 sig=5.0000e-03 rs=0.0150 (2137s, 0.2/s, ETA 1060s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0150
+no-cross (ratio high)
+[392/585] M3 sig=5.0000e-03 rs=0.0178 (2138s, 0.2/s, ETA 1053s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0178
+no-cross (ratio high)
+[393/585] M3 sig=5.0000e-03 rs=0.0212 (2139s, 0.2/s, ETA 1045s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0212
+no-cross (ratio high)
+[394/585] M3 sig=5.0000e-03 rs=0.0252 (2140s, 0.2/s, ETA 1037s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0252
+no-cross (ratio high)
+[395/585] M3 sig=5.0000e-03 rs=0.0300 (2141s, 0.2/s, ETA 1030s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0300
+no-cross (ratio high)
+[396/585] M3 sig=5.0000e-03 rs=0.0357 (2142s, 0.2/s, ETA 1022s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0357
+no-cross (ratio high)
+[397/585] M3 sig=5.0000e-03 rs=0.0424 (2142s, 0.2/s, ETA 1015s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0424
+no-cross (ratio high)
+[398/585] M3 sig=5.0000e-03 rs=0.0505 (2143s, 0.2/s, ETA 1007s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0505
+no-cross (ratio high)
+[399/585] M3 sig=5.0000e-03 rs=0.0600 (2154s, 0.2/s, ETA 1004s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0600
+no-cross (ratio high)
+[400/585] M3 sig=5.0000e-03 rs=0.0714 (2165s, 0.2/s, ETA 1001s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0714
+no-cross (ratio high)
+[401/585] M3 sig=5.0000e-03 rs=0.0849 (2176s, 0.2/s, ETA 998s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.0849
+no-cross (ratio high)
+[402/585] M3 sig=5.0000e-03 rs=0.1009 (2187s, 0.2/s, ETA 995s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.1009
+no-cross (ratio high)
+[403/585] M3 sig=5.0000e-03 rs=0.1200 (2197s, 0.2/s, ETA 992s) ~~~~~ Creating new halo M3_sig5.0000e-03_rs0.1200
+no-cross (ratio high)
+[404/585] M3 sig=7.3001e-03 rs=0.0150 (2208s, 0.2/s, ETA 989s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0150
+no-cross (ratio high)
+[405/585] M3 sig=7.3001e-03 rs=0.0178 (2209s, 0.2/s, ETA 982s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0178
+no-cross (ratio high)
+[406/585] M3 sig=7.3001e-03 rs=0.0212 (2210s, 0.2/s, ETA 974s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0212
+no-cross (ratio high)
+[407/585] M3 sig=7.3001e-03 rs=0.0252 (2211s, 0.2/s, ETA 967s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0252
+no-cross (ratio high)
+[408/585] M3 sig=7.3001e-03 rs=0.0300 (2212s, 0.2/s, ETA 960s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0300
+no-cross (ratio high)
+[409/585] M3 sig=7.3001e-03 rs=0.0357 (2213s, 0.2/s, ETA 952s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0357
+no-cross (ratio high)
+[410/585] M3 sig=7.3001e-03 rs=0.0424 (2214s, 0.2/s, ETA 945s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0424
+no-cross (ratio high)
+[411/585] M3 sig=7.3001e-03 rs=0.0505 (2215s, 0.2/s, ETA 938s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0505
+no-cross (ratio high)
+[412/585] M3 sig=7.3001e-03 rs=0.0600 (2225s, 0.2/s, ETA 934s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0600
+no-cross (ratio high)
+[413/585] M3 sig=7.3001e-03 rs=0.0714 (2236s, 0.2/s, ETA 931s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0714
+no-cross (ratio high)
+[414/585] M3 sig=7.3001e-03 rs=0.0849 (2247s, 0.2/s, ETA 928s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.0849
+no-cross (ratio high)
+[415/585] M3 sig=7.3001e-03 rs=0.1009 (2258s, 0.2/s, ETA 925s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.1009
+no-cross (ratio high)
+[416/585] M3 sig=7.3001e-03 rs=0.1200 (2269s, 0.2/s, ETA 922s) ~~~~~ Creating new halo M3_sig7.3001e-03_rs0.1200
+no-cross (ratio high)
+[417/585] M3 sig=1.0658e-02 rs=0.0150 (2279s, 0.2/s, ETA 918s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0150
+no-cross (ratio high)
+[418/585] M3 sig=1.0658e-02 rs=0.0178 (2280s, 0.2/s, ETA 911s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0178
+no-cross (ratio high)
+[419/585] M3 sig=1.0658e-02 rs=0.0212 (2281s, 0.2/s, ETA 904s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0212
+no-cross (ratio high)
+[420/585] M3 sig=1.0658e-02 rs=0.0252 (2282s, 0.2/s, ETA 896s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0252
+no-cross (ratio high)
+[421/585] M3 sig=1.0658e-02 rs=0.0300 (2283s, 0.2/s, ETA 889s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0300
+no-cross (ratio high)
+[422/585] M3 sig=1.0658e-02 rs=0.0357 (2284s, 0.2/s, ETA 882s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0357
+no-cross (ratio high)
+[423/585] M3 sig=1.0658e-02 rs=0.0424 (2285s, 0.2/s, ETA 875s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0424
+no-cross (ratio high)
+[424/585] M3 sig=1.0658e-02 rs=0.0505 (2286s, 0.2/s, ETA 868s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0505
+no-cross (ratio high)
+[425/585] M3 sig=1.0658e-02 rs=0.0600 (2296s, 0.2/s, ETA 864s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0600
+no-cross (ratio high)
+[426/585] M3 sig=1.0658e-02 rs=0.0714 (2307s, 0.2/s, ETA 861s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0714
+no-cross (ratio high)
+[427/585] M3 sig=1.0658e-02 rs=0.0849 (2318s, 0.2/s, ETA 858s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.0849
+no-cross (ratio high)
+[428/585] M3 sig=1.0658e-02 rs=0.1009 (2329s, 0.2/s, ETA 854s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.1009
+no-cross (ratio high)
+[429/585] M3 sig=1.0658e-02 rs=0.1200 (2340s, 0.2/s, ETA 851s) ~~~~~ Creating new halo M3_sig1.0658e-02_rs0.1200
+VIABLE t_cross=0.0323 Gyr
+[430/585] M3 sig=1.5561e-02 rs=0.0150 (2350s, 0.2/s, ETA 847s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0150
+no-cross (ratio high)
+[431/585] M3 sig=1.5561e-02 rs=0.0178 (2351s, 0.2/s, ETA 840s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0178
+no-cross (ratio high)
+[432/585] M3 sig=1.5561e-02 rs=0.0212 (2352s, 0.2/s, ETA 833s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0212
+no-cross (ratio high)
+[433/585] M3 sig=1.5561e-02 rs=0.0252 (2353s, 0.2/s, ETA 826s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0252
+no-cross (ratio high)
+[434/585] M3 sig=1.5561e-02 rs=0.0300 (2354s, 0.2/s, ETA 819s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0300
+no-cross (ratio high)
+[435/585] M3 sig=1.5561e-02 rs=0.0357 (2355s, 0.2/s, ETA 812s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0357
+no-cross (ratio high)
+[436/585] M3 sig=1.5561e-02 rs=0.0424 (2356s, 0.2/s, ETA 805s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0424
+no-cross (ratio high)
+[437/585] M3 sig=1.5561e-02 rs=0.0505 (2356s, 0.2/s, ETA 798s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0505
+no-cross (ratio high)
+[438/585] M3 sig=1.5561e-02 rs=0.0600 (2367s, 0.2/s, ETA 794s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0600
+no-cross (ratio high)
+[439/585] M3 sig=1.5561e-02 rs=0.0714 (2378s, 0.2/s, ETA 791s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0714
+no-cross (ratio high)
+[440/585] M3 sig=1.5561e-02 rs=0.0849 (2389s, 0.2/s, ETA 787s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.0849
+no-cross (ratio high)
+[441/585] M3 sig=1.5561e-02 rs=0.1009 (2399s, 0.2/s, ETA 783s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.1009
+no-cross (ratio high)
+[442/585] M3 sig=1.5561e-02 rs=0.1200 (2409s, 0.2/s, ETA 779s) ~~~~~ Creating new halo M3_sig1.5561e-02_rs0.1200
+VIABLE t_cross=0.0223 Gyr
+[443/585] M3 sig=2.2720e-02 rs=0.0150 (2415s, 0.2/s, ETA 774s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0150
+no-cross (ratio high)
+[444/585] M3 sig=2.2720e-02 rs=0.0178 (2416s, 0.2/s, ETA 767s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0178
+no-cross (ratio high)
+[445/585] M3 sig=2.2720e-02 rs=0.0212 (2416s, 0.2/s, ETA 760s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0212
+no-cross (ratio high)
+[446/585] M3 sig=2.2720e-02 rs=0.0252 (2417s, 0.2/s, ETA 753s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0252
+no-cross (ratio high)
+[447/585] M3 sig=2.2720e-02 rs=0.0300 (2418s, 0.2/s, ETA 747s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0300
+no-cross (ratio high)
+[448/585] M3 sig=2.2720e-02 rs=0.0357 (2419s, 0.2/s, ETA 740s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0357
+no-cross (ratio high)
+[449/585] M3 sig=2.2720e-02 rs=0.0424 (2420s, 0.2/s, ETA 733s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0424
+no-cross (ratio high)
+[450/585] M3 sig=2.2720e-02 rs=0.0505 (2421s, 0.2/s, ETA 726s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0505
+no-cross (ratio high)
+[451/585] M3 sig=2.2720e-02 rs=0.0600 (2432s, 0.2/s, ETA 722s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0600
+no-cross (ratio high)
+[452/585] M3 sig=2.2720e-02 rs=0.0714 (2442s, 0.2/s, ETA 718s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0714
+no-cross (ratio high)
+[453/585] M3 sig=2.2720e-02 rs=0.0849 (2451s, 0.2/s, ETA 714s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.0849
+no-cross (ratio high)
+[454/585] M3 sig=2.2720e-02 rs=0.1009 (2460s, 0.2/s, ETA 710s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.1009
+no-cross (ratio high)
+[455/585] M3 sig=2.2720e-02 rs=0.1200 (2469s, 0.2/s, ETA 705s) ~~~~~ Creating new halo M3_sig2.2720e-02_rs0.1200
+VIABLE t_cross=0.0153 Gyr
+[456/585] M3 sig=3.3172e-02 rs=0.0150 (2474s, 0.2/s, ETA 700s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0150
+no-cross (ratio high)
+[457/585] M3 sig=3.3172e-02 rs=0.0178 (2475s, 0.2/s, ETA 693s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0178
+no-cross (ratio high)
+[458/585] M3 sig=3.3172e-02 rs=0.0212 (2476s, 0.2/s, ETA 686s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0212
+no-cross (ratio high)
+[459/585] M3 sig=3.3172e-02 rs=0.0252 (2477s, 0.2/s, ETA 680s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0252
+no-cross (ratio high)
+[460/585] M3 sig=3.3172e-02 rs=0.0300 (2477s, 0.2/s, ETA 673s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0300
+no-cross (ratio high)
+[461/585] M3 sig=3.3172e-02 rs=0.0357 (2478s, 0.2/s, ETA 667s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0357
+no-cross (ratio high)
+[462/585] M3 sig=3.3172e-02 rs=0.0424 (2479s, 0.2/s, ETA 660s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0424
+no-cross (ratio high)
+[463/585] M3 sig=3.3172e-02 rs=0.0505 (2480s, 0.2/s, ETA 653s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0505
+no-cross (ratio high)
+[464/585] M3 sig=3.3172e-02 rs=0.0600 (2490s, 0.2/s, ETA 649s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0600
+no-cross (ratio high)
+[465/585] M3 sig=3.3172e-02 rs=0.0714 (2498s, 0.2/s, ETA 645s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0714
+no-cross (ratio high)
+[466/585] M3 sig=3.3172e-02 rs=0.0849 (2507s, 0.2/s, ETA 640s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.0849
+no-cross (ratio high)
+[467/585] M3 sig=3.3172e-02 rs=0.1009 (2514s, 0.2/s, ETA 635s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.1009
+no-cross (ratio high)
+[468/585] M3 sig=3.3172e-02 rs=0.1200 (2522s, 0.2/s, ETA 630s) ~~~~~ Creating new halo M3_sig3.3172e-02_rs0.1200
+VIABLE t_cross=0.0104 Gyr
+[469/585] M3 sig=4.8431e-02 rs=0.0150 (2525s, 0.2/s, ETA 624s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0150
+no-cross (ratio high)
+[470/585] M3 sig=4.8431e-02 rs=0.0178 (2525s, 0.2/s, ETA 618s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0178
+no-cross (ratio high)
+[471/585] M3 sig=4.8431e-02 rs=0.0212 (2526s, 0.2/s, ETA 611s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0212
+no-cross (ratio high)
+[472/585] M3 sig=4.8431e-02 rs=0.0252 (2527s, 0.2/s, ETA 605s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0252
+no-cross (ratio high)
+[473/585] M3 sig=4.8431e-02 rs=0.0300 (2528s, 0.2/s, ETA 599s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0300
+no-cross (ratio high)
+[474/585] M3 sig=4.8431e-02 rs=0.0357 (2529s, 0.2/s, ETA 592s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0357
+no-cross (ratio high)
+[475/585] M3 sig=4.8431e-02 rs=0.0424 (2530s, 0.2/s, ETA 586s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0424
+no-cross (ratio high)
+[476/585] M3 sig=4.8431e-02 rs=0.0505 (2531s, 0.2/s, ETA 579s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0505
+no-cross (ratio high)
+[477/585] M3 sig=4.8431e-02 rs=0.0600 (2539s, 0.2/s, ETA 575s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0600
+no-cross (ratio high)
+[478/585] M3 sig=4.8431e-02 rs=0.0714 (2547s, 0.2/s, ETA 570s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0714
+no-cross (ratio high)
+[479/585] M3 sig=4.8431e-02 rs=0.0849 (2554s, 0.2/s, ETA 565s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.0849
+no-cross (ratio high)
+[480/585] M3 sig=4.8431e-02 rs=0.1009 (2560s, 0.2/s, ETA 560s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.1009
+no-cross (ratio high)
+[481/585] M3 sig=4.8431e-02 rs=0.1200 (2562s, 0.2/s, ETA 554s) ~~~~~ Creating new halo M3_sig4.8431e-02_rs0.1200
+VIABLE t_cross=0.0072 Gyr
+[482/585] M3 sig=7.0711e-02 rs=0.0150 (2564s, 0.2/s, ETA 548s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0150
+no-cross (ratio high)
+[483/585] M3 sig=7.0711e-02 rs=0.0178 (2565s, 0.2/s, ETA 542s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0178
+no-cross (ratio high)
+[484/585] M3 sig=7.0711e-02 rs=0.0212 (2566s, 0.2/s, ETA 536s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0212
+no-cross (ratio high)
+[485/585] M3 sig=7.0711e-02 rs=0.0252 (2567s, 0.2/s, ETA 529s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0252
+no-cross (ratio high)
+[486/585] M3 sig=7.0711e-02 rs=0.0300 (2568s, 0.2/s, ETA 523s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0300
+no-cross (ratio high)
+[487/585] M3 sig=7.0711e-02 rs=0.0357 (2569s, 0.2/s, ETA 517s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0357
+no-cross (ratio high)
+[488/585] M3 sig=7.0711e-02 rs=0.0424 (2570s, 0.2/s, ETA 511s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0424
+no-cross (ratio high)
+[489/585] M3 sig=7.0711e-02 rs=0.0505 (2570s, 0.2/s, ETA 505s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0505
+no-cross (ratio high)
+[490/585] M3 sig=7.0711e-02 rs=0.0600 (2577s, 0.2/s, ETA 500s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0600
+no-cross (ratio high)
+[491/585] M3 sig=7.0711e-02 rs=0.0714 (2584s, 0.2/s, ETA 495s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0714
+no-cross (ratio high)
+[492/585] M3 sig=7.0711e-02 rs=0.0849 (2590s, 0.2/s, ETA 490s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.0849
+no-cross (ratio high)
+[493/585] M3 sig=7.0711e-02 rs=0.1009 (2596s, 0.2/s, ETA 484s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.1009
+no-cross (ratio high)
+[494/585] M3 sig=7.0711e-02 rs=0.1200 (2601s, 0.2/s, ETA 479s) ~~~~~ Creating new halo M3_sig7.0711e-02_rs0.1200
+VIABLE t_cross=0.0047 Gyr
+[495/585] M3 sig=1.0324e-01 rs=0.0150 (2602s, 0.2/s, ETA 473s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0150
+no-cross (ratio high)
+[496/585] M3 sig=1.0324e-01 rs=0.0178 (2603s, 0.2/s, ETA 467s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0178
+no-cross (ratio high)
+[497/585] M3 sig=1.0324e-01 rs=0.0212 (2604s, 0.2/s, ETA 461s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0212
+no-cross (ratio high)
+[498/585] M3 sig=1.0324e-01 rs=0.0252 (2605s, 0.2/s, ETA 455s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0252
+no-cross (ratio high)
+[499/585] M3 sig=1.0324e-01 rs=0.0300 (2606s, 0.2/s, ETA 449s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0300
+no-cross (ratio high)
+[500/585] M3 sig=1.0324e-01 rs=0.0357 (2607s, 0.2/s, ETA 443s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0357
+no-cross (ratio high)
+[501/585] M3 sig=1.0324e-01 rs=0.0424 (2607s, 0.2/s, ETA 437s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0424
+no-cross (ratio high)
+[502/585] M3 sig=1.0324e-01 rs=0.0505 (2608s, 0.2/s, ETA 431s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0505
+no-cross (ratio high)
+[503/585] M3 sig=1.0324e-01 rs=0.0600 (2614s, 0.2/s, ETA 426s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0600
+no-cross (ratio high)
+[504/585] M3 sig=1.0324e-01 rs=0.0714 (2620s, 0.2/s, ETA 421s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0714
+no-cross (ratio high)
+[505/585] M3 sig=1.0324e-01 rs=0.0849 (2625s, 0.2/s, ETA 416s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.0849
+no-cross (ratio high)
+[506/585] M3 sig=1.0324e-01 rs=0.1009 (2630s, 0.2/s, ETA 411s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.1009
+VIABLE t_cross=0.0268 Gyr
+[507/585] M3 sig=1.0324e-01 rs=0.1200 (2634s, 0.2/s, ETA 405s) ~~~~~ Creating new halo M3_sig1.0324e-01_rs0.1200
+VIABLE t_cross=0.0033 Gyr
+[508/585] M3 sig=1.5073e-01 rs=0.0150 (2635s, 0.2/s, ETA 399s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0150
+no-cross (ratio high)
+[509/585] M3 sig=1.5073e-01 rs=0.0178 (2636s, 0.2/s, ETA 394s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0178
+no-cross (ratio high)
+[510/585] M3 sig=1.5073e-01 rs=0.0212 (2637s, 0.2/s, ETA 388s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0212
+no-cross (ratio high)
+[511/585] M3 sig=1.5073e-01 rs=0.0252 (2638s, 0.2/s, ETA 382s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0252
+no-cross (ratio high)
+[512/585] M3 sig=1.5073e-01 rs=0.0300 (2639s, 0.2/s, ETA 376s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0300
+no-cross (ratio high)
+[513/585] M3 sig=1.5073e-01 rs=0.0357 (2640s, 0.2/s, ETA 370s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0357
+no-cross (ratio high)
+[514/585] M3 sig=1.5073e-01 rs=0.0424 (2640s, 0.2/s, ETA 365s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0424
+no-cross (ratio high)
+[515/585] M3 sig=1.5073e-01 rs=0.0505 (2641s, 0.2/s, ETA 359s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0505
+no-cross (ratio high)
+[516/585] M3 sig=1.5073e-01 rs=0.0600 (2646s, 0.2/s, ETA 354s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0600
+no-cross (ratio high)
+[517/585] M3 sig=1.5073e-01 rs=0.0714 (2651s, 0.2/s, ETA 349s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0714
+no-cross (ratio high)
+[518/585] M3 sig=1.5073e-01 rs=0.0849 (2655s, 0.2/s, ETA 343s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.0849
+VIABLE t_cross=0.0507 Gyr
+[519/585] M3 sig=1.5073e-01 rs=0.1009 (2660s, 0.2/s, ETA 338s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.1009
+VIABLE t_cross=0.0335 Gyr
+[520/585] M3 sig=1.5073e-01 rs=0.1200 (2663s, 0.2/s, ETA 333s) ~~~~~ Creating new halo M3_sig1.5073e-01_rs0.1200
+VIABLE t_cross=0.0023 Gyr
+[521/585] M3 sig=2.2007e-01 rs=0.0150 (2664s, 0.2/s, ETA 327s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0150
+no-cross (ratio high)
+[522/585] M3 sig=2.2007e-01 rs=0.0178 (2665s, 0.2/s, ETA 322s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0178
+no-cross (ratio high)
+[523/585] M3 sig=2.2007e-01 rs=0.0212 (2666s, 0.2/s, ETA 316s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0212
+no-cross (ratio high)
+[524/585] M3 sig=2.2007e-01 rs=0.0252 (2666s, 0.2/s, ETA 310s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0252
+no-cross (ratio high)
+[525/585] M3 sig=2.2007e-01 rs=0.0300 (2667s, 0.2/s, ETA 305s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0300
+no-cross (ratio high)
+[526/585] M3 sig=2.2007e-01 rs=0.0357 (2668s, 0.2/s, ETA 299s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0357
+no-cross (ratio high)
+[527/585] M3 sig=2.2007e-01 rs=0.0424 (2669s, 0.2/s, ETA 294s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0424
+no-cross (ratio high)
+[528/585] M3 sig=2.2007e-01 rs=0.0505 (2669s, 0.2/s, ETA 288s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0505
+no-cross (ratio high)
+[529/585] M3 sig=2.2007e-01 rs=0.0600 (2674s, 0.2/s, ETA 283s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0600
+no-cross (ratio high)
+[530/585] M3 sig=2.2007e-01 rs=0.0714 (2678s, 0.2/s, ETA 278s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0714
+no-cross (ratio high)
+[531/585] M3 sig=2.2007e-01 rs=0.0849 (2682s, 0.2/s, ETA 273s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.0849
+no-cross (ratio high)
+[532/585] M3 sig=2.2007e-01 rs=0.1009 (2686s, 0.2/s, ETA 268s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.1009
+VIABLE t_cross=0.0125 Gyr
+[533/585] M3 sig=2.2007e-01 rs=0.1200 (2687s, 0.2/s, ETA 262s) ~~~~~ Creating new halo M3_sig2.2007e-01_rs0.1200
+VIABLE t_cross=0.0016 Gyr
+[534/585] M3 sig=3.2131e-01 rs=0.0150 (2688s, 0.2/s, ETA 257s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0150
+no-cross (ratio high)
+[535/585] M3 sig=3.2131e-01 rs=0.0178 (2688s, 0.2/s, ETA 251s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0178
+no-cross (ratio high)
+[536/585] M3 sig=3.2131e-01 rs=0.0212 (2689s, 0.2/s, ETA 246s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0212
+no-cross (ratio high)
+[537/585] M3 sig=3.2131e-01 rs=0.0252 (2690s, 0.2/s, ETA 240s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0252
+no-cross (ratio high)
+[538/585] M3 sig=3.2131e-01 rs=0.0300 (2691s, 0.2/s, ETA 235s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0300
+no-cross (ratio high)
+[539/585] M3 sig=3.2131e-01 rs=0.0357 (2691s, 0.2/s, ETA 230s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0357
+no-cross (ratio high)
+[540/585] M3 sig=3.2131e-01 rs=0.0424 (2692s, 0.2/s, ETA 224s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0424
+no-cross (ratio high)
+[541/585] M3 sig=3.2131e-01 rs=0.0505 (2693s, 0.2/s, ETA 219s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0505
+no-cross (ratio high)
+[542/585] M3 sig=3.2131e-01 rs=0.0600 (2697s, 0.2/s, ETA 214s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0600
+no-cross (ratio high)
+[543/585] M3 sig=3.2131e-01 rs=0.0714 (2701s, 0.2/s, ETA 209s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0714
+no-cross (ratio high)
+[544/585] M3 sig=3.2131e-01 rs=0.0849 (2705s, 0.2/s, ETA 204s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.0849
+VIABLE t_cross=0.0240 Gyr
+[545/585] M3 sig=3.2131e-01 rs=0.1009 (2708s, 0.2/s, ETA 199s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.1009
+VIABLE t_cross=0.0149 Gyr
+[546/585] M3 sig=3.2131e-01 rs=0.1200 (2711s, 0.2/s, ETA 194s) ~~~~~ Creating new halo M3_sig3.2131e-01_rs0.1200
+VIABLE t_cross=0.0011 Gyr
+[547/585] M3 sig=4.6912e-01 rs=0.0150 (2711s, 0.2/s, ETA 188s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0150
+no-cross (ratio high)
+[548/585] M3 sig=4.6912e-01 rs=0.0178 (2712s, 0.2/s, ETA 183s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0178
+no-cross (ratio high)
+[549/585] M3 sig=4.6912e-01 rs=0.0212 (2713s, 0.2/s, ETA 178s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0212
+no-cross (ratio high)
+[550/585] M3 sig=4.6912e-01 rs=0.0252 (2713s, 0.2/s, ETA 173s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0252
+no-cross (ratio high)
+[551/585] M3 sig=4.6912e-01 rs=0.0300 (2714s, 0.2/s, ETA 167s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0300
+no-cross (ratio high)
+[552/585] M3 sig=4.6912e-01 rs=0.0357 (2715s, 0.2/s, ETA 162s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0357
+no-cross (ratio high)
+[553/585] M3 sig=4.6912e-01 rs=0.0424 (2716s, 0.2/s, ETA 157s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0424
+no-cross (ratio high)
+[554/585] M3 sig=4.6912e-01 rs=0.0505 (2716s, 0.2/s, ETA 152s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0505
+no-cross (ratio high)
+[555/585] M3 sig=4.6912e-01 rs=0.0600 (2720s, 0.2/s, ETA 147s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0600
+no-cross (ratio high)
+[556/585] M3 sig=4.6912e-01 rs=0.0714 (2725s, 0.2/s, ETA 142s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0714
+VIABLE t_cross=0.0435 Gyr
+[557/585] M3 sig=4.6912e-01 rs=0.0849 (2730s, 0.2/s, ETA 137s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.0849
+VIABLE t_cross=0.0262 Gyr
+[558/585] M3 sig=4.6912e-01 rs=0.1009 (2733s, 0.2/s, ETA 132s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.1009
+VIABLE t_cross=0.0059 Gyr
+[559/585] M3 sig=4.6912e-01 rs=0.1200 (2734s, 0.2/s, ETA 127s) ~~~~~ Creating new halo M3_sig4.6912e-01_rs0.1200
+VIABLE t_cross=0.0007 Gyr
+[560/585] M3 sig=6.8492e-01 rs=0.0150 (2734s, 0.2/s, ETA 122s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0150
+no-cross (ratio high)
+[561/585] M3 sig=6.8492e-01 rs=0.0178 (2735s, 0.2/s, ETA 117s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0178
+no-cross (ratio high)
+[562/585] M3 sig=6.8492e-01 rs=0.0212 (2735s, 0.2/s, ETA 112s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0212
+no-cross (ratio high)
+[563/585] M3 sig=6.8492e-01 rs=0.0252 (2736s, 0.2/s, ETA 107s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0252
+no-cross (ratio high)
+[564/585] M3 sig=6.8492e-01 rs=0.0300 (2737s, 0.2/s, ETA 102s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0300
+no-cross (ratio high)
+[565/585] M3 sig=6.8492e-01 rs=0.0357 (2737s, 0.2/s, ETA 97s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0357
+no-cross (ratio high)
+[566/585] M3 sig=6.8492e-01 rs=0.0424 (2738s, 0.2/s, ETA 92s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0424
+no-cross (ratio high)
+[567/585] M3 sig=6.8492e-01 rs=0.0505 (2738s, 0.2/s, ETA 87s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0505
+no-cross (ratio high)
+[568/585] M3 sig=6.8492e-01 rs=0.0600 (2743s, 0.2/s, ETA 82s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0600
+no-cross (ratio high)
+[569/585] M3 sig=6.8492e-01 rs=0.0714 (2749s, 0.2/s, ETA 77s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0714
+no-cross (ratio high)
+[570/585] M3 sig=6.8492e-01 rs=0.0849 (2754s, 0.2/s, ETA 72s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.0849
+VIABLE t_cross=0.0113 Gyr
+[571/585] M3 sig=6.8492e-01 rs=0.1009 (2756s, 0.2/s, ETA 68s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.1009
+VIABLE t_cross=0.0078 Gyr
+[572/585] M3 sig=6.8492e-01 rs=0.1200 (2758s, 0.2/s, ETA 63s) ~~~~~ Creating new halo M3_sig6.8492e-01_rs0.1200
+VIABLE t_cross=0.0005 Gyr
+[573/585] M3 sig=1.0000e+00 rs=0.0150 (2758s, 0.2/s, ETA 58s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0150
+no-cross (ratio high)
+[574/585] M3 sig=1.0000e+00 rs=0.0178 (2759s, 0.2/s, ETA 53s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0178
+no-cross (ratio high)
+[575/585] M3 sig=1.0000e+00 rs=0.0212 (2760s, 0.2/s, ETA 48s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0212
+no-cross (ratio high)
+[576/585] M3 sig=1.0000e+00 rs=0.0252 (2760s, 0.2/s, ETA 43s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0252
+no-cross (ratio high)
+[577/585] M3 sig=1.0000e+00 rs=0.0300 (2761s, 0.2/s, ETA 38s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0300
+no-cross (ratio high)
+[578/585] M3 sig=1.0000e+00 rs=0.0357 (2761s, 0.2/s, ETA 33s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0357
+no-cross (ratio high)
+[579/585] M3 sig=1.0000e+00 rs=0.0424 (2762s, 0.2/s, ETA 29s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0424
+no-cross (ratio high)
+[580/585] M3 sig=1.0000e+00 rs=0.0505 (2762s, 0.2/s, ETA 24s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0505
+no-cross (ratio high)
+[581/585] M3 sig=1.0000e+00 rs=0.0600 (2768s, 0.2/s, ETA 19s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0600
+no-cross (ratio high)
+[582/585] M3 sig=1.0000e+00 rs=0.0714 (2774s, 0.2/s, ETA 14s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0714
+no-cross (ratio high)
+[583/585] M3 sig=1.0000e+00 rs=0.0849 (2782s, 0.2/s, ETA 10s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.0849
+VIABLE t_cross=0.0105 Gyr
+[584/585] M3 sig=1.0000e+00 rs=0.1009 (2784s, 0.2/s, ETA 5s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.1009
+VIABLE t_cross=0.0029 Gyr
+[585/585] M3 sig=1.0000e+00 rs=0.1200 (2786s, 0.2/s, ETA 0s) ~~~~~ Creating new halo M3_sig1.0000e+00_rs0.1200
+VIABLE t_cross=0.0003 Gyr
+
+Final summary -> data/P5_grid_scan\grid_summary.csv
+Total viable points: 143/585
+  M1: 55/195 viable
+  M2: 62/195 viable
+  M3: 26/195 viable
+
+Total time: 2785.7s

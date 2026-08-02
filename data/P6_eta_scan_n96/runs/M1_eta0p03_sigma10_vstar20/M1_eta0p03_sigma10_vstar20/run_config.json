@@ -1,0 +1,14 @@
+{
+  "alpha_D": 6.67590033632171e-11,
+  "eta_B": 0.029999999999999995,
+  "eta_requested": 0.03,
+  "flag_dissipation": true,
+  "m_chi_GeV": 0.0016853424895570202,
+  "m_mediator_keV": 1.8751964154751633e-06,
+  "model": "M1_dark_photon_massive",
+  "n_shells": 96,
+  "r_epsilon": 1e-08,
+  "t_epsilon": 0.005,
+  "target_sigma_m_100_kms": 10.0,
+  "threshold_velocity_requested_kms": 20.0
+}

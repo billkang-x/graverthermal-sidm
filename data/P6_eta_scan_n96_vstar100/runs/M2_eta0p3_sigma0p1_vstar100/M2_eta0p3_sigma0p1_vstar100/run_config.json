@@ -1,0 +1,14 @@
+{
+  "alpha_D": 1.6689750840804276e-08,
+  "eta_B": 0.3,
+  "eta_requested": 0.3,
+  "flag_dissipation": true,
+  "m_chi_GeV": 0.2800631783573644,
+  "m_mediator_keV": 0.0077903077774469,
+  "model": "M2_scalar_phi_massive",
+  "n_shells": 96,
+  "r_epsilon": 1e-08,
+  "t_epsilon": 0.005,
+  "target_sigma_m_100_kms": 0.1,
+  "threshold_velocity_requested_kms": 100.0
+}

@@ -1,0 +1,7 @@
+"scan_point_id","model","best_requested_time_gyr","selected_source_time_gyr","direct_mass_chi2","direct_mass_ratio","direct_t_evo_phys_gyr","direct_max_cooling_code","status"
+"M1_eta0p1_sigma0p1_vstar100","M1_dark_photon_massive","0","0","0.0177167059938559","0.367080478706351","0","0","complete"
+"M1_eta0p1_sigma0p1_vstar20","M1_dark_photon_massive","0","0","0.0177167059938559","0.367080478706351","0","3.7029767699062E-31","complete"
+"M1_eta0p1_sigma0p1_vstar500","M1_dark_photon_massive","0","0","0.0177167059938559","0.367080478706351","0","0","complete"
+"M2_eta0p1_sigma0p1_vstar100","M2_scalar_phi_massive","0","0","0.0177167059938559","0.367080478706351","0","0","complete"
+"M2_eta0p1_sigma0p1_vstar20","M2_scalar_phi_massive","0","0","0.0177167059938559","0.367080478706351","0","2.885290899951E-31","complete"
+"M2_eta0p1_sigma0p1_vstar500","M2_scalar_phi_massive","0","0","0.0177167059938559","0.367080478706351","0","0","complete"

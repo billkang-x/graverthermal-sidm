@@ -1,0 +1,4 @@
+These direct-resimulation outputs used the former sampled Abel projection.
+They are retained only to document the projection-resolution failure and must
+not be used for scientific interpretation. Current outputs use the exact
+piecewise-constant shell projection under data/P5_born_direct_shell_projection.

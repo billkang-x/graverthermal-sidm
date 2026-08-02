@@ -1,0 +1,16 @@
+{
+  "born_max": 1.0,
+  "checkpoint_gyr": 0.05,
+  "direct": false,
+  "direct_n_shells": 96,
+  "eta_values": "0.03,0.1,0.3",
+  "max_steps": null,
+  "models": "M1_dark_photon_massive,M2_scalar_phi_massive",
+  "n_shells": 96,
+  "output_root": "data\\P6_eta_scan_n96",
+  "resume": true,
+  "sigma_values": "0.1,1,10",
+  "t_end_gyr": 0.5,
+  "t_epsilon": 0.005,
+  "threshold_values": "20,500"
+}

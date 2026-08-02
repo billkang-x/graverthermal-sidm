@@ -1,0 +1,77 @@
+%paramfile for P1 relaxation Phase A (elastic relaxation)
+% Point: P1_relaxation_phaseA
+% Purpose: Relax the IC to numerical virial equilibrium with elastic SIDM only.
+%          Output snapshot at t=0.5 becomes the new t=0 IC for Phase B.
+%
+% Parameters match the original P1_elastic_control run exactly, except:
+%   - TimeMax = 0.5 (half the original, relaxation only)
+%   - TimeOfFirstSnapshot = 0.5 (write only the final snapshot)
+%
+% All units: Gadget4 code units (UnitLength=1 kpc, UnitMass=1e10 Msun,
+%            UnitVelocity=1 km/s -> UnitTime = 0.978 Gyr)
+
+InitCondFile        ic.dat
+OutputDir           output_relax
+SnapshotFileBase    snapshot
+OutputListFilename  output_list_relax.txt
+
+ICFormat            1
+SnapFormat          1
+
+TimeLimitCPU              21000
+CpuTimeBetRestartFile     3600
+MaxMemSize                4000
+
+TimeBegin           0.0
+TimeMax             0.5
+
+ComovingIntegrationOn    0
+Omega0              0
+OmegaLambda         0
+OmegaBaryon         0
+HubbleParam         1.0
+Hubble              0
+BoxSize             0
+
+% Only write one snapshot at the end (t=0.5)
+OutputListOn              1
+TimeBetSnapshot           0.5
+TimeOfFirstSnapshot       0.5
+TimeBetStatistics         0.05
+NumFilesPerSnapshot       1
+MaxFilesWithConcurrentIO  1
+
+ErrTolIntAccuracy        0.02
+CourantFac               0.15
+MaxSizeTimestep          0.002
+MinSizeTimestep          0.0
+
+TypeOfOpeningCriterion                1
+ErrTolTheta                           0.7
+ErrTolThetaMax                        0.9
+ErrTolForceAcc                        0.0025
+TopNodeFactor                         2.0
+ActivePartFracForNewDomainDecomp      0.02
+
+DesNumNgb                             64
+MaxNumNgbDeviation                    8
+
+UnitLength_in_cm         3.0856775814913673e21
+UnitMass_in_g            1.989e43
+UnitVelocity_in_cm_per_s 1.0e5
+GravityConstantInternal  0
+
+% Softening MUST match the original P1 run (0.1 kpc, not 0.0005)
+SofteningComovingClass0       0.1
+SofteningMaxPhysClass0        0.1
+SofteningComovingClass1       0.1
+SofteningMaxPhysClass1        0.1
+SofteningComovingClass2       0.1
+SofteningMaxPhysClass2        0.1
+SofteningClassOfPartType0     0
+SofteningClassOfPartType1     1
+SofteningClassOfPartType2     2
+
+ArtBulkViscConst       1.0
+MinEgySpec             0
+InitGasTemp            0

@@ -1,0 +1,243 @@
+Loaded 15 resim points from data/P5_resim_points.csv
+Will run 15 simulations
+
+=== Run 1/15 ===
+
+[M1_P1_lower] model=M1_dark_photon_massive
+  r_s=2.9214e-02 kpc, ρ₀=1.9189e+04 Msun/pc³
+  σ/m=2.2766e-03 cm²/g, t_evo=3.1478e-04 Gyr
+~~~~~ Creating new halo M1_P1_lower
+  scale_t=3.0363e-05 Gyr → t_end_dimless=1.0367e+01
+  [M1_P1_lower] Done: t=10.3679 (3.1480e-04 Gyr) after 4312 steps
+  [M1_P1_lower] 4312 steps in 2.4s
+  [M1_P1_lower] M(20pc)/M(90pc)_resim = 0.5956 (obs 0.3642±0.0220) Δ=+0.2314 (+63.55%)
+  [M1_P1_lower] Saved → data/P5_resim\M1_P1_lower.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 2/15 ===
+
+[M1_P2_p25] model=M1_dark_photon_massive
+  r_s=8.1026e-02 kpc, ρ₀=1.9033e+03 Msun/pc³
+  σ/m=8.2753e-03 cm²/g, t_evo=1.8575e-03 Gyr
+~~~~~ Creating new halo M1_P2_p25
+  scale_t=9.6406e-05 Gyr → t_end_dimless=1.9267e+01
+  [M1_P2_p25] Done: t=19.2704 (1.8578e-03 Gyr) after 5646 steps
+  [M1_P2_p25] 5646 steps in 2.9s
+  [M1_P2_p25] M(20pc)/M(90pc)_resim = 0.3672 (obs 0.3642±0.0220) Δ=+0.0030 (+0.82%)
+  [M1_P2_p25] Saved → data/P5_resim\M1_P2_p25.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 3/15 ===
+
+[M1_P3_median] model=M1_dark_photon_massive
+  r_s=1.0844e-01 kpc, ρ₀=9.2795e+02 Msun/pc³
+  σ/m=1.2682e-02 cm²/g, t_evo=2.6602e-03 Gyr
+~~~~~ Creating new halo M1_P3_median
+  scale_t=1.3807e-04 Gyr → t_end_dimless=1.9267e+01
+  [M1_P3_median] Done: t=19.2699 (2.6606e-03 Gyr) after 5212 steps
+  [M1_P3_median] 5212 steps in 2.6s
+  [M1_P3_median] M(20pc)/M(90pc)_resim = 0.3316 (obs 0.3642±0.0220) Δ=-0.0326 (-8.94%)
+  [M1_P3_median] Saved → data/P5_resim\M1_P3_median.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 4/15 ===
+
+[M1_P4_p75] model=M1_dark_photon_massive
+  r_s=1.5611e-01 kpc, ρ₀=4.1092e+02 Msun/pc³
+  σ/m=1.9894e-02 cm²/g, t_evo=8.0037e-03 Gyr
+~~~~~ Creating new halo M1_P4_p75
+  scale_t=2.0748e-04 Gyr → t_end_dimless=3.8575e+01
+  [M1_P4_p75] Done: t=38.5810 (8.0049e-03 Gyr) after 9190 steps
+  [M1_P4_p75] 9190 steps in 5.2s
+  [M1_P4_p75] M(20pc)/M(90pc)_resim = 0.2420 (obs 0.3642±0.0220) Δ=-0.1221 (-33.54%)
+  [M1_P4_p75] Saved → data/P5_resim\M1_P4_p75.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 5/15 ===
+
+[M1_P5_upper] model=M1_dark_photon_massive
+  r_s=7.7560e-01 kpc, ρ₀=9.9507e+00 Msun/pc³
+  σ/m=1.6536e-01 cm²/g, t_evo=1.4476e-02 Gyr
+~~~~~ Creating new halo M1_P5_upper
+  scale_t=1.3333e-03 Gyr → t_end_dimless=1.0857e+01
+  [M1_P5_upper] Done: t=10.8616 (1.4482e-02 Gyr) after 4846 steps
+  [M1_P5_upper] 4846 steps in 2.8s
+  [M1_P5_upper] M(20pc)/M(90pc)_resim = 0.1638 (obs 0.3642±0.0220) Δ=-0.2004 (-55.02%)
+  [M1_P5_upper] Saved → data/P5_resim\M1_P5_upper.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 6/15 ===
+
+[M2_P1_lower] model=M2_scalar_phi_massive
+  r_s=4.8653e-02 kpc, ρ₀=6.6267e+03 Msun/pc³
+  σ/m=3.9584e-03 cm²/g, t_evo=2.2002e-03 Gyr
+~~~~~ Creating new halo M2_P1_lower
+  scale_t=5.1667e-05 Gyr → t_end_dimless=4.2585e+01
+  [M2_P1_lower] Done: t=42.5874 (2.2004e-03 Gyr) after 11767 steps
+  [M2_P1_lower] 11767 steps in 6.0s
+  [M2_P1_lower] M(20pc)/M(90pc)_resim = 0.4766 (obs 0.3642±0.0220) Δ=+0.1124 (+30.87%)
+  [M2_P1_lower] Saved → data/P5_resim\M2_P1_lower.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 7/15 ===
+
+[M2_P2_p25] model=M2_scalar_phi_massive
+  r_s=8.1026e-02 kpc, ρ₀=1.9217e+03 Msun/pc³
+  σ/m=8.1962e-03 cm²/g, t_evo=1.8109e-03 Gyr
+~~~~~ Creating new halo M2_P2_p25
+  scale_t=9.5944e-05 Gyr → t_end_dimless=1.8874e+01
+  [M2_P2_p25] Done: t=18.8775 (1.8112e-03 Gyr) after 5949 steps
+  [M2_P2_p25] 5949 steps in 3.1s
+  [M2_P2_p25] M(20pc)/M(90pc)_resim = 0.3763 (obs 0.3642±0.0220) Δ=+0.0121 (+3.33%)
+  [M2_P2_p25] Saved → data/P5_resim\M2_P2_p25.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 8/15 ===
+
+[M2_P3_median] model=M2_scalar_phi_massive
+  r_s=1.0082e-01 kpc, ρ₀=1.0995e+03 Msun/pc³
+  σ/m=1.1512e-02 cm²/g, t_evo=0.0000e+00 Gyr
+~~~~~ Creating new halo M2_P3_median
+  scale_t=1.2684e-04 Gyr → t_end_dimless=0.0000e+00
+  [M2_P3_median] Done: t=0.0008 (1.0596e-07 Gyr) after 1 steps
+  [M2_P3_median] 1 steps in 0.0s
+  [M2_P3_median] M(20pc)/M(90pc)_resim = 0.4079 (obs 0.3642±0.0220) Δ=+0.0437 (+12.01%)
+  [M2_P3_median] Saved → data/P5_resim\M2_P3_median.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 9/15 ===
+
+[M2_P4_p75] model=M2_scalar_phi_massive
+  r_s=1.3494e-01 kpc, ρ₀=5.1634e+02 Msun/pc³
+  σ/m=1.8316e-02 cm²/g, t_evo=1.1662e-03 Gyr
+~~~~~ Creating new halo M2_P4_p75
+  scale_t=1.8509e-04 Gyr → t_end_dimless=6.3007e+00
+  [M2_P4_p75] Done: t=6.3021 (1.1665e-03 Gyr) after 2373 steps
+  [M2_P4_p75] 2373 steps in 1.2s
+  [M2_P4_p75] M(20pc)/M(90pc)_resim = 0.3193 (obs 0.3642±0.0220) Δ=-0.0449 (-12.34%)
+  [M2_P4_p75] Saved → data/P5_resim\M2_P4_p75.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 10/15 ===
+
+[M2_P5_upper] model=M2_scalar_phi_massive
+  r_s=4.0256e-01 kpc, ρ₀=4.3332e+01 Msun/pc³
+  σ/m=7.3162e-02 cm²/g, t_evo=4.0257e-03 Gyr
+~~~~~ Creating new halo M2_P5_upper
+  scale_t=6.3894e-04 Gyr → t_end_dimless=6.3007e+00
+  [M2_P5_upper] Done: t=6.3023 (4.0268e-03 Gyr) after 2784 steps
+  [M2_P5_upper] 2784 steps in 1.6s
+  [M2_P5_upper] M(20pc)/M(90pc)_resim = 0.1658 (obs 0.3642±0.0220) Δ=-0.1984 (-54.47%)
+  [M2_P5_upper] Saved → data/P5_resim\M2_P5_upper.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 11/15 ===
+
+[M3_P1_lower] model=const_rdiss_1p05
+  r_s=5.2330e-02 kpc, ρ₀=5.7951e+03 Msun/pc³
+  σ/m=4.2083e-03 cm²/g, t_evo=1.0553e-03 Gyr
+~~~~~ Creating new halo M3_P1_lower
+  scale_t=5.5250e-05 Gyr → t_end_dimless=1.9100e+01
+  [M3_P1_lower] Done: t=19.1002 (1.0553e-03 Gyr) after 15078 steps
+  [M3_P1_lower] 15078 steps in 7.2s
+  [M3_P1_lower] M(20pc)/M(90pc)_resim = 0.4268 (obs 0.3642±0.0220) Δ=+0.0626 (+17.20%)
+  [M3_P1_lower] Saved → data/P5_resim\M3_P1_lower.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 12/15 ===
+
+[M3_P2_p25] model=const_rdiss_1p05
+  r_s=1.0082e-01 kpc, ρ₀=8.5459e+02 Msun/pc³
+  σ/m=1.4812e-02 cm²/g, t_evo=8.2184e-03 Gyr
+~~~~~ Creating new halo M3_P2_p25
+  scale_t=1.4387e-04 Gyr → t_end_dimless=5.7122e+01
+  [M3_P2_p25] step 20719: t=24.23 (3.4858e-03 Gyr), rho_c=4.26e+03
+  [M3_P2_p25] step 42073: t=39.46 (5.6780e-03 Gyr), rho_c=5.41e+03
+  [M3_P2_p25] step 64293: t=49.53 (7.1265e-03 Gyr), rho_c=7.02e+03
+  [M3_P2_p25] step 89076: t=55.87 (8.0382e-03 Gyr), rho_c=8.82e+03
+  [M3_P2_p25] Done: t=57.1231 (8.2185e-03 Gyr) after 95280 steps
+  [M3_P2_p25] 95280 steps in 42.5s
+  [M3_P2_p25] M(20pc)/M(90pc)_resim = 0.3998 (obs 0.3642±0.0220) Δ=+0.0357 (+9.79%)
+  [M3_P2_p25] Saved → data/P5_resim\M3_P2_p25.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 13/15 ===
+
+[M3_P3_median] model=const_rdiss_1p05
+  r_s=1.0844e-01 kpc, ρ₀=5.9680e+02 Msun/pc³
+  σ/m=1.9719e-02 cm²/g, t_evo=1.0659e-02 Gyr
+~~~~~ Creating new halo M3_P3_median
+  scale_t=1.7217e-04 Gyr → t_end_dimless=6.1912e+01
+  [M3_P3_median] step 21597: t=25.56 (4.4004e-03 Gyr), rho_c=3.01e+03
+  [M3_P3_median] step 42796: t=40.58 (6.9870e-03 Gyr), rho_c=3.86e+03
+  [M3_P3_median] step 64648: t=50.25 (8.6515e-03 Gyr), rho_c=5.01e+03
+  [M3_P3_median] step 88998: t=56.18 (9.6730e-03 Gyr), rho_c=6.23e+03
+  [M3_P3_median] step 113018: t=59.80 (1.0295e-02 Gyr), rho_c=7.37e+03
+  [M3_P3_median] step 136659: t=60.90 (1.0485e-02 Gyr), rho_c=7.86e+03
+  [M3_P3_median] step 160169: t=61.37 (1.0566e-02 Gyr), rho_c=8.16e+03
+  [M3_P3_median] step 184337: t=61.59 (1.0604e-02 Gyr), rho_c=8.42e+03
+  [M3_P3_median] 200000 steps in 86.6s
+  [M3_P3_median] M(20pc)/M(90pc)_resim = 0.3813 (obs 0.3642±0.0220) Δ=+0.0171 (+4.69%)
+  [M3_P3_median] Saved → data/P5_resim\M3_P3_median.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 14/15 ===
+
+[M3_P4_p75] model=const_rdiss_1p05
+  r_s=1.3494e-01 kpc, ρ₀=3.8320e+02 Msun/pc³
+  σ/m=2.4681e-02 cm²/g, t_evo=1.3302e-02 Gyr
+~~~~~ Creating new halo M3_P4_p75
+  scale_t=2.1486e-04 Gyr → t_end_dimless=6.1912e+01
+  [M3_P4_p75] step 20983: t=24.64 (5.2938e-03 Gyr), rho_c=1.93e+03
+  [M3_P4_p75] step 41331: t=39.45 (8.4766e-03 Gyr), rho_c=2.41e+03
+  [M3_P4_p75] step 62926: t=49.41 (1.0617e-02 Gyr), rho_c=3.13e+03
+  [M3_P4_p75] step 86273: t=55.40 (1.1902e-02 Gyr), rho_c=3.87e+03
+  [M3_P4_p75] step 109349: t=59.42 (1.2767e-02 Gyr), rho_c=4.64e+03
+  [M3_P4_p75] step 133111: t=60.65 (1.3031e-02 Gyr), rho_c=4.98e+03
+  [M3_P4_p75] step 156665: t=61.19 (1.3147e-02 Gyr), rho_c=5.18e+03
+  [M3_P4_p75] step 179777: t=61.44 (1.3201e-02 Gyr), rho_c=5.33e+03
+  [M3_P4_p75] 200000 steps in 88.7s
+  [M3_P4_p75] M(20pc)/M(90pc)_resim = 0.3211 (obs 0.3642±0.0220) Δ=-0.0430 (-11.82%)
+  [M3_P4_p75] Saved → data/P5_resim\M3_P4_p75.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Run 15/15 ===
+
+[M3_P5_upper] model=const_rdiss_1p05
+  r_s=5.3878e-01 kpc, ρ₀=1.5888e+01 Msun/pc³
+  σ/m=1.4909e-01 cm²/g, t_evo=6.5275e-02 Gyr
+~~~~~ Creating new halo M3_P5_upper
+  scale_t=1.0552e-03 Gyr → t_end_dimless=6.1862e+01
+  [M3_P5_upper] step 20169: t=23.90 (2.5221e-02 Gyr), rho_c=7.93e+01
+  [M3_P5_upper] step 39744: t=38.37 (4.0488e-02 Gyr), rho_c=9.81e+01
+  [M3_P5_upper] step 60091: t=48.20 (5.0856e-02 Gyr), rho_c=1.25e+02
+  [M3_P5_upper] step 83458: t=54.66 (5.7674e-02 Gyr), rho_c=1.56e+02
+  [M3_P5_upper] step 106469: t=58.92 (6.2173e-02 Gyr), rho_c=1.88e+02
+  [M3_P5_upper] step 130462: t=60.31 (6.3640e-02 Gyr), rho_c=2.03e+02
+  [M3_P5_upper] step 153820: t=60.91 (6.4271e-02 Gyr), rho_c=2.11e+02
+  [M3_P5_upper] step 177101: t=61.20 (6.4573e-02 Gyr), rho_c=2.18e+02
+  [M3_P5_upper] 200000 steps in 89.9s
+  [M3_P5_upper] M(20pc)/M(90pc)_resim = 0.1704 (obs 0.3642±0.0220) Δ=-0.1938 (-53.21%)
+  [M3_P5_upper] Saved → data/P5_resim\M3_P5_upper.pickle
+  → updated data/P5_resim\summary.csv
+
+=== Done: 15 runs ===
+Final summary → data/P5_resim\summary.csv
+
+Summary table:
+model_label pick_label  sigma_m_cm2_g  t_evo_gyr  mass_ratio_resim  delta_ratio_pct
+         M1   P1_lower       0.002277   0.000315          0.595624        63.551371
+         M1     P2_p25       0.008275   0.001857          0.367151         0.815446
+         M1  P3_median       0.012682   0.002660          0.331606        -8.944788
+         M1     P4_p75       0.019894   0.008004          0.242034       -33.540324
+         M1   P5_upper       0.165359   0.014476          0.163817       -55.017665
+         M2   P1_lower       0.003958   0.002200          0.476595        30.867457
+         M2     P2_p25       0.008196   0.001811          0.376291         3.325075
+         M2  P3_median       0.011512   0.000000          0.407906        12.006139
+         M2     P4_p75       0.018316   0.001166          0.319250       -12.337703
+         M2   P5_upper       0.073162   0.004026          0.165829       -54.465369
+         M3   P1_lower       0.004208   0.001055          0.426817        17.198862
+         M3     P2_p25       0.014812   0.008218          0.399844         9.792547
+         M3  P3_median       0.019719   0.010659          0.381269         4.691847
+         M3     P4_p75       0.024681   0.013302          0.321140       -11.818646
+         M3   P5_upper       0.149087   0.065275          0.170391       -53.212672

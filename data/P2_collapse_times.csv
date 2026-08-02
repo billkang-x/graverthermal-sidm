@@ -1,0 +1,5 @@
+model,t_core_gyr,rho_min,t_final_gyr,rho_final,v_final
+elastic,4.3485,1.7344e-02,6.0156,5.1648e-02,12.76
+const_rdiss_1p05,0.9015,3.4001e-02,3.0925,2.8939e-01,13.82
+M1_dark_photon_massive,6.4006,3.1404e-02,7.4926,3.2485e-02,24.06
+M2_scalar_phi_massive,4.2309,3.1339e-02,7.4926,4.9873e-02,26.78
