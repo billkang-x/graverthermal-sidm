@@ -1,0 +1,16 @@
+{
+  "center_x_arcsec": 0.12,
+  "center_y_arcsec": 0.12,
+  "dirty_minimum_jy_per_beam": -0.008226535497735289,
+  "dirty_peak_jy_per_beam": 0.026123840969960583,
+  "gridded_stokes_i_count": 15923560,
+  "model_coordinate_registration": "not published; PRONTO x/y values must not be overplotted directly",
+  "natural_weight_sum": 31007918814.2784,
+  "noise_csv": "D:\\graverthermal-sidm\\data\\P7_lens_imaging\\noise_bins.csv",
+  "nx": 768,
+  "ny": 768,
+  "pixel_scale_mas": 1.5,
+  "purpose": "coordinate and phase-centre QA only; not deconvolved",
+  "retained_group_count": 2599830,
+  "uvfits": "D:\\graverthermal-sidm\\data\\external\\GM068\\gm068_B1938+666.UVDATA.FITS"
+}

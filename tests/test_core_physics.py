@@ -54,8 +54,9 @@ from snapshot_diagnostics import best_mass_fit, _log_interp_profile, diagnose_sn
 sys.path.insert(0, str(ROOT / "src" / "P6_parameter_scan"))
 from run_parameter_scan import _model_point, _parse_float_list
 from run_direct_time_scan import _nearest_snapshot, _parse_times
-from audit_physical_activity import parse_point_id
+from audit_physical_activity import local_timescale_diagnostics, parse_point_id
 from audit_nfw_cosmology import isolated_nfw_extrapolation, nfw_mass_factor
+from audit_halo_priors import bmo_projected_masses, dutton_maccio_c200
 from compare_direct_controls import compare_frames
 
 
@@ -275,6 +276,20 @@ class ParameterScanTests(unittest.TestCase):
             (0.1, 0.1, 100.0),
         )
 
+    def test_local_timescales_use_fastest_cooling_shell(self):
+        diagnostics = local_timescale_diagnostics(
+            np.array([3.0, 2.0]),
+            np.array([1.0, 2.0]),
+            np.array([4.0, 9.0]),
+            0.6,
+            cosmic_age_gyr=6.0,
+        )
+        self.assertEqual(diagnostics["shell_index"], 1)
+        self.assertAlmostEqual(diagnostics["cooling_time_gyr"], 0.6)
+        self.assertAlmostEqual(diagnostics["dynamical_time_gyr"], 0.2)
+        self.assertAlmostEqual(diagnostics["cooling_to_dynamical"], 3.0)
+        self.assertAlmostEqual(diagnostics["cooling_to_cosmic_age"], 0.1)
+
     def test_direct_time_scan_selects_nearest_saved_snapshot(self):
         import pandas as pd
 
@@ -337,6 +352,21 @@ class ParameterScanTests(unittest.TestCase):
         recovered_rho_s = delta_c * result["rho_critical_msun_pc3"]
         self.assertAlmostEqual(recovered_rho_s, 50.0, places=8)
         self.assertGreater(result["r_delta_over_modeled_rmax"], 1.0)
+
+    def test_dutton_maccio_relation_matches_planck_fit(self):
+        concentration = dutton_maccio_c200(3.09e6, 0.881, h=0.674)
+        self.assertGreater(concentration, 15.0)
+        self.assertLess(concentration, 16.0)
+
+    def test_bmo_truncation_reduces_projected_masses(self):
+        weak, _ = bmo_projected_masses(
+            1e8, 15.0, 100.0, 3.508e-7, radial_count=600
+        )
+        strong, _ = bmo_projected_masses(
+            1e8, 15.0, 1.0, 3.508e-7, radial_count=600
+        )
+        self.assertTrue(np.all(strong < weak))
+        self.assertGreater(strong[0], 0.0)
 
 
 class EmissionKernelTests(unittest.TestCase):

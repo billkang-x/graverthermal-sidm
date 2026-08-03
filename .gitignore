@@ -13,11 +13,12 @@ __pycache__/
 *.pyd
 .Python
 
-# Large binary data files (N-body snapshots, ICs, pickles, HDF5)
+# Large binary data files (N-body snapshots, ICs, pickles, HDF5, FITS)
 # These are too large for Git and can be regenerated from source code
 data/**/*.pickle
 data/**/*.h5
 data/**/*.hdf5
+data/**/*.fits
 data/**/snapshot_*
 data/**/ic.dat
 data/**/ic_*.dat
@@ -26,6 +27,7 @@ data/**/output_prod/
 data/**/ref_snapshots/
 data/**/sim_snapshots/
 data/**/ics_sim_space/
+data/external/
 
 # Large CSV files (>5MB, can be regenerated from source code)
 data/P3_B1938_viable_region.csv
@@ -44,7 +46,16 @@ texput.log
 *.out
 *.fdb_latexmk
 *.fls
+*.synctex
 *.synctex.gz
+*.tex.bak
+
+# Windows reserved name artifact
+nul
+
+# LaTeX build directories
+paper/build_aanda/
+paper/build_jcap/
 
 # OS files
 Thumbs.db

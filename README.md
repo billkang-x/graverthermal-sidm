@@ -232,9 +232,114 @@ The two extended paper figures are regenerated from all four refined scans:
   --activity-output figures\P6_extended_activity_audit.pdf
 ```
 
+The same physical-state audit now evaluates the cooling and local dynamical
+times at the fastest-cooling shell, using
+`t_dyn=(4*pi*G*rho)^(-1/2)`.  The dense, initial-state failure map is generated
+without additional halo evolution:
+
+```powershell
+.venv\Scripts\python src\P6_parameter_scan\build_failure_map.py `
+  --time-csv data\P6_final_direct_time_n192_refined\direct_time_scan_summary.csv data\P6_low_threshold_direct_time_n192_refined\direct_time_scan_summary.csv data\P6_deep_threshold_direct_time_n192_refined\direct_time_scan_summary.csv data\P6_high_sigma_vstar20_direct_time_n192_refined\direct_time_scan_summary.csv `
+  --audit-csv data\P6_final_direct_time_n192_refined\physical_activity_audit.csv data\P6_low_threshold_direct_time_n192_refined\physical_activity_audit.csv data\P6_deep_threshold_direct_time_n192_refined\physical_activity_audit.csv data\P6_high_sigma_vstar20_direct_time_n192_refined\physical_activity_audit.csv `
+  --output data\P6_failure_map\cooling_failure_map.csv `
+  --figure figures\P6_cooling_failure_map.pdf `
+  --eta 0.1 --n-shells 192 --vmax-kms 5.343777930616317
+```
+
+This produces 4018 Born-controlled post-processing points over
+`0.1 <= v_star/v_max <= 100` and
+`0.1 <= sigma/m(100 km/s) <= 10 cm^2/g`.  The minimum local ratio is
+`t_cool/t_dyn = 8.32e26` (M1); the M2 minimum is `1.18e27`.
+
+The initial-halo prior audit uses the Dutton--Maccio Planck concentration
+relation and a smooth BMO-truncated NFW profile.  The baseline profiles over
+`1 <= r_t/r_s <= 100`; a deliberately aggressive sensitivity branch extends
+the truncation to `r_t/r_s = 0.5`:
+
+```powershell
+.venv\Scripts\python src\P6_parameter_scan\audit_halo_priors.py `
+  --isolated-csv data\P6_final_direct_time_n192_refined\nfw_isolated_extrapolation.csv `
+  --profile-output data\P6_halo_prior\concentration_profile.csv `
+  --summary-output data\P6_halo_prior\halo_prior_summary.csv `
+  --figure figures\P6_halo_prior_audit.pdf `
+  --tau-min 1 --tau-max 100
+```
+
+The isolated extrapolation lies `10.46 sigma_logc` above the median relation.
+After profiling over halo mass and the baseline tidal envelope, reaching
+`chi2_2M <= 2.30` requires an interpolated concentration offset of
+`6.36 sigma_logc`; the aggressive `r_t/r_s >= 0.5` branch lowers this to
+`5.69 sigma_logc`.  These are prior-sensitivity diagnostics, not measurements
+of an infall concentration or tidal radius.
+
 The old `*_initial` direct directories are retained as provenance for the
 pre-refinement 80-point radius-grid selection and must not be used for final
 paper numbers.
+
+## P7: public GM068 likelihood and host-tidal prior
+
+The public pipeline-calibrated GM068 visibility file is intentionally kept
+under the ignored `data/external/GM068` directory. Its expected SHA-256 is
+`4d78a1d81e39d819318714faac7a1901fab907ec5a090a9175c9260967537982`.
+The data-quality and likelihood audit is regenerated with:
+
+```powershell
+.venv\Scripts\python src\P7_lens_joint\audit_uvfits.py `
+  data\external\GM068\gm068_B1938+666.UVDATA.FITS `
+  --output-dir data\P7_lens_imaging `
+  --figure figures\P7_uvfits_audit.pdf
+```
+
+The audit finds 30,173,833 valid RR/LL complex samples before the published
+baseline removals. It estimates per-component noise from adjacent
+visibilities in 30-minute baseline bins, removes the published EF-JB-WB
+triangle, and records data-driven RFI flags separately. Because AIPS `SPLIT`
+averaged each 8 MHz IF from 32 channels, the forward operator integrates over
+the 32 original channel centres.
+
+A full-data, naturally weighted dirty image can be generated as a phase and
+coordinate QA check. It is not deconvolved and must not be used as the lens
+likelihood:
+
+```powershell
+.venv\Scripts\python src\P7_lens_joint\make_dirty_image.py `
+  data\external\GM068\gm068_B1938+666.UVDATA.FITS `
+  --noise-csv data\P7_lens_imaging\noise_bins.csv `
+  --metadata-json data\P7_lens_imaging\metadata.json `
+  --fits-output data\P7_lens_imaging\gm068_dirty_image.fits `
+  --summary-output data\P7_lens_imaging\dirty_image_summary.json `
+  --figure figures\P7_gm068_dirty_image.pdf
+```
+
+The independent lensing core in `src/P7_lens_joint/lens_forward_model.py`
+implements the published elliptical power law, `m=3,4` convergence
+multipoles, external shear, spherical perturbers, bilinear pixel sources,
+band-integrated NUFFTs, and exact finite-dimensional Gaussian source
+marginalization. Synthetic forward/adjoint and evidence-normalization tests
+are part of `tests/test_uvfits_likelihood.py`.
+
+The host-orbit/tidal sensitivity calculation is regenerated with:
+
+```powershell
+.venv\Scripts\python src\P7_lens_joint\run_host_tidal_prior.py `
+  --output-dir data\P7_host_tidal_prior `
+  --figure figures\P7_host_tidal_prior.pdf `
+  --samples 500000 --posterior-draws 20000
+```
+
+At the published mean free-PJ mass and truncation radius, the current 3D
+radius must be at least 6.28 kpc under the published power-law tidal scaling,
+compared with a projected radius of about 1.52 kpc. This is a geometry bound
+within the stated tidal model. The orbit-family posteriors are sensitivity
+priors, not a cosmological orbit measurement, and currently use the public
+one-dimensional PJ summaries because the correlated PRONTO posterior samples
+are not available.
+
+The exact published imaging posterior is not reproducible from the archive
+alone. The missing private inputs are listed in
+`reports/P7_joint_likelihood_readiness.md`; no formal joint Bayes factor or
+dSIDM exclusion may be quoted from P7 until those inputs are supplied or an
+independent production fit is completed and validated.
 
 The production workflow should not be run until these tests pass. A constant
 cross section and constant `r_diss` must preserve the Appendix G rescaling

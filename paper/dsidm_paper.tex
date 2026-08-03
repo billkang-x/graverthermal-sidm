@@ -19,6 +19,7 @@
 \newcommand{\vrel}{v_{\rm rel}}
 \newcommand{\vstar}{v_\star}
 \newcommand{\tcool}{t_{\rm cool}}
+\newcommand{\tdyn}{t_{\rm dyn}}
 
 \title{Born-Valid Dissipative Self-Interacting Dark Matter\\
 and the Compact Lens JVAS B1938+666}
@@ -50,16 +51,30 @@ parameters makes the unevolved profile interpolate the two masses exactly;
 this is an underconstrained initial-profile match, not evidence for SIDM.
 The physical halos have $v_{\max}\simeq5.34\,\mathrm{km\,s^{-1}}$, so the
 1 and 5 $\mathrm{km\,s^{-1}}$ branches explicitly open the radiative channel.
-Nevertheless, the shortest exact local cooling time in the entire grid is
-$8.7\times10^{22}$ Gyr.  Increasing the reference cross section to
-10 $\mathrm{cm^2\,g^{-1}}$ enhances cooling but remains dynamically
-irrelevant, and cooling-disabled controls give identical projected masses at
-the saved precision.  An isolated-NFW extrapolation of the fitted initial
-profile gives $r_s=10.0$ pc and $c_{200}\simeq219$, although the modeled domain
-does not reach $r_{200}$ and a stripped subhalo need not admit this isolated
-interpretation.  B1938+666 therefore provides no positive dissipative signal
-in the explored Born-valid channels, including radiatively open thresholds;
-the result does not exclude other dSIDM regimes.
+Nevertheless, the shortest exact local cooling time among the direct runs is
+$8.7\times10^{22}$ Gyr.  A dense 4018-point initial-state map over
+$0.1\leq\vstar/v_{\max}\leq100$ and
+$0.1\leq\sigmavm(100)\leq10\,\mathrm{cm^2\,g^{-1}}$ lowers this only to
+$8.1\times10^{22}$ Gyr and gives
+$\min(\tcool/\tdyn)=8.3\times10^{26}$.  Cooling-disabled controls give
+identical projected masses at the saved precision.  The freely fitted NFW
+profile has an isolated extrapolation $c_{200}\simeq219$, or 10.46 times an
+assumed 0.11-dex concentration scatter above a standard median relation.
+Profiling over a broad smooth tidal envelope still requires an offset of at
+least 6.36 scatter units to reach the adopted two-mass reference contour
+(5.69 for an aggressive truncation bound).  A separate host-orbit sensitivity
+analysis uses the published pseudo-Jaffe summaries and tidal scaling.  At the
+mean free-truncation parameters, the current three-dimensional radius must be
+at least 6.28 kpc, compared with a projected radius of approximately 1.52 kpc;
+a phase-mixed orbital prior gives a median of 8.57 kpc.  We independently
+audit the public GM068 visibilities and implement the normalized complex
+likelihood and pixel-source forward operators, but do not claim a new joint
+lens posterior because the PRONTO configuration and correlated posterior
+products are not public.  The concentration and orbit results are therefore
+prior-sensitivity diagnostics, not formal exclusion significances.  B1938+666
+provides no positive dissipative signal in the explored Born-valid channels,
+including radiatively open thresholds; the result does not exclude other
+dSIDM regimes.
 \end{abstract}
 
 \section{Introduction}
@@ -152,8 +167,10 @@ This paper is organized as follows.  Section~\ref{sec:microphysics} describes
 the scattering models and cooling moment.  Section~\ref{sec:numerics}
 summarizes the fluid solver, B1938 statistic, and scan strategy.
 Section~\ref{sec:results} presents the Born-valid parameter map, direct
-192-shell time scan, physical threshold audit, and elastic controls.  We
-discuss the physical interpretation and limitations in
+192-shell time scan, physical threshold audit, elastic controls, a
+dimensionless cooling-failure map, a cosmological-profile audit, and the
+public-data likelihood and host-orbit sensitivity analyses.  We discuss the
+physical interpretation and limitations in
 Section~\ref{sec:discussion} and conclude in Section~\ref{sec:conclusions}.
 
 \section{Microphysical framework}
@@ -298,6 +315,41 @@ For every physical direct run we use the two-mass statistic
 This statistic is a compact diagnostic based on two measurements; it is not a
 replacement for the full lens-imaging likelihood.
 
+\subsection{Public GM068 visibility audit and likelihood scope}
+\label{sec:visibility-audit-method}
+
+We independently audit the public pipeline-calibrated GM068 UVFITS data
+\citep{Powell2025}.  The file contains 2,716,193 visibility groups, eight
+8-MHz intermediate-frequency windows, and the parallel-hand correlations RR
+and LL.  Of the 43,459,088 stored complex correlation samples, 30,173,833
+have positive finite pipeline weights.  Following the published procedure,
+we estimate one Gaussian noise standard deviation per real or imaginary
+component by differencing time-adjacent visibilities and accumulating the
+root-mean-square in 30-minute baseline bins.  We remove the full EF--JB--WB
+triangle and retain the published RFI-sensitive baselines as a separate mask
+category.  Because the exact 1--2 h RFI intervals are not public, two LA--PT
+bins at 9--10 h are additionally identified by a declared six-MAD threshold
+in log noise; this data-driven mask is not asserted to reproduce the private
+flag table.
+
+The public file was averaged by AIPS \texttt{SPLIT} from 32 channels to one
+channel per 8-MHz window.  Our visibility operator therefore averages the sky
+model over the 32 original channel centers.  The independent forward model
+contains the published elliptical power-law macromodel, $m=3$ and 4
+convergence multipoles, external shear, spherical pseudo-Jaffe or tabulated
+perturbers, a bilinear pixelated source, and forward/adjoint non-uniform fast
+Fourier transforms.  For finite test problems we evaluate the normalized
+Gaussian source-marginalized likelihood, including the precision-matrix
+determinants.
+
+This implementation establishes data provenance and a reproducible route to
+a future independent fit; it is not used here to generate a new lens posterior.
+The PRONTO model-coordinate registration, adaptive source grid, numerical
+macromodel priors and chain, exact final flags, log-determinant preconditioner,
+and correlated perturber samples are not public.  We therefore retain
+Eq.~\eqref{eq:b1938-masses} as the observational compression for the
+gravothermal calculation and do not quote a new visibility-level Bayes factor.
+
 At each source snapshot, a logarithmic $r_{2D}/r_s$ grid first locates the
 relevant rescaling branch, after which a bounded continuous minimization of
 Eq.~\eqref{eq:two-mass-chi2} determines the radius scale.  The common mass
@@ -352,12 +404,90 @@ $\vstar=1$ and 5 $\mathrm{km\,s^{-1}}$ branches are rerun at
 $t_{\rm source}=0.10$ Gyr with cooling disabled but identical
 velocity-dependent elastic transport.
 
-The numerical implementation is covered by 31 regression tests.  They check
+\subsection{Dimensionless failure map and halo-prior audit}
+
+To express the cooling hierarchy independently of a chosen evolution time,
+we compare Eq.~\eqref{eq:cooling-time} with the local dynamical time at the
+same fastest-cooling shell,
+\begin{equation}
+  \tdyn(r_i)=\left[4\pi G\rho(r_i)\right]^{-1/2}.
+  \label{eq:dynamical-time}
+\end{equation}
+On the common unevolved 192-shell physical halo, we evaluate the exact thermal
+kernel on a 49-point grid in $0.1\leq\vstar/v_{\max}\leq100$.  At fixed
+threshold and $\eta_B=0.1$, the source term scales linearly with the reference
+cross section, allowing a 41-point grid over
+$0.1\leq\sigmavm(100)\leq10\,\mathrm{cm^2\,g^{-1}}$.  The resulting 4018
+points are an initial-state post-processing diagnostic, not additional halo
+evolutions.  Existing direct candidates provide an independent overlay.
+
+We separately test whether the zero-time NFW interpolation resembles a
+cosmological halo.  The median Planck concentration relation is
+\begin{equation}
+ \log_{10}c_{200}=a(z)+b(z)\log_{10}\!\left[
+ \frac{M_{200}}{10^{12}h^{-1}\Msun}\right],
+ \label{eq:concentration-relation}
+\end{equation}
+where $a=0.520+(0.905-0.520)\exp(-0.617z^{1.21})$ and
+$b=-0.101+0.026z$ \citep{DuttonMaccio2014}; we adopt its 0.11-dex intrinsic
+scatter.  To allow a broad tidal envelope, we forward-project the smoothly
+truncated profile
+\begin{equation}
+ \rho_{\rm BMO}(r)=\rho_{\rm NFW}(r)
+ \left(\frac{r_t^2}{r^2+r_t^2}\right)^2
+ \label{eq:bmo-profile}
+\end{equation}
+\citep{Baltz2009} and profile the two masses over
+$10^{5.5}\leq M_{200}/\Msun\leq10^{10}$ and
+$1\leq r_t/r_s\leq100$.  A deliberately aggressive sensitivity branch uses
+$r_t/r_s\geq0.5$.  We quote the concentration offset at which the profiled
+two-mass statistic reaches $\chi^2_{2M}=2.30$ only as a common reference
+contour.  With two data points and profiled halo/truncation parameters, it is
+not a posterior credible interval or a detection significance.
+
+\subsection{Host-orbit and tidal sensitivity prior}
+\label{sec:host-orbit-method}
+
+The preceding BMO envelope treats $r_t/r_s$ as a free sensitivity coordinate.
+We separately propagate the unknown three-dimensional location through the
+tidal prescription used in the published lens analysis.  The tidal
+pseudo-Jaffe fit gives $r_{t,0}=53\pm1$ pc for
+$m_0=(1.54\pm0.07)\times10^6\,\Msun$ when the true host distance is set equal
+to the projected distance \citep{Powell2025}.  The displayed macromodel and
+perturber posterior medians give $R_{\rm proj}\simeq1.52$ kpc and
+$\gamma\simeq1.76$.  Since $M_{\rm host}(<R)\propto R^{3-\gamma}$ for the
+power-law host, the same prescription scales as
+\begin{equation}
+ r_t(r_p,m)=53\ {\rm pc}
+ \left(\frac{m}{1.54\times10^6\,\Msun}\right)^{1/3}
+ \left(\frac{r_p}{1.52\ {\rm kpc}}\right)^{\gamma/3},
+ \label{eq:host-tidal-scaling}
+\end{equation}
+where $r_p$ is the orbital pericenter.
+
+We write the current radius as
+$r=[R_{\rm proj}^2+z_{\rm los}^2]^{1/2}$ and $r_p=f_p r$.  The conditional
+line-of-sight sensitivity prior follows an NFW-like tracer number density
+with a 30-kpc scale radius and a 200-kpc outer boundary.  We compare a circular
+upper envelope $f_p=1$, a phase-mixed family
+$f_p\sim{\rm Beta}(4,2)$, and a radially biased sensitivity family
+$f_p\sim{\rm Beta}(2,4)$.  The free pseudo-Jaffe summaries
+$m=(2.82\pm0.26)\times10^6\,\Msun$ and $r_t=149\pm18$ pc supply the likelihood.
+They are treated as independent Gaussians because their correlated PRONTO
+samples are unavailable.  These choices define an explicit robustness audit,
+not a calibrated cosmological orbit distribution or a formal joint lens-orbit
+posterior.
+
+The numerical implementation is covered by 48 regression tests.  They check
 the relative-speed distribution, the constant-parameter limit of
 Eq.~\eqref{eq:cooling-moment}, the massless analytic emission rate, threshold
 closure of the massive kernels, Born-parameter construction, exact shell
 projection, continuous candidate refinement, direct-snapshot selection, and
-the cosmological NFW extrapolation identity.
+the cooling/dynamical-time and cosmological-profile identities.  The added
+visibility tests cover AIPS baseline decoding, RR/LL flag handling,
+bandwidth integration, complex-likelihood normalization, pseudo-Jaffe mass
+normalization, the NUFFT adjoint identity, bilinear source mapping, and exact
+finite-dimensional source marginalization.
 
 \section{Results}
 \label{sec:results}
@@ -581,7 +711,39 @@ at the saved precision, with identical conduction-step counts.  The equality
 in Eq.~\eqref{eq:elastic-control} verifies that even the radiatively open
 candidates are in the effective elastic limit.
 
-\subsection{Physical meaning of the initial NFW match}
+\subsection{Dimensionless cooling-failure map}
+
+Figure~\ref{fig:failure-map} generalizes the finite direct grid in the two
+coordinates that control whether massive emission can matter.  The shortest
+cooling times over the dense map are $8.09\times10^{22}$ Gyr for M1 and
+$1.14\times10^{23}$ Gyr for M2, both at
+$\vstar/v_{\max}=0.75$ and
+$\sigmavm(100)=10\,\mathrm{cm^2\,g^{-1}}$.  Thus even the most favorable
+point cools more than $1.2\times10^{22}$ times slower than the 6.37 Gyr age at
+the lens redshift.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{../figures/P6_cooling_failure_map.pdf}
+\caption{Born-controlled initial-state cooling-failure map for (a) massive
+vector and (b) massive scalar emission.  The color gives the local ratio
+$\tcool/\tdyn$, evaluated at the shell with the shortest cooling time; the
+vertical dashed line marks $\vstar=v_{\max}$.  Open circles are the direct
+192-shell candidates.  The dense grid is a kernel post-processing diagnostic,
+not an additional time-evolution scan.}
+\label{fig:failure-map}
+\end{figure}
+
+The minimum dynamical margin is
+$\tcool/\tdyn=8.32\times10^{26}$ for M1 and
+$1.18\times10^{27}$ for M2, occurring near
+$\vstar/v_{\max}=1.78$ at the largest cross section.  The different locations
+of the minimum absolute cooling time and minimum local ratio reflect changes
+in the shell that minimizes Eq.~\eqref{eq:cooling-time}.  More importantly,
+neither threshold crossing nor the two-decade cross-section lever arm
+approaches the dynamically relevant region $\tcool/\tdyn\lesssim1$.
+
+\subsection{Cosmological concentration and tidal-envelope audit}
 
 The continuously fitted initial profile has
 \begin{equation}
@@ -596,18 +758,97 @@ $H_0=67.4$ km s$^{-1}$ Mpc$^{-1}$ and $\Omega_m=0.315$.  This gives
   M_{200}=3.09\times10^6\ \Msun.
   \label{eq:nfw-extrapolation}
 \end{equation}
-This is not an ordinary $c\sim17$ halo.  For orientation, the nearby
-mass/redshift comparison quoted by \citet{Schmidt2026} from the
-\citet{DiemerJoyce2019} relation has a median concentration of order 13.
+At this mass and $z=0.881$, Eq.~\eqref{eq:concentration-relation} gives
+$c_{200}=15.50$.  The isolated extrapolation is therefore 10.46 units of the
+assumed 0.11-dex log-concentration scatter above the median, rather than an
+ordinary $c\sim15$--17 halo.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{../figures/P6_halo_prior_audit.pdf}
+\caption{Cosmological and tidal-envelope plausibility audit.  (a) The
+\citet{DuttonMaccio2014} median concentration relation at $z=0.881$, with one-
+and three-scatter bands, compared with the isolated extrapolation and the
+first baseline tidal-envelope grid point inside the reference contour.
+(b) Two-mass $\chi^2$ profiled over $M_{200}$ and BMO truncation at fixed
+concentration offset.  The baseline has $r_t/r_s\geq1$; the aggressive
+sensitivity branch extends to 0.5.  Offset labels are in units of the assumed
+0.11-dex scatter and are not formal statistical significances.}
+\label{fig:halo-prior}
+\end{figure}
+
+When $M_{200}$ and $1\leq r_t/r_s\leq100$ are profiled, the two-mass statistic
+first reaches the reference contour at an interpolated concentration offset
+of 6.36 scatter units.  The first sampled solution inside the contour has
+$M_{200}=2.91\times10^7\,\Msun$, $c_{200}=67.5$, and saturates the lower
+truncation bound $r_t/r_s=1$.  Extending that bound to the deliberately
+aggressive value 0.5 lowers the interpolated offset only to 5.69 units and
+again drives the fit to the boundary.  The boundary saturation makes the
+dependence on the assumed tidal envelope explicit.
 
 Equation~\eqref{eq:nfw-extrapolation} is an extrapolation diagnostic rather
 than a concentration measurement.  The fluid model extends only to
 $50r_s\simeq0.50$ kpc, whereas the inferred $r_{200}$ is $219r_s$; moreover,
 a tidally stripped subhalo need not retain a meaningful isolated-halo
 $c_{200}$.  The zero-time mass match therefore shows only that a freely
-rescaled NFW shape can interpolate the two measurements.  Whether such an
-initial state is plausible requires an infall, concentration, and tidal-history
-prior.
+rescaled NFW shape can interpolate the two measurements.  The audit in
+Figure~\ref{fig:halo-prior} shows that neither an ordinary untruncated halo nor
+the adopted broad truncation envelope makes this particular interpolation
+typical.  This BMO profile exercise alone does not provide a formal exclusion
+of a CDM subhalo because its truncation coordinate is not tied to an infall
+history or a full lens likelihood.
+
+\subsection{Public-data likelihood audit and host-orbit sensitivity}
+\label{sec:host-orbit-results}
+
+The visibility audit yields 2255 baseline/time noise bins.  Of these, 76 lie
+in the published EF--JB--WB triangle, 16 contain too few adjacent pairs for
+the adopted noise estimate, and two LA--PT bins are selected by the declared
+data-driven RFI rule.  After polarization averaging and these exclusions,
+15,923,560 Stokes-$I$ samples enter the full-data dirty-image QA.  The
+visibility forward/adjoint identity, band integration, and finite-dimensional
+source marginalization pass the regression suite.  The QA also shows that the
+PRONTO image-plane coordinates are not directly registered to the public
+UVFITS phase center; a future independent fit must sample this global shift.
+These checks validate the public-data pathway, but, by construction, provide
+neither a new perturber profile posterior nor a likelihood correction to
+Eq.~\eqref{eq:b1938-masses}.
+
+Equation~\eqref{eq:host-tidal-scaling} gives a geometric bound within the
+adopted tidal model: since $r_p\leq r$, the mean free-PJ mass and truncation
+radius require $r\geq6.277$ kpc and $|z_{\rm los}|\geq6.090$ kpc.  This is
+substantially larger than $R_{\rm proj}\simeq1.52$ kpc, quantifying why
+substituting projected distance for three-dimensional distance produces an
+overly compact tidal radius.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{../figures/P7_host_tidal_prior.pdf}
+\caption{Host-orbit and tidal sensitivity audit conditioned on the published
+free pseudo-Jaffe summaries.  (a) Current three-dimensional radius for the
+circular upper envelope, phase-mixed prior, and radially biased sensitivity
+prior.  The dashed line is the lower bound evaluated at the mean measured
+mass and truncation radius; measurement uncertainty permits posterior samples
+below it.  (b) Pericenter distributions that set the tidal radius.
+(c) Imaging-conditioned tidal-radius distributions; the gray band is the
+published free-PJ $1\sigma$ interval and the dotted line is the tidal radius
+obtained by setting the three-dimensional radius equal to the projected one.
+The curves use one-dimensional public summaries rather than the unavailable
+correlated PRONTO samples and are not formal orbit constraints.}
+\label{fig:host-tidal-prior}
+\end{figure}
+
+For the circular upper envelope, the current-radius posterior has median
+$5.97$ kpc and 16--84 percentile interval $4.74$--$7.39$ kpc.  The
+phase-mixed family gives $8.57^{+3.68}_{-2.26}$ kpc, while the radially biased
+sensitivity family gives $14.97^{+11.26}_{-5.41}$ kpc.  Their pericenter
+medians remain close to 5.9--6.0 kpc because the free-PJ truncation radius
+primarily constrains the tidal-setting pericenter.  Changing the NFW-like
+tracer scale radius from 10 to 100 kpc moves the phase-mixed current-radius
+median only from 8.15 to 8.92 kpc.  Orbital-family uncertainty therefore
+dominates this host-scale sensitivity.  This analysis shows that line-of-sight
+geometry can reconcile the published projected-radius tide with a more
+extended perturber; it does not identify the perturber as CDM, SIDM, or dSIDM.
 
 \section{Discussion}
 \label{sec:discussion}
@@ -655,10 +896,19 @@ The numerical zero in Eq.~\eqref{eq:best-fit} should not be interpreted as a
 detection of dSIDM or even as evidence for an ordinary cosmological NFW
 subhalo.  It is obtained at the unevolved boundary with two fitted profile
 scales and two mass constraints.  The isolated extrapolation is unusually
-concentrated, while a stripped-subhalo interpretation requires information not
-contained in the two masses.  The evolved dissipative runs are also
-indistinguishable from the elastic controls.  Within this analysis, B1938
-therefore supplies no positive evidence for radiative self-interactions.
+concentrated.  Even after profiling over a generous smooth truncation envelope,
+matching the two masses requires a large positive concentration offset and
+pushes the truncation to its allowed boundary.  These findings weaken the
+interpretation of the zero-time solution as an ordinary cosmological NFW
+subhalo, but they are not a concentration measurement: a stripped-subhalo
+interpretation requires information not contained in the two masses.  The
+explicit host-orbit sensitivity calculation shows that line-of-sight geometry
+can relieve the apparent tidal tension at the projected radius.  It does so by
+reweighting public one-dimensional pseudo-Jaffe summaries, however, and does
+not turn the initial NFW interpolation into a cosmological posterior.  The
+evolved dissipative runs are also indistinguishable from the elastic controls.
+Within this analysis, B1938 therefore supplies no positive evidence for
+radiative self-interactions.
 
 The result also does not exclude dSIDM in general.  The observational input is
 compressed to two projected masses, the initial halo is restricted to an
@@ -666,8 +916,11 @@ isolated NFW family, and the microphysical scan covers two long-range
 identical-fermion channels.  A different emission normalization or channel, a
 nonperturbative scattering treatment, or a halo modified by tides and assembly
 history could yield a different cooling hierarchy.  A full statistical claim
-would additionally require the lens-imaging likelihood and priors on the halo
-mass, concentration, infall history, and formation time.
+would require production inference with the full visibility likelihood, the
+correlated perturber--macromodel posterior, and calibrated priors on halo mass,
+concentration, orbit, infall history, and formation time.  The public-data
+framework developed here supplies a reproducible route to that analysis, but
+not the missing joint inference itself.
 
 The present null result is nevertheless physically informative.  It identifies
 a necessary condition for using B1938 as a dSIDM probe: after the candidate is
@@ -713,8 +966,24 @@ B1938+666.  The main conclusions are:
   source-profile optimization removes the earlier discrete-scale selection
   artifact.
   \item The initial NFW family interpolates the two masses exactly, as expected
-  for two fitted scales.  Its isolated extrapolation has $c_{200}\simeq219$ and
-  is not evidence for an ordinary unstripped $\Lambda$CDM subhalo.
+  for two fitted scales.  Its isolated extrapolation has $c_{200}\simeq219$,
+  10.46 assumed-scatter units above the adopted median.  A broad tidal-envelope
+  profile still requires at least 6.36 units (5.69 for an aggressive bound) to
+  reach the two-mass reference contour; these are sensitivity diagnostics,
+  not formal exclusion significances.
+  \item An independent audit of the public GM068 visibility data reproduces
+  the published data-volume bookkeeping and implements a normalized complex
+  visibility likelihood with finite pixel-source marginalization.  Because
+  the original coordinate registration, correlated lens posterior, and
+  production source-grid configuration are not public, we do not report a new
+  perturber posterior or Bayes factor.
+  \item The published free-truncation pseudo-Jaffe summary implies a
+  mean-parameter lower bound $r_{\rm 3D}\geq6.28$ kpc under the adopted tidal
+  scaling, compared with the projected separation $R_{\rm proj}\simeq1.52$
+  kpc.  A phase-mixed host-orbit sensitivity prior gives a median current
+  radius of 8.57 kpc.  This demonstrates the importance of line-of-sight
+  geometry but is not a formal orbit constraint or a discriminator among CDM,
+  SIDM, and dSIDM.
   \item The directly resimulated halos have
   $v_{\max}\simeq5.34\,\mathrm{km\,s^{-1}}$.  The 1 and 5
   $\mathrm{km\,s^{-1}}$ branches are radiatively open, but the shortest
@@ -722,14 +991,59 @@ B1938+666.  The main conclusions are:
   \item Cooling-disabled and dissipative direct runs give identical B1938
   masses at fixed physical parameters for all open-threshold controls.  The
   tested models are therefore in the effective elastic limit.
+  \item A 4018-point map over $\vstar/v_{\max}$ and $\sigmavm$ gives
+  $\min(\tcool/\tdyn)=8.3\times10^{26}$ for M1 and $1.2\times10^{27}$ for M2.
+  The null cooling conclusion is therefore not an artifact of the sparse
+  direct grid or of testing only sub-threshold branches.
 \end{enumerate}
 
 The B1938 mass measurements do not favor dissipative self-interactions in the
 explored Born-valid parameter region, but they do not exclude other dSIDM
-regimes.  The next statistically meaningful step is not a wider fluid or
-$N$-body scan of the same inactive kernels, but a joint analysis using the
-full lens likelihood and cosmological/tidal priors, or a different microscopic
-branch with a substantially larger validated emission moment.
+regimes.  The public GM068 audit and the host-orbit sensitivity calculation
+narrow the requirements for the next step, but they do not convert the
+two-mass compression into a model exclusion.  A fully joint visibility-level
+analysis is therefore deferred until the original reconstruction products are
+available or an independent production reconstruction has validated the
+global coordinate shift, adaptive source regularization, correlated lens
+posterior, and evidence convergence.  A wider fluid or $N$-body scan of the
+same inactive kernels is not warranted; a different microscopic branch with a
+substantially larger validated emission moment remains physically distinct.
+
+\appendix
+\section{Public GM068 visibility-quality audit}
+\label{app:visibility-audit}
+
+Figure~\ref{fig:visibility-audit} records the reproducible quality-control
+stage used to construct the public-data likelihood pathway.  Panel (a) shows a
+representative positive-weight Stokes-$I$ sample and its conjugate in the
+$uv$ plane.  Panel (b) displays adjacent-difference noise estimates in
+30-minute baseline bins together with their time-bin median; these estimates
+also define the declared six-median-absolute-deviation RFI rule.  Panel (c)
+compares the baseline-level empirical noise with the RMS inferred from the
+pipeline weights and exposes their arbitrary overall normalization.  Because
+the exact original RFI intervals and amplitude normalization are not public,
+these diagnostics define exclusions and internal noise scales rather than
+reproduce a private calibration table.  A full-data dirty image was also used
+as a phase and sign-convention check, but is not presented as a lens
+reconstruction: its absolute registration to the published PRONTO coordinate
+system is unknown.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{../figures/P7_uvfits_audit.pdf}
+\caption{Public GM068 UVFITS quality audit: sampled $uv$ coverage,
+30-minute adjacent-difference noise estimates, and a baseline-level comparison
+with the pipeline-weight RMS.  The public AIPS weights and amplitudes have an
+arbitrary overall normalization, so the figure supports reproducibility of
+selection and internal noise weighting, not an absolute flux-calibration
+claim.}
+\label{fig:visibility-audit}
+\end{figure}
+
+\section*{Code availability}
+The source code, simulation data, and figure-generation scripts underlying
+this work are publicly available at
+\url{https://github.com/billkang-x/graverthermal-sidm}.
 
 \section*{Acknowledgments}
 We thank the developers of the public GravothermalSIDM code.  This work used
@@ -746,6 +1060,9 @@ Andrade, K.~E., Fuson, J., Gad-Nasr, S., et al. 2022, MNRAS, 510, 54.
 \bibitem[Balberg et al.(2002)]{Balberg2002}
 Balberg, S., Shapiro, S.~L., \& Inagaki, S. 2002, ApJ, 568, 475.
 
+\bibitem[Baltz et al.(2009)]{Baltz2009}
+Baltz, E.~A., Marshall, P., \& Oguri, M. 2009, JCAP, 01, 015.
+
 \bibitem[Bullock \& Boylan-Kolchin(2017)]{BullockBoylan2017}
 Bullock, J.~S. \& Boylan-Kolchin, M. 2017, ARA\&A, 55, 343.
 
@@ -759,6 +1076,9 @@ ApJ, 547, 574.
 
 \bibitem[Diemer \& Joyce(2019)]{DiemerJoyce2019}
 Diemer, B. \& Joyce, M. 2019, ApJ, 871, 168.
+
+\bibitem[Dutton \& Macci\`o(2014)]{DuttonMaccio2014}
+Dutton, A.~A. \& Macci\`o, A.~V. 2014, MNRAS, 441, 3359.
 
 \bibitem[Elbert et al.(2015)]{Elbert2015}
 Elbert, O.~D., Bullock, J.~S., Garrison-Kimmel, S., et al. 2015,

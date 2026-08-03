@@ -1,0 +1,22 @@
+{
+  "free_pseudo_jaffe_summary": {
+    "tidal_radius_pc": 149.0,
+    "tidal_radius_sigma_pc": 18.0,
+    "total_mass_msun": 2820000.0,
+    "total_mass_sigma_msun": 260000.0
+  },
+  "host_scale_sensitivity_kpc": [
+    10.0,
+    30.0,
+    100.0
+  ],
+  "important_limitation": "The public free-PJ mass and radius summaries are treated as independent Gaussians because the PRONTO posterior chain is private.",
+  "orbit_independent_abs_los_lower_bound_pc": 6090.214973489163,
+  "orbit_independent_current_radius_lower_bound_pc": 6277.03101978249,
+  "reference": {
+    "host_density_slope": 1.76,
+    "projected_radius_pc": 1520.0,
+    "tidal_radius_pc": 53.0,
+    "total_mass_msun": 1540000.0
+  }
+}
